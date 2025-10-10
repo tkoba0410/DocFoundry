@@ -1,5 +1,5 @@
 
-# 📘 Exchange API Library — 標準文書体系（現行版）
+# 📘 標準文書体系（現行版）
 **対象範囲:** docs/standards/  
 **構成単位:** 「0100-STD-DOCS群」「0200-STD-DEVP群」  
 （現存する文書のみを対象とする）
