@@ -70,3 +70,33 @@
 
 **Status:** Draft  
 **Location:** `docs/standards/README.md`
+
+## 目次（目安の参照順）
+
+1. **文書運用ポリシー層（1-doc/）**
+   - [G0100-STD-DOC0-DocumentPolicy](1-doc/G0100-STD-DOC0-DocumentPolicy.md)
+   - [G0101-STD-DOC1-CompliancePack](1-doc/G0101-STD-DOC1-CompliancePack.md)
+
+2. **開発サイクル定義層（2-scd/）**
+   - [G0200-STD-SCD0-CycleOverview](2-scd/G0200-STD-SCD0-CycleOverview.md)
+   - [G0201-STD-SCD1-SpecPhase](2-scd/G0201-STD-SCD1-SpecPhase.md)
+   - [G0202-STD-SCD2-ContractPhase](2-scd/G0202-STD-SCD2-ContractPhase.md)
+   - [G0203-STD-SCD3-TestPhase](2-scd/G0203-STD-SCD3-TestPhase.md)
+   - [G0204-STD-SCD4-ImplPhase](2-scd/G0204-STD-SCD4-ImplPhase.md)
+   - [G0205-STD-SCD5-ConformancePhase](2-scd/G0205-STD-SCD5-ConformancePhase.md)
+   - [G0206-STD-SCD6-FeedbackPhase](2-scd/G0206-STD-SCD6-FeedbackPhase.md)
+
+3. **テンプレート／マップ**
+   - [G0210-STD-SCDT-Templates](2-scd/G0210-STD-SCDT-Templates.md)
+   - [G0220-STD-SCDM-PhaseActionMap](2-scd/G0220-STD-SCDM-PhaseActionMap.md)
+
+---
+
+## 参照ルール（Reference Rules）
+
+- **正式名称**：本体系は「SCD（Spec–Conformance Development）」で統一します。旧称 *SCD³* は使用しません。
+- **単一真実源（SSoT）**：契約仕様（Contract Schema）を唯一の参照源とし、自動生成成果物の直接改変を禁止します。
+- **テンプレートの徹底**：T1（ReqID一覧）、T2（Conformance Matrix）、T3（ADR）、T4（Deviation）は全フェーズで必須です。
+- **トレーサビリティ**：ReqID ⇄ Test ⇄ Impl ⇄ ADR ⇄ Deviation を相互リンクで維持します。
+- **版管理**：Semantic Versioning（MAJOR.MINOR.PATCH）で統一し、Breaking変更はMAJORで示します。
+- **承認責任**：自動検証（CI）は必須ですが、最終承認は人が行います（Human-in-the-Loop）。
