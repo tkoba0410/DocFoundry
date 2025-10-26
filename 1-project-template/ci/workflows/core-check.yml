@@ -1,0 +1,13 @@
+name: core-check
+on: [push, pull_request]
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate DCMM front matter & PII-free
+        run: |
+          echo "TODO: implement dcmm/markdown validation and PII scan"
+      - name: Validate naming rules (G0100 §4)
+        run: |
+          echo "TODO: check filename patterns for G/P + number + category + code"

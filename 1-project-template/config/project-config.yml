@@ -1,0 +1,37 @@
+# Project configuration for applying G0100–G0210 to a concrete project
+project_id: EXA
+project_name: ExchangeApi Development
+domain: FinTech
+owner_role: Project Maintainer
+review_team:
+  - QA Lead
+  - Architecture Review Board
+doc_prefix: P02
+reqid_prefix: EXA-R
+contract_format: OpenAPI 3.1
+test_format: Gherkin
+ci_system: GitHub Actions
+conformance_threshold:
+  pass_rate: 100
+  allow_fail: 0
+template_location: /docs/templates/
+evidence_storage: /docs/compliance/YYYYMMDD/
+compliance_targets:
+  - G0100-STD-DOC0
+  - G0101-STD-DOC1
+  - G0200-STD-SCD0
+  - G0201-STD-SCD1
+  - G0202-STD-SCD2
+  - G0203-STD-SCD3
+  - G0204-STD-SCD4
+  - G0205-STD-SCD5
+  - G0206-STD-SCD6
+  - G0210-STD-SCDT
+exception_handling:
+  recorded_in: ADR
+  review_cycle: 3 months
+feedback_interval: per release
+deviation_policy: "Register → Fix → Retest → Close"
+created: 2025-10-26
+confidentiality: Internal
+language_policy: "JA/EN bilingual"
