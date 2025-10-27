@@ -1,102 +1,133 @@
+# 📘 標準文書体系 — *DocFoundry Standards Overview (v2.0.0)*
 
-# 📘 標準文書体系（現行版）
-**対象範囲:** docs/standards/  
-**構成単位:** 「0100-STD-DOCS群」「0200-STD-DEVP群」  
-（現存する文書のみを対象とする）
+**対象範囲:** `0-standards/`  
+**構成単位:** 「0-adpt」「1-doc」「2-scd」「3-cod」  
+（現行有効な標準文書のみを対象）
 
 ---
 
 ## 🧭 1. 目的 / *Purpose*
-本ディレクトリは、あらゆる組織・プロジェクトに共通して利用可能な  
-**文書管理および開発プロセス標準の中核文書群** を収録しています。  
+本ディレクトリは、すべてのDocFoundry準拠プロジェクトに共通して適用される  
+**開発標準・文書標準・コーディング標準の中核体系** を定義します。  
 
-ここに含まれる標準文書は、以下の2群に整理されます：  
-- 0100-STD-DOCS群：文書管理標準（Document Standards）  
-- 0200-STD-DEVP群：開発プロセス標準（Development Process Standards）  
-
----
-
-## 📘 2. 0100-STD-DOCS群 — 文書管理標準
-
-> 文書番号・命名・改訂・体系管理を定義する基盤規約。  
-> すべての標準文書はこの規約のルールに従って作成されます。
-
-| 番号 | 文書名 | 説明 |
-|------|---------|------|
-| [0100-STD-DOCS-DocumentPolicy](0100-STD-DOCS-DocumentPolicy.md) | 文書管理規約。番号体系・命名・改訂ルールの中核標準。 |
+ここに収録される標準群は、プロジェクト雛型（`1-project-template/`）の  
+全構成を統制する「基盤リファレンス」として機能します。  
 
 ---
 
-## ⚙️ 3. 0200-STD-DEVP群 — 開発プロセス標準
+## 🧱 2. 構成層別の概要
 
-> Spec–Conformance Cycle に基づく、開発プロセスの標準化群。  
-> 仕様・契約・テスト・実装・運用を一貫的に統制します。
-
-| 番号 | 文書名 | 概要 |
-|------|---------|------|
-| [0200-STD-DEVP-CycleGuide](0200-STD-DEVP-CycleGuide.md) | Spec–Conformance 開発手法の循環モデル（統合ガイド）。 |
-| [0210-STD-DEVP-Templates](0210-STD-DEVP-Templates.md) | ReqID, ADR, Matrix などの標準テンプレート集。 |
-| [0220-STD-DEVP-OpsIntegrationGuide](0220-STD-DEVP-OpsIntegrationGuide.md) | 開発サイクルを運用・CI/CDへ統合する実践指針。 |
+| 階層 | ディレクトリ | 説明 |
+|------|---------------|------|
+| **0-adpt/** | [G0000-STD-ADPT-ProjectAdaptationGuide](0-adpt/G0000-STD-ADPT-ProjectAdaptationGuide.md) | 全標準群に共通する「メタ標準」。適用・導入・参照ルールを統一定義。 |
+| **1-doc/** | [G0100-STD-DOC0-DocumentPolicy](1-doc/G0100-STD-DOC0-DocumentPolicy.md)<br>[G0101-STD-DOC1-CompliancePack](1-doc/G0101-STD-DOC1-CompliancePack.md) | 文書命名・番号体系・改訂規約および準拠確認プロセスを定義。 |
+| **2-scd/** | [G0200-STD-SCD0-CycleOverview](2-scd/G0200-STD-SCD0-CycleOverview.md)<br>[G0201〜G0206 各Phase定義](2-scd/)<br>[G0210-STD-SCDT-Templates](2-scd/G0210-STD-SCDT-Templates.md)<br>[G0220-STD-SCDM-PhaseActionMap](2-scd/G0220-STD-SCDM-PhaseActionMap.md) | SCD（Spec–Conformance Development）プロセスモデルの全フェーズとテンプレート定義。 |
+| **3-cod/** | [G0300-STD-COD0-CodingStandard](3-cod/G0300-STD-COD0-CodingStandard.md)<br>[G0301-STD-COD1-Lang-CSharp](3-cod/G0301-STD-COD1-Lang-CSharp.md) | コーディング規約。Core／言語別（LANG）モジュール構成。 |
 
 ---
 
-## 🔗 4. 群間の関係と依存方向
+## ⚙️ 3. 標準群の相互関係
 
-```
-0100-STD-DOCS群 → 0200-STD-DEVP群
+```mermaid
+flowchart TB
+  A[G0000 ADPT – Project Adaptation Guide]
+  B[G0100 DOC – DocumentPolicy]
+  C[G0200 SCD – CycleOverview]
+  D[G0300 COD – CodingStandard-Core]
+  A --> B
+  A --> C
+  A --> D
+  B --> E[G0101 CompliancePack]
+  C --> F[G0201〜G0206 Phases]
+  C --> G[G0210 Templates / G0220 Map]
+  D --> H[G0301 Lang Modules]
 ```
 
-- **0100群** は命名・番号・改訂ルールの基盤を提供します。  
-- **0200群** はその基盤上で、Spec–Conformance 開発プロセスを定義します。  
-- 双方は独立運用可能ですが、常に一方向の参照関係を維持します。
+- **ADPT層** は全標準文書の上位に位置する「メタ標準」  
+- **DOC層** は命名・改訂・準拠のルールを定義  
+- **SCD層** は Spec–Conformance プロセスの循環構造を定義  
+- **COD層** は実装レベルの命名規範・品質基準を定義  
+
+---
+
+## 🔗 4. 群間の依存方向
+
+```
+ADPT → DOC → SCD → COD
+```
+
+- 上位層（ADPT）は下位層すべてに適用される。  
+- 各層は独立参照可能だが、依存方向は常に一方向。  
+- 下位文書は必ず上位文書を `related_docs` に登録する。  
 
 ---
 
 ## 🧩 5. 運用・改訂指針
 
-- 各文書は、`0100-STD-DOCS-DocumentPolicy` に定める命名・改訂ルールに準拠すること。  
-- 改訂は Pull Request 経由で行い、履歴を明確に残すこと。  
-- 新規標準を追加する場合は、番号体系に従い「03xx」以降を予約して拡張可。  
+- すべての標準文書は `1-doc/G0100-STD-DOC0-DocumentPolicy.md` に従うこと。  
+- 改訂は Pull Request により行い、**改訂理由（ADR）とタグ（SemVer）を付与**。  
+- 新規標準追加は **未使用プレフィクス（G04xx以降）** を予約して拡張。  
+- メタ標準（G0000）は改変禁止（MUST）。更新は審査委員会承認を要する。  
 
 ---
 
-## 🧾 6. 改訂履歴
+## 🧭 6. SCDモデルとの統合適合性
+
+- **正式名称:** 本体系は “SCD（Spec–Conformance Development）” で統一。旧称 *SCD³* は廃止。  
+- **SSoT原則:** 契約仕様（Contract Schema）を唯一の真実源（Single Source of Truth）とする。  
+- **テンプレート必須:** T1（ReqID）/ T2（Conformance Matrix）/ T3（ADR）/ T4（Deviation） を全Phaseで運用。  
+- **トレーサビリティ:** ReqID ⇄ Test ⇄ Impl ⇄ ADR ⇄ Deviation の双方向リンクを維持。  
+- **バージョン管理:** Semantic Versioning 準拠（MAJOR.MINOR.PATCH）。  
+- **承認責任:** 自動検証（CI）＋人間承認（Human-in-the-Loop）による二重保証。  
+
+---
+
+## 🪜 7. 運用ルール（実務要約）
+
+| 区分 | 管理方法 |
+|------|-----------|
+| **標準文書改訂** | PR → Review（標準委員会）→ Merge → Tag発行 |
+| **プロジェクト準拠確認** | CompliancePack（T2 Matrix）で自動評価 |
+| **差異管理** | ADR（T3）＋ FeedbackPhase（G0206）で再評価 |
+| **CIチェック** | core-check / conformance.yml により自動実行 |
+| **公開範囲** | `confidentiality: Public`（内部・外部共用可能） |
+
+---
+
+## 🧾 8. 改訂履歴
 
 | 版 | 日付 | 内容 |
 |----|------|------|
-| v1.0 | 2025-10-09 | 「0100群」「0200群」構成による現行版 README 新規作成。 |
+| v1.0.0 | 2025-10-09 | 「0100群」「0200群」構成による初版。 |
+| v2.0.0 | 2025-10-27 | G0000メタ標準準拠に改訂。SCDモデル統合／階層構造を正式化。 |
 
 ---
 
-**Status:** Draft  
-**Location:** `docs/standards/README.md`
+## 🗂️ 付録：推奨参照順序
 
-## 目次（目安の参照順）
-
-1. **文書運用ポリシー層（1-doc/）**
-   - [G0100-STD-DOC0-DocumentPolicy](1-doc/G0100-STD-DOC0-DocumentPolicy.md)
+1. **メタ標準層（0-adpt/）**  
+   - [G0000-STD-ADPT-ProjectAdaptationGuide](0-adpt/G0000-STD-ADPT-ProjectAdaptationGuide.md)
+2. **文書運用層（1-doc/）**  
+   - [G0100-STD-DOC0-DocumentPolicy](1-doc/G0100-STD-DOC0-DocumentPolicy.md)  
    - [G0101-STD-DOC1-CompliancePack](1-doc/G0101-STD-DOC1-CompliancePack.md)
-
-2. **開発サイクル定義層（2-scd/）**
-   - [G0200-STD-SCD0-CycleOverview](2-scd/G0200-STD-SCD0-CycleOverview.md)
-   - [G0201-STD-SCD1-SpecPhase](2-scd/G0201-STD-SCD1-SpecPhase.md)
-   - [G0202-STD-SCD2-ContractPhase](2-scd/G0202-STD-SCD2-ContractPhase.md)
-   - [G0203-STD-SCD3-TestPhase](2-scd/G0203-STD-SCD3-TestPhase.md)
-   - [G0204-STD-SCD4-ImplPhase](2-scd/G0204-STD-SCD4-ImplPhase.md)
-   - [G0205-STD-SCD5-ConformancePhase](2-scd/G0205-STD-SCD5-ConformancePhase.md)
-   - [G0206-STD-SCD6-FeedbackPhase](2-scd/G0206-STD-SCD6-FeedbackPhase.md)
-
-3. **テンプレート／マップ**
-   - [G0210-STD-SCDT-Templates](2-scd/G0210-STD-SCDT-Templates.md)
+3. **開発サイクル層（2-scd/）**  
+   - [G0200-STD-SCD0-CycleOverview](2-scd/G0200-STD-SCD0-CycleOverview.md)  
+   - [G0201〜G0206 各Phase](2-scd/)  
+   - [G0210-STD-SCDT-Templates](2-scd/G0210-STD-SCDT-Templates.md)  
    - [G0220-STD-SCDM-PhaseActionMap](2-scd/G0220-STD-SCDM-PhaseActionMap.md)
+4. **コーディング標準層（3-cod/）**  
+   - [G0300-STD-COD0-CodingStandard](3-cod/G0300-STD-COD0-CodingStandard.md)  
+   - [G0301-STD-COD1-Lang-CSharp](3-cod/G0301-STD-COD1-Lang-CSharp.md)
 
 ---
 
-## 参照ルール（Reference Rules）
+**Status:** Stable  
+**Lifecycle:** Canonical  
+**Location:** `0-standards/README.md`  
+**上位文書:** [G0000-STD-ADPT](0-adpt/G0000-STD-ADPT-ProjectAdaptationGuide.md)
 
-- **正式名称**：本体系は「SCD（Spec–Conformance Development）」で統一します。旧称 *SCD³* は使用しません。
-- **単一真実源（SSoT）**：契約仕様（Contract Schema）を唯一の参照源とし、自動生成成果物の直接改変を禁止します。
-- **テンプレートの徹底**：T1（ReqID一覧）、T2（Conformance Matrix）、T3（ADR）、T4（Deviation）は全フェーズで必須です。
-- **トレーサビリティ**：ReqID ⇄ Test ⇄ Impl ⇄ ADR ⇄ Deviation を相互リンクで維持します。
-- **版管理**：Semantic Versioning（MAJOR.MINOR.PATCH）で統一し、Breaking変更はMAJORで示します。
-- **承認責任**：自動検証（CI）は必須ですが、最終承認は人が行います（Human-in-the-Loop）。
+---
+
+この最新版（v2.0.0）は、  
+`G0000-STD-ADPT` の適用指針に完全準拠し、  
+DocFoundry標準体系の「正式な索引文書」として使用可能です。  

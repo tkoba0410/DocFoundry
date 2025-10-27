@@ -1,60 +1,36 @@
-# リポジトリ概要（standards + project-template 構成）
+# 🧭 リポジトリ概要 — *DocFoundry Integrated Repository*
 
-このリポジトリは、開発標準文書（standards）と、プロジェクト雛型（project-template）を同居させた構成です。  
-小規模導入や初期試行段階での運用を想定しており、2件目以降のプロジェクト開始時に standards を独立リポジトリとして分離することを前提としています。
-
----
-
-## 📘 構成の目的
-
-- **standards/** : 全プロジェクト共通の「汎用開発標準文書群」  
-  文書方針（DocumentPolicy）、準拠基準（CompliancePack）、SCDモデル、コーディング標準などを含みます。
-- **project-template/** : 各プロジェクトがコピーして利用する「導入雛型」  
-  config／docs／ci／src／tests など、標準に準拠した構成を初期から提供します。
+**構成対象:** `standards/` + `project-template/`  
+**改訂目的:** メタ標準（G0000-STD-ADPT）および SCDモデル（Spec–Conformance Development）準拠の体系に統一。
 
 ---
 
-## 📂 ディレクトリ構成
+## 📘 1. 概要 / *Overview*
+
+このリポジトリは、  
+**開発標準文書群（standards）** と **プロジェクト雛型（project-template）** を統合した「導入一体型構成」です。  
+
+小規模導入や初期段階での標準運用を想定しており、  
+**2件目以降のプロジェクト開始時に standards を独立リポジトリ化** することを前提としています。
+
+---
+
+## 📂 2. ディレクトリ構成
 
 ```plaintext
 repo-root/
-├── standards/
+├── 0-standards/
+│   ├── 0-adpt/
 │   ├── 1-doc/
-│   │   ├── G0100-STD-DOC0-DocumentPolicy.md
-│   │   ├── G0101-STD-DOC1-CompliancePack.md
-│   │   ├── G0102-STD-DOC2-ProjectAdaptationGuide.md
-│   │   ├── G0103-STD-DOC3-CodingStandard.md
-│   │   └── lang/
-│   │       └── G0104-STD-LANG-CS-CodingStandard.md
 │   ├── 2-scd/
-│   │   ├── G0200〜G0210
-│   │   └── G0220-STD-SCDM-PhaseActionMap.md
+│   ├── 3-cod/
 │   └── README.md
 │
-├── project-template/
+├── 1-project-template/
 │   ├── config/
-│   │   ├── project-config.yml
-│   │   └── project-coding-overrides.yml
 │   ├── compliance/
-│   │   ├── T1-ReqID.csv
-│   │   ├── T2-ConformanceMatrix.csv
-│   │   ├── T3-ADR/
-│   │   └── T4-Deviation/
 │   ├── docs/
-│   │   ├── P0200-STD-PJ0-Overview.md
-│   │   ├── P0201-STD-PJ1-Architecture.md
-│   │   ├── P0202-STD-PJ2-Interfaces.md
-│   │   ├── P0203-STD-PJ3-TestStrategy.md
-│   │   ├── P0204-STD-PJ4-Deployment.md
-│   │   ├── P0205-STD-PJ5-Operation.md
-│   │   ├── P0206-STD-PJ6-SecurityPolicy.md
-│   │   ├── P0207-STD-PJ7-Licensing.md
-│   │   └── index.md
-│   ├── ci/
-│   │   └── workflows/
-│   │       ├── core-check.yml
-│   │       ├── csharp-check.yml
-│   │       └── conformance.yml
+│   ├── ci/workflows/
 │   ├── src/
 │   └── tests/
 │
@@ -63,62 +39,104 @@ repo-root/
 
 ---
 
-## 🧭 運用ポリシー
+## 🎯 3. 目的と適用範囲
+
+| 項目 | 内容 |
+|------|------|
+| **目的** | 標準文書群とテンプレート群を統合管理し、統一されたSCDモデルに基づくプロジェクト導入を支援する。 |
+| **適用対象** | すべてのDocFoundry準拠プロジェクト。 |
+| **上位文書** | G0000-STD-ADPT（Project Adaptation Guide） |
+| **関連文書** | G0100（Document Policy）, G0200（Cycle Overview）, G0300（Coding Standard） |
+
+---
+
+## ⚙️ 4. 運用ポリシー
 
 | 項目 | 方針 |
 |------|------|
-| **standards/** | 標準化チーム専用領域。プロジェクトチームは改変禁止。 |
-| **project-template/** | 新規プロジェクトがコピーして使用。個別設定・文書・CIを含む。 |
-| **改変手続き** | standards内の修正は Pull Request＋レビュー＋タグ付与（SemVer管理）。 |
-| **コードオーナー** | `/standards/**` は CODEOWNERSで標準チーム専権。 |
-| **差異管理** | `config/project-coding-overrides.yml` で Core/LANG 規約を部分上書き（ADR必須）。 |
+| **standards/** | 標準化チーム専用領域。プロジェクト側は改変禁止（MUST）。 |
+| **project-template/** | 新規プロジェクトの初期構成テンプレート。コピー利用を前提。 |
+| **改変手続き** | Pull Request＋レビュー＋タグ発行（Semantic Versioning準拠）。 |
+| **コードオーナー** | `/0-standards/**` は CODEOWNERS により標準チーム専権。 |
+| **差異管理** | `project-coding-overrides.yml` にて Core/LANG 差異を明記（ADR必須）。 |
+| **承認責任** | 自動検証（CI）＋人間承認（Human-in-the-Loop）を併用。 |
 
 ---
 
-## ⚙️ 利用手順（新プロジェクト開始時）
+## 🚀 5. 利用手順（新規プロジェクト開始時）
 
-1. `project-template/` をコピーして新規プロジェクトディレクトリを作成  
-   例：`cp -r project-template project-exa`
-2. `config/project-config.yml` を編集し、プロジェクトIDや契約方式を設定  
-3. 必要に応じて `config/project-coding-overrides.yml` を作成し、差異を定義  
-4. `/docs/` 以下の雛型文書を埋めてプロジェクト仕様を記録  
-5. `/ci/workflows/` に含まれる core-check / csharp-check / conformance CI を実行  
-6. 検証結果（T2, T4）を `/compliance/` に保存  
+1️⃣ `1-project-template/` をコピーし、新規PJディレクトリを作成  
+　例：`cp -r 1-project-template project-alpha`
+
+2️⃣ `config/project-config.yml` を編集し、プロジェクト識別子・契約方式を定義。  
+3️⃣ 必要に応じて `project-coding-overrides.yml` に差異を定義。  
+4️⃣ `/docs/` 以下の雛型を用いて OVR, REQ, ARC, IMP, TST, OPS, SEC 文書を作成。  
+5️⃣ `/ci/workflows/` の CI を実行し、Core／Lang／Conformance 検証を実施。  
+6️⃣ `/compliance/` に ReqID / Matrix / ADR / Deviation を記録。  
 
 ---
 
-## 🔒 標準との関係
+## 🔗 6. 標準との関係
 
 - **参照優先順位**
-  1. G0103（Coding Standard – Core）
-  2. G0104（LANG-CS）
-  3. project-coding-overrides.yml（承認済み差異）
+  1. G0300（Coding Standard – Core）  
+  2. G0301（Language Module – C# 等）  
+  3. project-coding-overrides.yml（差異定義）
 
 - **不整合時の扱い**
-  - Core／LANG 規約に反する差異は ADR（T3）で承認が必要
-  - 差異の有効期限を定め、FeedbackPhase で再評価する
+  - Core／Lang に反する差異は ADR（T3）で承認必須。  
+  - 差異は有効期限を設定し、FeedbackPhase（G0206）で再評価。  
 
 ---
 
-## 🪜 将来の移行計画（2プロジェクト目以降）
+## 🪜 7. 将来移行計画（複数PJ運用時）
 
 | ステップ | 内容 |
 |----------|------|
-| 1️⃣ | `/standards` を独立リポジトリ化（例：`org-standards`） |
-| 2️⃣ | 本リポの standards を削除し、submodule または release zip で参照 |
-| 3️⃣ | 各プロジェクトでタグ固定参照 (`v3.0.0`) を設定 |
-| 4️⃣ | CIで standards バージョンの整合チェックを自動化 |
-| 5️⃣ | 変更理由を ADR に記録し、Conformance で検証 |
+| 1️⃣ | `/0-standards` を独立リポジトリ化（例：`org-standards`）。 |
+| 2️⃣ | 本リポジトリから standards を削除し、submodule／release ZIP で参照。 |
+| 3️⃣ | 各プロジェクトでタグ固定参照（例：`v3.0.0`）を設定。 |
+| 4️⃣ | CIに standards バージョン整合チェックを追加。 |
+| 5️⃣ | 変更理由を ADR（T3）で記録し、Conformance Matrix（T2）で検証。 |
 
 ---
 
-## 📄 参照・連絡・改訂履歴
+## 🧩 8. 関連構造（Mermaid）
 
-- 管理者: Documentation Team / QA
-- バージョン: v3.0.0（SCDモデル準拠）
-- ライフサイクル: Stable
-- 連絡先: standards@org.example
+```mermaid
+flowchart TB
+  A[G0000 ProjectAdaptationGuide] --> B[G0100 DocumentPolicy]
+  A --> C[G0200 CycleOverview]
+  A --> D[G0300 CodingStandard-Core]
+  B --> E[0100-STD-DOCS群]
+  C --> F[0200-STD-DEVP群]
+  D --> G[project-template/docs/*]
+```
+
+---
+
+## 📄 9. 管理情報
+
+| 項目 | 内容 |
+|------|------|
+| **管理責任者** | Documentation Team / QA |
+| **バージョン** | v3.1.0 |
+| **ライフサイクル** | Stable |
+| **上位文書** | G0000-STD-ADPT |
+| **リリース形態** | 同居構成（統合パッケージ） |
+| **連絡先** | standards@org.example |
+
+---
+
+## 🧾 10. 改訂履歴
 
 | 版 | 日付 | 内容 |
 |----|------|------|
 | v1.0.0 | 2025-10-26 | 初版。standards＋project-template同居構成を正式化。 |
+| v3.1.0 | 2025-10-27 | G0000メタ標準および現行SCDモデル準拠に更新。階層構成・用語を統一。 |
+
+---
+
+### 💡 今後の推奨補足
+- CODEOWNERS と release tagging 規約を補足文書として追加（例：`G0103-STD-OPS-CODEOWNERS.md`）  
+- standards リポジトリ分離後は、本README を `org-docfoundry-template/` 側に移設予定。
