@@ -2,28 +2,29 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0301-STD-COD1"
 title: "Coding Standard – C# (Project‑Agnostic)"
-version: "v0.2.1"
-date: "2025-10-27"
-status: "Draft"
+version: "v1.0.0"
+date: "2025-10-28"
+status: "Approved"
 owner: "Documentation Team"
 reviewers: ["Architecture Review Board", "QA Lead"]
 confidentiality: "Public"
 scope: "Generic"
-lifecycle: "Draft"
+lifecycle: "Stable"
 description: "本書はプロジェクトに依存しないC#のコーディング規範を定義する。設計仕様（アーキ構成、API契約、SLO値等）は扱わず、G0300-STD-COD0（コア）を言語観点で具体化する。"
 related_docs:
   - "G0300-STD-COD0"
   - "G0100-STD-DOC0"
   - "G0101-STD-DOC1"
+inherit_from: "G0300-STD-COD0"
 ---
 
 # [STD-COD1] Coding Standard – C# (Project‑Agnostic)
 
 ## 表紙情報
 - 文書番号: `G0301-STD-COD1`
-- バージョン: **v0.2.1**
-- 日付: 2025-10-27
-- 状態: Draft / Draft
+- バージョン: **v1.0.0**
+- 日付: 2025-10-28
+- 状態: Approved / Stable
 
 > **適用範囲**：C# 10 以降（最新推奨）を前提とし、上位互換を意図する。プロジェクトに依存する命名・設計・ログ項目・タイムアウト値等は扱わない。
 
