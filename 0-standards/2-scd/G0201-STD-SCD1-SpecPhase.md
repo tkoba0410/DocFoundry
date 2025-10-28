@@ -1,18 +1,24 @@
 ---
-doc_id: G0201-STD-SCD1-SpecPhase
-title: 仕様定義フェーズガイド（v3.0統一構成）
-version: 3.0.0
-date: 2025-10-XX
-scope: ExchangeApi Standard
-lifecycle: canonical
-status: Stable
+schema: "https://schema.org/CreativeWork"
+doc_id: "G0201-STD-SCD1"
+title: "仕様定義フェーズガイド（v3.0統一構成）"
+version: "v3.0.0"
+date: "2025-10-15"
+status: "Approved"
+lifecycle: "Canonical"
+scope: "Generic"
+owner: "Standards-Governance-Team"
+reviewers:
+  - "Specification-Architecture-Guild"
+  - "Quality-Assurance-Guild"
+confidentiality: "Public"
 ---
 
-# [STD-SCD1] 仕様定義フェーズガイド（v3.0統一構成）
+# [SCD-SPEC] 仕様定義フェーズガイド（v3.0統一構成）
 
-**Version:** v3.0.0  
-**Date:** 2025-10-XX  
-**Status:** Stable  
+**Version:** v3.0.0
+**Date:** 2025-10-15
+**Status:** Approved
 
 ---
 
@@ -102,7 +108,15 @@ Linked-Impl: IMPL-API-RETRY
 ### C. 参照文書
 - G0200‑STD‑SCD0‑CycleOverview（開発サイクル概要）  
 - G0210‑STD‑SCDT‑Templates（共通テンプレート集）  
-- G0320‑STD‑SCDM‑PhaseActionMap（実務行動マップ）  
+- G0220‑STD‑SCDM‑PhaseActionMap（実務行動マップ）
+
+---
+
+## 8. 改訂履歴 / *Revision History*
+
+| Version | Date | Description |
+|:--|:--|:--|
+| v3.0.0 | 2025-10-15 | DCMM準拠のメタデータ整備とテンプレート更新。 |
 
 ---
 

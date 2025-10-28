@@ -1,18 +1,24 @@
 ---
-doc_id: G0320-STD-SCDM-PhaseActionMap
-title: フェーズ別実務行動マップ（v3.0最終統合版）
-version: 3.0.1
-date: 2025-10-XX
-scope: ExchangeApi Standard
-lifecycle: canonical
-status: Stable
+schema: "https://schema.org/CreativeWork"
+doc_id: "G0220-STD-SCDM"
+title: "フェーズ別実務行動マップ（v3.0最終統合版）"
+version: "v3.0.1"
+date: "2025-10-15"
+status: "Approved"
+lifecycle: "Canonical"
+scope: "Generic"
+owner: "Standards-Governance-Team"
+reviewers:
+  - "Operations-Enablement-Guild"
+  - "Quality-Assurance-Guild"
+confidentiality: "Public"
 ---
 
-# [STD-SCDM] フェーズ別実務行動マップ（v3.0最終統合版）
+# [SCD-MAP] フェーズ別実務行動マップ（v3.0最終統合版）
 
-**Version:** v3.0.1  
-**Date:** 2025-10-XX  
-**Status:** Stable  
+**Version:** v3.0.1
+**Date:** 2025-10-15
+**Status:** Approved
 
 ---
 
@@ -96,7 +102,7 @@ flowchart TD
 | Core | **G0200** | 開発サイクル概要（v3.0） | 全体統括 |
 | Phase | **G0201〜G0206** | 各フェーズガイド | 各工程の標準手順 |
 | Template | **G0210** | 開発フェーズ共通テンプレート集 | T1〜T4定義 |
-| Action | **G0320** | 本書（フェーズ別実務行動マップ） | 実践・教育統合 |
+| Action | **G0220** | 本書（フェーズ別実務行動マップ） | 実践・教育統合 |
 | Support | SCDT／SCDM連携資料 | Glossary／Checklist | 教育・監査用途 |
 
 ---
@@ -110,6 +116,15 @@ flowchart TD
 - Rolling Conformance により、常時整合・自動検証が可能。  
 
 > 📘 **SCDMは、ExchangeApi開発の“実務オペレーション基盤”として機能する。**
+
+---
+
+## 8. 改訂履歴 / *Revision History*
+
+| Version | Date | Description |
+|:--|:--|:--|
+| v3.0.1 | 2025-10-15 | DCMM準拠のメタデータ整備とフェーズ行動表の整合。 |
+| v3.0.0 | 2025-08-30 | ExchangeApi標準v3.0統合版として行動マップを刷新。 |
 
 ---
 

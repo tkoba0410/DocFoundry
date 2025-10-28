@@ -1,18 +1,24 @@
 ---
-doc_id: G0210-STD-SCDT-Templates
-title: 開発フェーズ共通テンプレート集（v3.0統一構成）
-version: 3.0.0
-date: 2025-10-XX
-scope: ExchangeApi Standard
-lifecycle: canonical
-status: Stable
+schema: "https://schema.org/CreativeWork"
+doc_id: "G0210-STD-SCDT"
+title: "開発フェーズ共通テンプレート集（v3.0統一構成）"
+version: "v3.0.0"
+date: "2025-10-15"
+status: "Approved"
+lifecycle: "Canonical"
+scope: "Generic"
+owner: "Standards-Governance-Team"
+reviewers:
+  - "Template-Management-Guild"
+  - "Quality-Assurance-Guild"
+confidentiality: "Public"
 ---
 
-# [STD-SCDT] 開発フェーズ共通テンプレート集（v3.0統一構成）
+# [SCD-TMPL] 開発フェーズ共通テンプレート集（v3.0統一構成）
 
-**Version:** v3.0.0  
-**Date:** 2025-10-XX  
-**Status:** Stable  
+**Version:** v3.0.0
+**Date:** 2025-10-15
+**Status:** Approved
 
 ---
 
@@ -118,8 +124,8 @@ status: Stable
 ### D. 改訂履歴
 | Version | Date | 概要 | 担当 |
 |:--|:--|:--|:--|
+| v3.0.0 | 2025-10-15 | DCMM準拠のメタデータ更新とテンプレート記述整合。 | Standards-Governance-Team |
 | v2.0.0 | 2025-10-21 | v2.2系からv3.0構造へ統一。Glossary追加。 | Documentation Team |
-| v3.0.0 | 2025-10-XX | 教育レベル体系（L1〜L3）導入。Phase連携表を統合。 | Standardization Group |
 
 ---
 

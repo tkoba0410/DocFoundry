@@ -1,18 +1,24 @@
 ---
-doc_id: G0200-STD-SCD0-CycleOverview
-title: 開発サイクル概要（v3.1a汎用版・Spec–Conformance Development Cycle）
-version: 3.1a.0
-date: 2025-10-XX
-scope: Generic Standard
-lifecycle: draft
-status: Under Review
+schema: "https://schema.org/CreativeWork"
+doc_id: "G0200-STD-SCD0"
+title: "開発サイクル概要（v3.1汎用版・Spec–Conformance Development Cycle）"
+version: "v3.1.0"
+date: "2025-10-15"
+status: "Draft"
+lifecycle: "Canonical"
+scope: "Generic"
+owner: "Standards-Governance-Team"
+reviewers:
+  - "Quality-Assurance-Guild"
+  - "Product-Compliance-Board"
+confidentiality: "Public"
 ---
 
-# [STD-P0] 開発サイクル概要（v3.1a汎用版・Spec–Conformance Development Cycle）
+# [SCD-CYCL] 開発サイクル概要（v3.1汎用版・Spec–Conformance Development Cycle）
 
-**Version:** v3.1a.0  
-**Date:** 2025-10-XX  
-**Status:** Draft (for Public Standardization)
+**Version:** v3.1.0
+**Date:** 2025-10-15
+**Status:** Draft
 
 ---
 
@@ -195,6 +201,14 @@ Spec–Conformance Development Cycle（SCD）は、
 を特徴とする。
 
 > 📘 **本書は、特定プロジェクトに依存しない汎用的なSCD標準フレームとして参照可能である。**
+
+---
+
+## 11. 改訂履歴 / *Revision History*
+
+| Version | Date | Description |
+|:--|:--|:--|
+| v3.1.0 | 2025-10-15 | YAMLメタデータと構成をG0100/G0101準拠に整備。 |
 
 ---
 
