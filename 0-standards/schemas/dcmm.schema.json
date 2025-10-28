@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/dcmm.schema.json",
+  "title": "Document Configuration Metadata Model (DCMM)",
+  "description": "Schema defining the required structure for all document Front Matter sections as per G0100-STD-DOC0.",
+  "type": "object",
+  "required": [
+    "schema",
+    "doc_id",
+    "title",
+    "version",
+    "date",
+    "status",
+    "owner",
+    "reviewers",
+    "confidentiality",
+    "scope",
+    "lifecycle"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "https://schema.org/CreativeWork",
+      "description": "URL of schema reference"
+    },
+    "doc_id": {
+      "type": "string",
+      "pattern": "^[GP]\\d{4}-[A-Z]{3}-[A-Z0-9]{4}$",
+      "description": "Document identifier (with prefix G/P, 4 digits, category code, and 4-letter doc code)."
+    },
+    "title": {
+      "type": "string",
+      "description": "English or bilingual document title."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^v\\d+\\.\\d+\\.\\d+$",
+      "description": "Version string following Semantic Versioning (vX.Y.Z)."
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Date in ISO8601 format (YYYY-MM-DD)."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Approved",
+        "Deprecated"
+      ],
+      "description": "Approval status of the document."
+    },
+    "owner": {
+      "type": "string",
+      "description": "Role or team name responsible for the document."
+    },
+    "reviewers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of reviewers (role/team names, not individuals)."
+    },
+    "confidentiality": {
+      "type": "string",
+      "enum": [
+        "Public",
+        "Internal",
+        "Confidential"
+      ],
+      "description": "Confidentiality classification."
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "Generic",
+        "Project"
+      ],
+      "description": "Scope of the document (Generic or Project)."
+    },
+    "lifecycle": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Stable",
+        "Canonical"
+      ],
+      "description": "Lifecycle stage of the document."
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description or abstract of the document."
+    },
+    "inherit_from": {
+      "type": "string",
+      "pattern": "^[GP]\\d{4}-[A-Z]{3}-[A-Z0-9]{4}$",
+      "description": "Optional doc_id of a parent or base document."
+    },
+    "related_docs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[GP]\\d{4}-[A-Z]{3}-[A-Z0-9]{4}$"
+      },
+      "description": "List of related document IDs."
+    }
+  },
+  "additionalProperties": {
+    "type": [
+      "string",
+      "number",
+      "boolean",
+      "array",
+      "object"
+    ],
+    "description": "Extensions allowed if prefixed with 'x-' per G0100 §6.3."
+  },
+  "propertyNames": {
+    "pattern": "^(x-|schema|doc_id|title|version|date|status|owner|reviewers|confidentiality|scope|lifecycle|description|inherit_from|related_docs)$"
+  },
+  "examples": [
+    {
+      "schema": "https://schema.org/CreativeWork",
+      "doc_id": "G0100-STD-DOC0",
+      "title": "Document Policy",
+      "version": "v2.3.5",
+      "date": "2025-10-30",
+      "status": "Approved",
+      "owner": "Project Maintainer",
+      "reviewers": [
+        "Documentation Review Team"
+      ],
+      "confidentiality": "Public",
+      "scope": "Generic",
+      "lifecycle": "Canonical",
+      "description": "Defines universal document management structure."
+    }
+  ]
+}

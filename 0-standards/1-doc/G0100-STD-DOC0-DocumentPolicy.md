@@ -2,14 +2,14 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0100-STD-DOC0"
 title: "Document Policy"
-version: "2.3.3"
-date: "2025-10-21"
-status: "Stable"
+version: "2.3.5"
+date: "2025-10-30"
+status: "Approved"
 owner: "Project Maintainer"
 reviewers: ["Documentation Review Team"]
 confidentiality: "Public"
-scope: "generic"
-lifecycle: "canonical"
+scope: "Generic"
+lifecycle: "Canonical"
 description: "Defines universal document management structure."
 ---
 
@@ -370,5 +370,6 @@ related_docs: ["G0200-STD-SCD0-CycleGuide","G0210-STD-DVT0-Templates","G0220-STD
 | **v2.3.2** | "2025-10-15" | G0160 Standard Reuse Policy を統合。G/P昇格ルールを §4.3 に正式追加。 |
 | **v2.3.3** | "2025-10-21" | Rolling Conformance方針への整合、PII非記載（MUST）を明文化、`related_docs`をDCMMに追加。 |
 | **v2.3.4** | "2025-10-23" | `status` と `lifecycle` の関係表を追加（§5.2）。<br>DCMM Schema 外部参照ルールを §6.1 に追記。 |
+| **v2.3.5** | "2025-10-30" | status値修正とscope統一に伴う軽微整合更新 |
 
 ---

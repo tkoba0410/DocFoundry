@@ -1,0 +1,45 @@
+# codex-ai-config.yaml
+base_policy: "G0100-STD-DOC0"
+base_policy_version: "2.3.5"
+compliance_pack: "G0101-STD-DOC1"
+compliance_pack_version: "1.1.0"
+ruleset: "/rules/G0101-STD-DOC1_ruleset.json"
+
+auto_fix:
+  enable: true
+  scope: ["A"]
+  restrict_pii: true
+  confirm_before_apply: false
+
+validation:
+  schema_ref: "/schemas/dcmm.schema.json"
+  strict_yaml: true
+  allow_extensions: ["x-ai", "x-schema"]
+  version_check: true
+
+llm:
+  model: "gpt-5"
+  threshold_B: 0.8
+  output_mode: "json"
+  temperature: 0.0
+
+report:
+  output_format: "jsonl"
+  output_dir: "./reports"
+  file_prefix: "compliance_result_"
+  severity_order: ["critical", "error", "warning", "info"]
+  summarize: true
+
+logging:
+  level: "info"
+  file: "./logs/codex-ai-validation.log"
+
+# CI integration example
+ci_pipeline:
+  steps:
+    - name: "Validate Front Matter"
+      run: "codex-ai validate --ruleset /rules/G0101-STD-DOC1_ruleset.json"
+    - name: "Auto-fix (optional)"
+      run: "codex-ai autofix --apply --scope A"
+    - name: "Generate Report"
+      run: "codex-ai report --format jsonl --output ./reports"

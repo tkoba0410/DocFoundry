@@ -1,0 +1,350 @@
+{
+  "metadata": {
+    "ruleset_id": "G0101-STD-DOC1-ruleset",
+    "description": "Executable compliance rules for G0100 Document Policy, derived from G0101 Compliance Pack.",
+    "base_policy_doc_id": "G0100-STD-DOC0",
+    "base_policy_version": "2.3.5",
+    "compliance_pack_doc_id": "G0101-STD-DOC1",
+    "compliance_pack_version": "1.1.0",
+    "schema_ref": "/schemas/dcmm.schema.json",
+    "report": {
+      "format": "jsonl",
+      "severity_order": [
+        "critical",
+        "error",
+        "warning",
+        "info"
+      ]
+    },
+    "llm": {
+      "threshold_B": 0.8,
+      "model_hint": "Use concise JSON outputs for decisions."
+    }
+  },
+  "auto_fix": {
+    "enable": true,
+    "scope": [
+      "A"
+    ],
+    "strategies": {
+      "quote_yaml_values": "Wrap all YAML Front Matter values in double quotes.",
+      "normalize_schema_url": "Replace schema with \"https://schema.org/CreativeWork\".",
+      "normalize_scope": "Replace scope with \"Generic\".",
+      "normalize_status": "Replace status with one of Draft|Approved|Deprecated per context.",
+      "ensure_h1_format": "Rewrite first H1 to `# [CAT-CODE] Title` if category and code are known.",
+      "insert_missing_keys": "Add missing DCMM mandatory keys with placeholder values."
+    }
+  },
+  "rules": [
+    {
+      "id": "DOCCHK-FM-001",
+      "class": "A",
+      "severity": "error",
+      "section": "G0101 §2 / G0100 §6",
+      "description": "[MUST] YAML Front Matter delimited by `---` exists at file start.",
+      "type": "regex",
+      "target": "text",
+      "pattern": "^---[\\s\\S]+?---",
+      "flags": [
+        "MULTILINE"
+      ],
+      "autofix": {
+        "strategy": "insert_missing_keys",
+        "when_absent": true
+      }
+    },
+    {
+      "id": "DOCCHK-FM-002",
+      "class": "A",
+      "severity": "error",
+      "section": "G0101 §2 / G0100 §6.1",
+      "description": "[MUST] DCMM mandatory keys present in Front Matter.",
+      "type": "schema_required_keys",
+      "target": "front_matter",
+      "keys": [
+        "schema",
+        "doc_id",
+        "title",
+        "version",
+        "date",
+        "status",
+        "owner",
+        "reviewers",
+        "confidentiality",
+        "scope",
+        "lifecycle"
+      ],
+      "autofix": {
+        "strategy": "insert_missing_keys"
+      }
+    },
+    {
+      "id": "DOCCHK-FM-003",
+      "class": "A",
+      "severity": "error",
+      "section": "G0100 §6.1 注記",
+      "description": "[MUST] All Front Matter values are double-quoted.",
+      "type": "yaml_quote_all_values",
+      "target": "front_matter",
+      "autofix": {
+        "strategy": "quote_yaml_values"
+      }
+    },
+    {
+      "id": "DOCCHK-ID-001",
+      "class": "A",
+      "severity": "error",
+      "section": "G0100 §5.1",
+      "description": "[MUST] version matches SemVer `vX.Y.Z`.",
+      "type": "regex",
+      "target": "front_matter.version",
+      "pattern": "^v\\d+\\.\\d+\\.\\d+$"
+    },
+    {
+      "id": "DOCCHK-ID-002",
+      "class": "A",
+      "severity": "error",
+      "section": "G0100 §6.1",
+      "description": "[MUST] date matches ISO8601 `YYYY-MM-DD`.",
+      "type": "regex",
+      "target": "front_matter.date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    {
+      "id": "DOCCHK-ID-003",
+      "class": "A",
+      "severity": "error",
+      "section": "G0100 §4.1/§6.1",
+      "description": "[MUST] doc_id format `^[GP]\\d{4}-[A-Z]{3}-[A-Z0-9]{4}$`.",
+      "type": "regex",
+      "target": "front_matter.doc_id",
+      "pattern": "^[GP]\\d{4}-[A-Z]{3}-[A-Z0-9]{4}$"
+    },
+    {
+      "id": "DOCCHK-ID-004",
+      "class": "A",
+      "severity": "error",
+      "section": "G0100 §4.1",
+      "description": "[MUST] Prefix is `G` or `P`.",
+      "type": "in_set",
+      "target": "front_matter.doc_id[0]",
+      "allowed": [
+        "G",
+        "P"
+      ]
+    },
+    {
+      "id": "DOCCHK-CAT-001",
+      "class": "A",
+      "severity": "error",
+      "section": "G0100 §3.2",
+      "description": "[MUST] Category is one of OVR,REQ,ARC,IMP,TST,OPS,SEC,STD,POL,RPT,REF.",
+      "type": "category_from_doc_id",
+      "target": "front_matter.doc_id",
+      "allowed": [
+        "OVR",
+        "REQ",
+        "ARC",
+        "IMP",
+        "TST",
+        "OPS",
+        "SEC",
+        "STD",
+        "POL",
+        "RPT",
+        "REF"
+      ]
+    },
+    {
+      "id": "DOCCHK-HDR-001",
+      "class": "A",
+      "severity": "error",
+      "section": "G0100 §4.4",
+      "description": "[MUST] First H1 matches `# [CAT-CODE] Title`.",
+      "type": "regex",
+      "target": "first_h1",
+      "pattern": "^# \\[[A-Z]{3}-[A-Z0-9]{4}\\] .+",
+      "flags": [
+        "MULTILINE"
+      ],
+      "autofix": {
+        "strategy": "ensure_h1_format"
+      }
+    },
+    {
+      "id": "DOCCHK-PII-001",
+      "class": "C",
+      "severity": "critical",
+      "section": "G0100 §2 / §6.1注記",
+      "description": "[MUST] No PII (names, account IDs, personal emails, handles) in meta or body.",
+      "type": "human_review",
+      "guidance": "Replace with role/team labels."
+    },
+    {
+      "id": "DOCCHK-OWN-001",
+      "class": "C",
+      "severity": "critical",
+      "section": "G0100 §6.1",
+      "description": "[MUST] owner/reviewers use roles/teams, not personal names.",
+      "type": "human_review",
+      "target": [
+        "front_matter.owner",
+        "front_matter.reviewers"
+      ]
+    },
+    {
+      "id": "DOCCHK-STA-001",
+      "class": "A",
+      "severity": "error",
+      "section": "G0100 §5.2",
+      "description": "[MUST] status/lifecycle combination is allowed.",
+      "type": "status_lifecycle_matrix",
+      "allowed_pairs": [
+        [
+          "Draft",
+          "Draft"
+        ],
+        [
+          "Approved",
+          "Stable"
+        ],
+        [
+          "Approved",
+          "Canonical"
+        ],
+        [
+          "Deprecated",
+          "Stable"
+        ]
+      ]
+    },
+    {
+      "id": "DOCCHK-CAT-002",
+      "class": "B",
+      "severity": "warning",
+      "section": "G0101 §4.3 / G0100 §3.2/§3.5",
+      "description": "[SHOULD] Body content purpose matches declared category.",
+      "type": "llm_semantic_category_check",
+      "prompt": "Given the category definitions from G0100 §3.2/§3.5 and the document summary, judge if the primary purpose matches the declared category. Return JSON: {match: true|false|null, score: 0..1}.",
+      "pass_threshold": 0.8
+    },
+    {
+      "id": "DOCCHK-REF-001",
+      "class": "A",
+      "severity": "error",
+      "section": "G0101 §2",
+      "description": "[MUST] inherit_from uses valid doc_id format when present.",
+      "type": "regex_if_present",
+      "target": "front_matter.inherit_from",
+      "pattern": "^[GP]\\d{4}-[A-Z]{3}-[A-Z0-9]{4}$"
+    },
+    {
+      "id": "DOCCHK-REF-002",
+      "class": "A",
+      "severity": "error",
+      "section": "G0101 §2",
+      "description": "[MUST] related_docs is an array of valid doc_id strings.",
+      "type": "array_items_regex",
+      "target": "front_matter.related_docs",
+      "pattern": "^[GP]\\d{4}-[A-Z]{3}-[A-Z0-9]{4}$"
+    },
+    {
+      "id": "DOCCHK-HIS-001",
+      "class": "A",
+      "severity": "error",
+      "section": "G0101 §2 / G0100 §5",
+      "description": "[MUST] Latest entry in history matches Front Matter version/date.",
+      "type": "history_matches_front_matter"
+    },
+    {
+      "id": "DOCCHK-FN-001",
+      "class": "A",
+      "severity": "error",
+      "section": "G0100 §4.1",
+      "description": "[MUST] Filename aligns with `{Prefix}{4Digit}-{Category3}-{Code4}-{Title}.md` and matches doc_id.",
+      "type": "filename_matches_doc_id"
+    },
+    {
+      "id": "DOCCHK-SCH-001",
+      "class": "A",
+      "severity": "error",
+      "section": "G0100 §6.1",
+      "description": "[MUST] schema equals \"https://schema.org/CreativeWork\".",
+      "type": "equals",
+      "target": "front_matter.schema",
+      "value": "https://schema.org/CreativeWork"
+    },
+    {
+      "id": "DOCCHK-STD-001",
+      "class": "A",
+      "severity": "error",
+      "section": "G0100 §2",
+      "description": "[MUST] STD documents explicitly include PII prohibition note.",
+      "type": "requires_body_snippet_if_category",
+      "if_category": "STD",
+      "snippet_contains": "PII",
+      "case_insensitive": true
+    },
+    {
+      "id": "DOCCHK-MD-001",
+      "class": "A",
+      "severity": "warning",
+      "section": "G0101 §2",
+      "description": "[MUST] Markdown tables/code/heading syntax well-formed.",
+      "type": "markdown_lint",
+      "linters": [
+        "heading-increment",
+        "no-bare-urls",
+        "fenced-code-language"
+      ]
+    },
+    {
+      "id": "DOCCHK-SCP-001",
+      "class": "A",
+      "severity": "error",
+      "section": "G0100 §6.1",
+      "description": "[MUST] scope equals \"Generic\" or \"Project\" (capitalized).",
+      "type": "in_set",
+      "target": "front_matter.scope",
+      "allowed": [
+        "Generic",
+        "Project"
+      ]
+    },
+    {
+      "id": "DOCCHK-STA-002",
+      "class": "A",
+      "severity": "error",
+      "section": "G0100 §5.2",
+      "description": "[MUST] status equals Draft|Approved|Deprecated (not Stable).",
+      "type": "in_set",
+      "target": "front_matter.status",
+      "allowed": [
+        "Draft",
+        "Approved",
+        "Deprecated"
+      ]
+    }
+  ],
+  "outputs": {
+    "pass": {
+      "code": 0,
+      "label": "pass",
+      "criteria": "no critical/error; warnings allowed"
+    },
+    "fail": {
+      "code": 1,
+      "label": "fail",
+      "criteria": "any critical/error present"
+    },
+    "format_example": {
+      "rule_id": "DOCCHK-ID-003",
+      "status": "fail",
+      "severity": "error",
+      "message": "doc_id does not match required pattern",
+      "location": "front_matter.doc_id",
+      "evidence": "P123-ARC-XXXX",
+      "suggestion": "Use pattern: ^[GP]\\d{4}-[A-Z]{3}-[A-Z0-9]{4}$"
+    }
+  }
+}

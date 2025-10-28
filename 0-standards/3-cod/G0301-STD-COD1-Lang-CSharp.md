@@ -12,7 +12,7 @@ scope: "Language-Specific (C#)"
 lifecycle: "Canonical"
 description: "本書はプロジェクトに依存しないC#のコーディング規範を定義する。設計仕様（アーキ構成、API契約、SLO値等）は扱わず、G0300-STD-COD0（コア）を言語観点で具体化する。"
 related_docs:
-  - "G0300-STD-COD0-CodingCore"
+  - "G0300-STD-COD0"
   - "G0100-STD-DOC0-DocumentPolicy"
   - "G0101-STD-DOC1-CompliancePack"
 ---
