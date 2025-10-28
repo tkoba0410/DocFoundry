@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "P0200-REQ-OVRV"
 title: "REQ Overview"
-version: "0.1.0"
+version: "v0.1.0"
 date: "2025-10-26"
 status: "Draft"
 owner: "Project Maintainer"
@@ -32,4 +32,4 @@ related_docs: ["G0201-STD-SCD1-SpecPhase"]
 ## 5. 改訂履歴
 | 版 | 日付 | 内容 |
 |----|------|------|
-| 0.1.0 | 2025-10-26 | 初版（テンプレート生成） |
+| v0.1.0 | 2025-10-26 | 初版（テンプレート生成） |

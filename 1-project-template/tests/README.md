@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "P0501-TST-TEST"
 title: "Test Strategy and Folder Guide"
-version: "0.1.0"
+version: "v0.1.0"
 date: "2025-10-26"
 status: "Draft"
 owner: "QA Lead"
@@ -54,4 +54,4 @@ tests/
 ## 7. 改訂履歴
 | 版 | 日付 | 内容 |
 |----|------|------|
-| 0.1.0 | 2025-10-26 | 初版（テンプレート生成） |
+| v0.1.0 | 2025-10-26 | 初版（テンプレート生成） |

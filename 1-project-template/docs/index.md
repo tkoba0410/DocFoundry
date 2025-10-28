@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "P0000-STD-PJX-Index"
 title: "Project Documentation Index"
-version: "0.1.0"
+version: "v0.1.0"
 date: "2025-10-26"
 status: "Draft"
 owner: "Project Maintainer"
@@ -82,4 +82,4 @@ flowchart TD
 
 | 版 | 日付 | 内容 |
 |----|------|------|
-| 0.1.0 | 2025-10-26 | 初版（自動生成）。P0100〜P0800文書の索引を作成。 |
+| v0.1.0 | 2025-10-26 | 初版（自動生成）。P0100〜P0800文書の索引を作成。 |
