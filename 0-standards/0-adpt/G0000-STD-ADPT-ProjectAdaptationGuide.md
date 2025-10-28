@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0000-STD-ADPT"
 title: "Project Adaptation Guide"
-version: "3.0.0"
+version: "v3.0.0"
 date: "2025-10-31"
 status: "Approved"
 owner: "Documentation Review Team"
