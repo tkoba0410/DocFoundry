@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0100-STD-DOC0"
 title: "Document Policy"
-version: "2.3.5"
+version: "v2.3.5"
 date: "2025-10-30"
 status: "Approved"
 owner: "Project Maintainer"
@@ -17,8 +17,8 @@ description: "Defines universal document management structure."
 
 ## 1. 表紙情報
 - 文書番号: `G0100-STD-DOC0`
-- バージョン: **v2.3.1**
-- 日付: 2025-10-15
+- バージョン: **v2.3.5**
+- 日付: 2025-10-30
 - 状態: Approved
 
 ---
@@ -283,7 +283,7 @@ P0400-IMP-GUID-ImplementationGuide.md
 | `schema` | ⬜ 推奨 | string | schema.org | 構造定義スキーマURL | `"https://schema.org/CreativeWork"` |
 | `doc_id` | ✅ | string | IEEE 828 / ISO 26514 | 文書ID（一意識別子、接頭子を含む） | `"G0100-STD-DOC0"` |
 | `title` | ✅ | string | ISO 26514 | 文書タイトル（英語推奨） | `"Document Policy"` |
-| `version` | ✅ | string | SemVer 2.0.0 | バージョン（`vX.Y.Z`形式） | `"2.3.1"` |
+| `version` | ✅ | string | SemVer 2.0.0 | バージョン（`vX.Y.Z`形式） | `"v2.3.1"` |
 | `date` | ✅ | string | ISO 8601 / ISO 26514 | 発行日（`YYYY-MM-DD`形式） | `"2025-10-15"` |
 | `status` | ✅ | enum | IEEE 828 | 文書状態（`Draft` / `Approved` / `Deprecated`） | `"Approved"` |
 | `owner` | ✅ | string | ISO 26514 | 文書責任者（役職またはチーム名） | `"Project Maintainer"` |
@@ -313,7 +313,7 @@ P0400-IMP-GUID-ImplementationGuide.md
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0100-STD-DOC0"
 title: "Document Policy"
-version: "2.3.3"
+version: "v2.3.3"
 date: "2025-10-21"
 status: "Approved"
 owner: "Project Maintainer"
@@ -331,7 +331,7 @@ description: "Defines universal document management structure."
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0100-STD-DOC0"
 title: "Document Policy"
-version: "2.3.3"
+version: "v2.3.3"
 date: "2025-10-21"
 status: "Approved"
 owner: "Project Maintainer"

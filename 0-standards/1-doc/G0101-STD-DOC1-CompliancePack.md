@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0101-STD-DOC1"
 title: "Compliance Pack (Checklist + Automation) for G0100-STD-DOC0"
-version: "1.1.0"
+version: "v1.1.0"
 date: "2025-10-30"
 status: "Approved"
 owner: "Documentation Review Team"
