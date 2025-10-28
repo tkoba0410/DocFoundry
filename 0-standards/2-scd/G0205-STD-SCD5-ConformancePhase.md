@@ -1,18 +1,24 @@
 ---
-doc_id: G0205-STD-SCD5-ConformancePhase
-title: 適合確認フェーズガイド（v3.0統一構成）
-version: 3.0.0
-date: 2025-10-XX
-scope: ExchangeApi Standard
-lifecycle: canonical
-status: Stable
+schema: "https://schema.org/CreativeWork"
+doc_id: "G0205-STD-SCD5"
+title: "適合確認フェーズガイド（v3.0統一構成）"
+version: "v3.0.0"
+date: "2025-10-15"
+status: "Approved"
+lifecycle: "Canonical"
+scope: "Generic"
+owner: "Standards-Governance-Team"
+reviewers:
+  - "Conformance-Engineering-Guild"
+  - "Quality-Assurance-Guild"
+confidentiality: "Public"
 ---
 
-# [STD-SCD5] 適合確認フェーズガイド（v3.0統一構成）
+# [SCD-CONF] 適合確認フェーズガイド（v3.0統一構成）
 
-**Version:** v3.0.0  
-**Date:** 2025-10-XX  
-**Status:** Stable  
+**Version:** v3.0.0
+**Date:** 2025-10-15
+**Status:** Approved
 
 ---
 
@@ -105,7 +111,15 @@ status: Stable
 ### D. 参照文書
 - G0204‑STD‑SCD4‑ImplPhase（実装フェーズ）  
 - G0210‑STD‑SCDT‑Templates（共通テンプレート集）  
-- G0320‑STD‑SCDM‑PhaseActionMap（実務行動マップ）  
+- G0220‑STD‑SCDM‑PhaseActionMap（実務行動マップ）
+
+---
+
+## 8. 改訂履歴 / *Revision History*
+
+| Version | Date | Description |
+|:--|:--|:--|
+| v3.0.0 | 2025-10-15 | DCMM準拠メタデータ追加と適合フェーズ指針更新。 |
 
 ---
 
