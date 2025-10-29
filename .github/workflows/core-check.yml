@@ -1,20 +1,61 @@
-name: core-check
-on: [push, pull_request]
+name: Core Compliance Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
   core:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Validate DCMM front matter & PII-free
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
         run: |
-          echo "TODO: implement dcmm/markdown validation and PII scan"
-      - name: Validate naming rules (G0100 §4)
-        run: |
-          echo "TODO: check filename patterns for G/P + number + category + code"
+          python3 -m pip install --upgrade pip
+          pip install pyyaml
+
       - name: Run Document Compliance Check
-        run: python3 tools/compliance_check.py --ruleset 0-standards/rules/G0101-STD-DOC1_ruleset.json
-      - name: Upload compliance report
+        run: |
+          python3 tools/compliance_check.py \
+            --ruleset 0-standards/rules/G0101-STD-DOC1_ruleset.json \
+            --output compliance_report.jsonl \
+            --fail-on error \
+            --summary \
+            --include-glob "0-standards/**/*.md" \
+            --include-glob "1-project-template/docs/**/*.md"
+
+      - name: Print offenders (human readable)
         if: always()
+        run: |
+          echo "=== Non-compliant documents detected (if any) ==="
+          python3 - <<'PY'
+          import json, os
+          path = "compliance_report.jsonl"
+          if not os.path.exists(path):
+              print("No compliance_report.jsonl found.")
+              raise SystemExit(0)
+          n = 0
+          for line in open(path, encoding='utf-8'):
+              r = json.loads(line)
+              if r["status"] != "✅ OK":
+                  n += 1
+                  print(f"{r['status']}\t{r['file']}\t{r.get('detail','')}")
+          print(f"\nTotal offenders: {n}")
+          if n == 0:
+              print("All Markdown documents are compliant.")
+          PY
+
+      - name: Upload compliance report
         uses: actions/upload-artifact@v4
         with:
           name: compliance-report
