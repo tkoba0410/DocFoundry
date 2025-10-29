@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0210-STD-SCDT"
 title: "開発フェーズ共通テンプレート集（v3.0統一構成）"
-version: "v3.0.0"
+version: "v1.0.0"
 date: "2025-10-15"
 status: "Approved"
 lifecycle: "Canonical"
@@ -12,17 +12,28 @@ reviewers:
   - "Template-Management-Guild"
   - "Quality-Assurance-Guild"
 confidentiality: "Public"
+inherit_from: ["G0100-STD-DOC0"]
+x-schema: "/schemas/dcmm.scd.schema.json"
 ---
 
 # [SCD-TMPL] 開発フェーズ共通テンプレート集（v3.0統一構成）
 
-**Version:** v3.0.0
+**Version:** v1.0.0
 **Date:** 2025-10-15
 **Status:** Approved
 
 ---
 
-## 1. 目的と位置づけ（Purpose & Scope）
+## 1. 表紙情報
+- 文書番号: `G0210-STD-SCDT`
+- バージョン: **v1.0.0**
+- 日付: 2025-10-15
+- 状態: Approved
+
+---
+
+
+## 2. 目的と位置づけ（Purpose & Scope）
 
 本書は ExchangeApi 開発標準 v3.0 における全フェーズ（SCD1〜SCD6, SCDM）を支える
 **共通テンプレートセット（T1〜T4）および用語集・教育リソース** を提供する。
@@ -35,7 +46,7 @@ confidentiality: "Public"
 
 ---
 
-## 2. テンプレート概要（Overview of Templates）
+## 3. テンプレート概要（Overview of Templates）
 
 | No | テンプレート名 | 用途 | 主な利用フェーズ | 管理形式 |
 |:--|:--|:--|:--|:--|
@@ -46,7 +57,7 @@ confidentiality: "Public"
 
 ---
 
-## 3. テンプレート構造（Template Structures）
+## 4. テンプレート構造（Template Structures）
 
 ### **T1: ReqID一覧表**
 | ReqID | 要求名 | RFC2119強度 | 概要 | 試験方法 | 状態 |
@@ -74,7 +85,7 @@ confidentiality: "Public"
 
 ---
 
-## 4. 用語レベル体系（Glossary Level Framework）
+## 5. 用語レベル体系（Glossary Level Framework）
 
 | レベル | 対象読者 | 用語理解の深さ | 例 |
 |:--|:--|:--|:--|
@@ -84,7 +95,7 @@ confidentiality: "Public"
 
 ---
 
-## 5. 運用ルール（Usage and Governance）
+## 6. 運用ルール（Usage and Governance）
 
 | 項目 | ルール | 備考 |
 |:--|:--|:--|
@@ -96,7 +107,7 @@ confidentiality: "Public"
 
 ---
 
-## 6. 付録（Appendix）
+## 7. 付録（Appendix）
 
 ### A. T番号とPhase対応
 | テンプレ | 対応フェーズ | 主要利用目的 |
@@ -124,6 +135,7 @@ confidentiality: "Public"
 ### D. 改訂履歴
 | Version | Date | 概要 | 担当 |
 |:--|:--|:--|:--|
+| v1.0.0 | 2025-10-15 | DocFoundry 初版FIXとして再ベースライン。 |
 | v3.0.0 | 2025-10-15 | DCMM準拠のメタデータ更新とテンプレート記述整合。 | Standards-Governance-Team |
 | v2.0.0 | 2025-10-21 | v2.2系からv3.0構造へ統一。Glossary追加。 | Documentation Team |
 

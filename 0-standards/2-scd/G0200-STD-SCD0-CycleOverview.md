@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0200-STD-SCD0"
 title: "開発サイクル概要（v3.1汎用版・Spec–Conformance Development Cycle）"
-version: "v3.1.0"
+version: "v1.0.0"
 date: "2025-10-15"
 status: "Draft"
 lifecycle: "Canonical"
@@ -12,17 +12,28 @@ reviewers:
   - "Quality-Assurance-Guild"
   - "Product-Compliance-Board"
 confidentiality: "Public"
+inherit_from: ["G0100-STD-DOC0"]
+x-schema: "/schemas/dcmm.scd.schema.json"
 ---
 
 # [SCD-CYCL] 開発サイクル概要（v3.1汎用版・Spec–Conformance Development Cycle）
 
-**Version:** v3.1.0
+**Version:** v1.0.0
 **Date:** 2025-10-15
 **Status:** Draft
 
 ---
 
-## 1. 目的と位置づけ / *Purpose and Scope*
+## 1. 表紙情報
+- 文書番号: `G0200-STD-SCD0`
+- バージョン: **v1.0.0**
+- 日付: 2025-10-15
+- 状態: Draft
+
+---
+
+
+## 2. 目的と位置づけ / *Purpose and Scope*
 
 本書は、開発活動を「継続的に整合し続ける循環体系」として捉える。
 その中心概念を **Spec–Conformance Development Cycle（SCD）** と定義し、
@@ -36,7 +47,7 @@ confidentiality: "Public"
 
 ---
 
-## 2. サイクル構造 / *Spec–Conformance Development Cycle Overview*
+## 3. サイクル構造 / *Spec–Conformance Development Cycle Overview*
 
 ```
  ┌───────────────┐
@@ -74,7 +85,7 @@ confidentiality: "Public"
 
 ---
 
-## 3. 継続整合ループ / *Continuous Conformance Loop*
+## 4. 継続整合ループ / *Continuous Conformance Loop*
 
 ```mermaid
 flowchart TD
@@ -95,7 +106,7 @@ flowchart TD
 
 ---
 
-## 4. フェーズ構成と目的 / *Phases and Objectives*
+## 5. フェーズ構成と目的 / *Phases and Objectives*
 
 | フェーズ（コード） | ゴール | 主な手法 | 代表成果物 |
 |:--|:--|:--|:--|
@@ -111,7 +122,7 @@ flowchart TD
 
 ---
 
-## 5. テンプレート対応表 / *Template Correlation (T1–T4)*
+## 6. テンプレート対応表 / *Template Correlation (T1–T4)*
 
 | テンプレート | 主な用途 | 関連フェーズ |
 |:--|:--|:--|
@@ -122,7 +133,7 @@ flowchart TD
 
 ---
 
-## 6. トレーサビリティ構造 / *Traceability Framework*
+## 7. トレーサビリティ構造 / *Traceability Framework*
 
 | 対応軸 | 対象 | 説明 |
 |:--|:--|:--|
@@ -138,7 +149,7 @@ flowchart TD
 
 ---
 
-## 7. チームの役割とAI支援範囲 / *Roles and AI Responsibility*
+## 8. チームの役割とAI支援範囲 / *Roles and AI Responsibility*
 
 | フェーズ | 主担当 | 補助担当 | AI支援（MAY） | 最終判断（MUST） |
 |:--|:--|:--|:--|:--|
@@ -155,7 +166,7 @@ flowchart TD
 
 ---
 
-## 8. 教育レベル構造 / *Education and Skill Levels*
+## 9. 教育レベル構造 / *Education and Skill Levels*
 
 | レベル | 対象読者 | 習得目的 | 主な利用資料 |
 |:--|:--|:--|:--|
@@ -169,7 +180,7 @@ flowchart TD
 
 ---
 
-## 9. 運用統合モデル / *Operations and Feedback Integration*
+## 10. 運用統合モデル / *Operations and Feedback Integration*
 
 ```mermaid
 flowchart TD
@@ -187,7 +198,7 @@ flowchart TD
 
 ---
 
-## 10. フェーズコード参照表 / *Phase Code Reference Table*
+## 11. フェーズコード参照表 / *Phase Code Reference Table*
 
 | コード | フェーズ名 | 主な目的 |
 |:--|:--|:--|
@@ -200,7 +211,7 @@ flowchart TD
 
 ---
 
-## 11. 要約 / *Summary*
+## 12. 要約 / *Summary*
 
 Spec–Conformance Development Cycle（SCD）は、
 **「計画 → 実装 → 検証 → 改善 → 再整合」** の全過程を一体化した自己整合型開発モデルである。
@@ -215,10 +226,11 @@ Spec–Conformance Development Cycle（SCD）は、
 
 ---
 
-## 12. 改訂履歴 / *Revision History*
+## 13. 改訂履歴 / *Revision History*
 
 | Version | Date | Description |
 |:--|:--|:--|
+| v1.0.0 | 2025-10-15 | DocFoundry 初版FIXとして再ベースライン。 |
 | v3.1.0 | 2025-10-15 | YAMLメタデータと構成をG0100/G0101準拠に整備。 |
 
 ---

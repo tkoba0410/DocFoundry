@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0220-STD-SCDM"
 title: "フェーズ別実務行動マップ（v3.1汎用統合版）"
-version: "v3.1.0"
+version: "v1.0.0"
 date: "2025-10-30"
 status: "Approved"
 lifecycle: "Canonical"
@@ -16,17 +16,28 @@ links:
   - doc_id: "G0200-STD-SCD0"
     relation: "base_on"
     comment: "Cycle Overview v3.1.0 準拠"
+inherit_from: ["G0100-STD-DOC0"]
+x-schema: "/schemas/dcmm.scd.schema.json"
 ---
 
 # [SCD-MAP] フェーズ別実務行動マップ（v3.1汎用統合版）
 
-**Version:** v3.1.0
+**Version:** v1.0.0
 **Date:** 2025-10-30
 **Status:** Approved
 
 ---
 
-## 1. 目的と位置づけ（Purpose & Scope）
+## 1. 表紙情報
+- 文書番号: `G0220-STD-SCDM`
+- バージョン: **v1.0.0**
+- 日付: 2025-10-30
+- 状態: Approved
+
+---
+
+
+## 2. 目的と位置づけ（Purpose & Scope）
 
 本書は **汎用標準体系** における
 全フェーズ（SCD0〜SCD6, SCDT）を統合的に俯瞰し、
@@ -39,7 +50,7 @@ links:
 
 ---
 
-## 2. フェーズ別実務行動マップ
+## 3. フェーズ別実務行動マップ
 
 | フェーズ | 主担当（Who） | 作業内容（What） | 手順（How／Step） | 成果物（Deliverables） | 終了基準（Outcome） |
 |:--|:--|:--|:--|:--|:--|
@@ -54,7 +65,7 @@ links:
 
 ---
 
-## 3. フェーズ連携フロー（Rolling Conformance）
+## 4. フェーズ連携フロー（Rolling Conformance）
 
 ```mermaid
 flowchart TD
@@ -77,7 +88,7 @@ flowchart TD
 
 ---
 
-## 4. 教育レベルと活用範囲（Education Level Mapping）
+## 5. 教育レベルと活用範囲（Education Level Mapping）
 
 | レベル | 対象 | 主に利用する文書 | 学習目的 |
 |:--|:--|:--|:--|
@@ -87,7 +98,7 @@ flowchart TD
 
 ---
 
-## 5. 運用ポイント（Operational Notes）
+## 6. 運用ポイント（Operational Notes）
 
 | 項目 | 説明 |
 |:--|:--|
@@ -99,7 +110,7 @@ flowchart TD
 
 ---
 
-## 6. 参照体系（Cross‑Reference）
+## 7. 参照体系（Cross‑Reference）
 
 | 区分 | 文書ID | タイトル | 主な目的 |
 |:--|:--|:--|:--|
@@ -111,7 +122,7 @@ flowchart TD
 
 ---
 
-## 7. まとめ（Summary）
+## 8. まとめ（Summary）
 
 本書は、汎用標準体系における **行動実行・教育・整合維持の中心文書** である。
 
@@ -123,10 +134,11 @@ flowchart TD
 
 ---
 
-## 8. 改訂履歴 / *Revision History*
+## 9. 改訂履歴 / *Revision History*
 
 | Version | Date | Description |
 |:--|:--|:--|
+| v1.0.0 | 2025-10-30 | DocFoundry 初版FIXとして再ベースライン。 |
 | v3.1.0 | 2025-10-30 | ExchangeApi依存表現を除去し、DCMMリンクを追加。 |
 | v3.0.1 | 2025-10-15 | DCMM準拠のメタデータ整備とフェーズ行動表の整合。 |
 | v3.0.0 | 2025-08-30 | ExchangeApi標準v3.0統合版として行動マップを刷新。 |

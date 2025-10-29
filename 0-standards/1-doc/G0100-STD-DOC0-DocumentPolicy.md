@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0100-STD-DOC0"
 title: "Document Policy"
-version: "v2.3.5"
+version: "v1.0.0"
 date: "2025-10-30"
 status: "Approved"
 owner: "Project Maintainer"
@@ -11,13 +11,14 @@ confidentiality: "Public"
 scope: "Generic"
 lifecycle: "Canonical"
 description: "Defines universal document management structure."
+x-schema: "/schemas/dcmm.doc.schema.json"
 ---
 
 # [STD-DOC0] 文書管理規約（汎用版）
 
 ## 1. 表紙情報
 - 文書番号: `G0100-STD-DOC0`
-- バージョン: **v2.3.5**
+- バージョン: **v1.0.0**
 - 日付: 2025-10-30
 - 状態: Approved
 
@@ -291,7 +292,7 @@ P0400-IMP-GUID-ImplementationGuide.md
 | `confidentiality` | ✅ | enum | ISO 27001 | 機密区分（`Public` / `Internal` / `Confidential`） | `"Public"` |
 | `scope` | ✅ | enum | STD-DOCS内部定義 | 適用範囲（`Generic` / `Project`） | `"Generic"` |
 | `lifecycle` | ✅ | enum | STD-DOCS内部定義 | 文書成熟度（`Draft` / `Stable` / `Canonical`） | `"Canonical"` |
-| `inherit_from` | ⬜ 任意 | string | STD-DOCS拡張 | 継承元文書ID | `"G0100-STD-DOC0"` |
+| `inherit_from` | ⬜ 任意 | string / list[string] | STD-DOCS拡張 | 継承元文書ID（単一または配列で指定可） | `"G0100-STD-DOC0"` |
 | `description` | ⬜ 任意 | string | schema.org | 文書概要 | `"Defines universal document management structure"` |
 | `related_docs` | ⬜ 推奨 | list[string] | STD-DOCS拡張 | 参照関係にある文書IDの配列 | `["G0200-STD-SCD0-CycleGuide","G0210-STD-DVT0-Templates"]` |
 
@@ -299,7 +300,9 @@ P0400-IMP-GUID-ImplementationGuide.md
 > DCMM の検証は JSON Schema (Draft 2020-12) に基づく。
 > 最新スキーマは次のファイルとして管理する：
 > ```
-> /schemas/dcmm.schema.json
+> /schemas/dcmm.doc.schema.json
+> /schemas/dcmm.scd.schema.json
+> /schemas/dcmm.cod.schema.json
 > ```
 > CI システムおよび IDE 補完は本スキーマを参照すること。
 > 本文ではスキーマ定義を内包せず、外部参照により肥大化を防止する。
@@ -313,7 +316,7 @@ P0400-IMP-GUID-ImplementationGuide.md
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0100-STD-DOC0"
 title: "Document Policy"
-version: "v2.3.3"
+version: "v1.0.0"
 date: "2025-10-21"
 status: "Approved"
 owner: "Project Maintainer"
@@ -331,7 +334,7 @@ description: "Defines universal document management structure."
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0100-STD-DOC0"
 title: "Document Policy"
-version: "v2.3.3"
+version: "v1.0.0"
 date: "2025-10-21"
 status: "Approved"
 owner: "Project Maintainer"
@@ -394,6 +397,7 @@ SemVer 仕様上、先頭の `v` は必須ではないが、本標準群では *
 ## 7. 改訂履歴
 | 版 | 日付 | 内容 |
 |----|------|------|
+| v1.0.0 | "2025-10-30" | DocFoundry 初版FIXとして再ベースライン。 |
 | v2.2.1 | "2025-10-15" | 接頭子体系統合・構成簡略化 |
 | v2.2.2 | "2025-10-15" | Semantic Versioning準拠方針を明記 |
 | v2.2.3 | "2025-10-15" | Front Matter必須化 |

@@ -12,7 +12,7 @@ auto_fix:
   confirm_before_apply: false
 
 validation:
-  schema_ref: "/schemas/dcmm.schema.json"
+  schema_ref: "/schemas/dcmm.doc.schema.json"
   strict_yaml: true
   allow_extensions: ["x-ai", "x-schema"]
   version_check: true

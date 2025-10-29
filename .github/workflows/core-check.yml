@@ -1,0 +1,21 @@
+name: core-check
+on: [push, pull_request]
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate DCMM front matter & PII-free
+        run: |
+          echo "TODO: implement dcmm/markdown validation and PII scan"
+      - name: Validate naming rules (G0100 §4)
+        run: |
+          echo "TODO: check filename patterns for G/P + number + category + code"
+      - name: Run Document Compliance Check
+        run: python3 tools/compliance_check.py --ruleset 0-standards/rules/G0101-STD-DOC1_ruleset.json
+      - name: Upload compliance report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compliance-report
+          path: compliance_report.jsonl
