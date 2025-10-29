@@ -1,9 +1,9 @@
 ---
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0220-STD-SCDM"
-title: "フェーズ別実務行動マップ（v3.0最終統合版）"
-version: "v3.0.1"
-date: "2025-10-15"
+title: "フェーズ別実務行動マップ（v3.1汎用統合版）"
+version: "v3.1.0"
+date: "2025-10-30"
 status: "Approved"
 lifecycle: "Canonical"
 scope: "Generic"
@@ -12,19 +12,23 @@ reviewers:
   - "Operations-Enablement-Guild"
   - "Quality-Assurance-Guild"
 confidentiality: "Public"
+links:
+  - doc_id: "G0200-STD-SCD0"
+    relation: "base_on"
+    comment: "Cycle Overview v3.1.0 準拠"
 ---
 
-# [SCD-MAP] フェーズ別実務行動マップ（v3.0最終統合版）
+# [SCD-MAP] フェーズ別実務行動マップ（v3.1汎用統合版）
 
-**Version:** v3.0.1
-**Date:** 2025-10-15
+**Version:** v3.1.0  
+**Date:** 2025-10-30  
 **Status:** Approved
 
 ---
 
 ## 1. 目的と位置づけ（Purpose & Scope）
 
-本書は ExchangeApi v3.0 標準体系における  
+本書は **汎用標準体系** における  
 全フェーズ（SCD0〜SCD6, SCDT）を統合的に俯瞰し、  
 **「誰が・何を・どう・何の成果を得て・いつ完了するか」** を明確化する行動ガイドである。  
 
@@ -99,7 +103,7 @@ flowchart TD
 
 | 区分 | 文書ID | タイトル | 主な目的 |
 |:--|:--|:--|:--|
-| Core | **G0200** | 開発サイクル概要（v3.0） | 全体統括 |
+| Core | **G0200** | 開発サイクル概要（v3.1） | 全体統括 |
 | Phase | **G0201〜G0206** | 各フェーズガイド | 各工程の標準手順 |
 | Template | **G0210** | 開発フェーズ共通テンプレート集 | T1〜T4定義 |
 | Action | **G0220** | 本書（フェーズ別実務行動マップ） | 実践・教育統合 |
@@ -109,13 +113,13 @@ flowchart TD
 
 ## 7. まとめ（Summary）
 
-本書は、ExchangeApi v3.0 標準体系における **行動実行・教育・整合維持の中心文書** である。  
+本書は、汎用標準体系における **行動実行・教育・整合維持の中心文書** である。  
 
 - 各Phaseの行動・成果物・完了基準を統一構造で定義。  
 - 教育レベル（L1〜L3）に対応し、理解から運用まで一貫支援。  
 - Rolling Conformance により、常時整合・自動検証が可能。  
 
-> 📘 **SCDMは、ExchangeApi開発の“実務オペレーション基盤”として機能する。**
+> 📘 **SCDMは、汎用開発の“実務オペレーション基盤”として機能する。**
 
 ---
 
@@ -123,6 +127,7 @@ flowchart TD
 
 | Version | Date | Description |
 |:--|:--|:--|
+| v3.1.0 | 2025-10-30 | ExchangeApi依存表現を除去し、DCMMリンクを追加。 |
 | v3.0.1 | 2025-10-15 | DCMM準拠のメタデータ整備とフェーズ行動表の整合。 |
 | v3.0.0 | 2025-08-30 | ExchangeApi標準v3.0統合版として行動マップを刷新。 |
 

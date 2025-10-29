@@ -40,32 +40,32 @@ confidentiality: "Public"
 
 ```
  ┌───────────────┐
- │ P1: 仕様 (Spec) │ ← 要求を形式化（RFC2119）
+ │ SCD1: 仕様 (Spec) │ ← 要求を形式化（RFC2119）
  └───────┬───────┘
          │
          ▼
  ┌───────────────┐
- │ P2: 契約 (Contract) │ ← インタフェース・データ仕様の確定
+ │ SCD2: 契約 (Contract) │ ← インタフェース・データ仕様の確定
  └───────┬───────┘
          │
          ▼
  ┌───────────────┐
- │ P3: テスト (Test) │ ← 仕様をExampleとして具体化
+ │ SCD3: テスト (Test) │ ← 仕様をExampleとして具体化
  └───────┬───────┘
          │
          ▼
  ┌───────────────┐
- │ P4: 実装 (Implementation) │ ← Test-Drivenで最小実装を導出
+ │ SCD4: 実装 (Implementation) │ ← Test-Drivenで最小実装を導出
  └───────┬───────┘
          │
          ▼
  ┌───────────────┐
- │ P5: 適合確認 (Conformance) │ ← 自動検証と品質統計
+ │ SCD5: 適合確認 (Conformance) │ ← 自動検証と品質統計
  └───────┬───────┘
          │
          ▼
  ┌───────────────┐
- │ P6: フィードバック │ ← 結果を仕様・設計へ還流
+ │ SCD6: フィードバック │ ← 結果を仕様・設計へ還流
  └───────────────┘
 ```
 
@@ -78,11 +78,11 @@ confidentiality: "Public"
 
 ```mermaid
 flowchart TD
-    A[P1: Spec] --> B[P2: Contract]
-    B --> C[P3: Test]
-    C --> D[P4: Implementation]
-    D --> E[P5: Conformance]
-    E --> F[P6: Feedback]
+    A[PSCD1: Spec] --> B[SCD2: Contract]
+    B --> C[SCD3: Test]
+    C --> D[SCD4: Implementation]
+    D --> E[SCD5: Conformance]
+    E --> F[SCD6: Feedback]
     F --> A
     classDef phase fill:#eef,stroke:#555,stroke-width:1px;
     class A,B,C,D,E,F phase;
@@ -99,19 +99,30 @@ flowchart TD
 
 | フェーズ（コード） | ゴール | 主な手法 | 代表成果物 |
 |:--|:--|:--|:--|
-| **P1 – Spec** | 要求を明確化し形式化 | RFC2119 / 要求分析 | 仕様書、要求一覧 |
-| **P2 – Contract** | インタフェース・データ仕様を確定 | Contract-First、Schema定義 | データ仕様書、設計契約 |
-| **P3 – Test** | 仕様をExampleとして具現化 | BDD、シナリオ駆動 | Example仕様、テストケース |
-| **P4 – Implementation** | テストに基づき最小実装を導出 | TDD、コードレビュー | 実装コード、変更記録 |
-| **P5 – Conformance** | 実装と仕様の整合を検証 | 自動テスト／統計評価 | Traceability Matrix、検証レポート |
-| **P6 – Feedback** | 結果を仕様・設計へ反映 | Closed-Loop改善 | 改訂仕様、Decision Record |
+| **SCD1 – Spec** | 要求を明確化し形式化 | RFC2119 / 要求分析 | 仕様書、要求一覧 |
+| **SCD2 – Contract** | インタフェース・データ仕様を確定 | Contract-First、Schema定義 | データ仕様書、設計契約 |
+| **SCD3 – Test** | 仕様をExampleとして具現化 | BDD、シナリオ駆動 | Example仕様、テストケース |
+| **SCD4 – Implementation** | テストに基づき最小実装を導出 | TDD、コードレビュー | 実装コード、変更記録 |
+| **SCD5 – Conformance** | 実装と仕様の整合を検証 | 自動テスト／統計評価 | Traceability Matrix、検証レポート |
+| **SCD6 – Feedback** | 結果を仕様・設計へ反映 | Closed-Loop改善 | 改訂仕様、Decision Record |
 
 > **備考:**  
 > 各工程は独立ではなく、SCDサイクル内で相互に整合を確認し続ける。  
 
 ---
 
-## 5. トレーサビリティ構造 / *Traceability Framework*
+## 5. テンプレート対応表 / *Template Correlation (T1–T4)*
+
+| テンプレート | 主な用途 | 関連フェーズ |
+|:--|:--|:--|
+| **T1: ReqID** | 要求定義・承認 | SCD1 |
+| **T2: Conformance Matrix** | 整合検証・統計記録 | SCD3〜SCD5 |
+| **T3: ADR (Decision Record)** | 判断・設計履歴 | SCD2〜SCD6 |
+| **T4: Deviation Record** | 不適合・是正追跡 | SCD5〜SCD6 |
+
+---
+
+## 6. トレーサビリティ構造 / *Traceability Framework*
 
 | 対応軸 | 対象 | 説明 |
 |:--|:--|:--|
@@ -127,16 +138,16 @@ flowchart TD
 
 ---
 
-## 6. チームの役割とAI支援範囲 / *Roles and AI Responsibility*
+## 7. チームの役割とAI支援範囲 / *Roles and AI Responsibility*
 
 | フェーズ | 主担当 | 補助担当 | AI支援（MAY） | 最終判断（MUST） |
 |:--|:--|:--|:--|:--|
-| **P1 – Spec** | 要求分析者 | QA | 曖昧語検出、構文提案 | 人間 |
-| **P2 – Contract** | 設計者 | 開発者 | Schema整合検証 | 人間 |
-| **P3 – Test** | QA／テスター | 開発補助 | Example生成、曖昧語修正 | 人間 |
-| **P4 – Implementation** | 開発者 | 技術リード | コード提案、差分要約 | 人間 |
-| **P5 – Conformance** | QA／CI管理者 | 品質担当 | 自動検証ログ整形 | 人間 |
-| **P6 – Feedback** | QA／設計者 | プロジェクト責任者 | 改訂提案、要約 | 人間 |
+| **SCD1 – Spec** | 要求分析者 | QA | 曖昧語検出、構文提案 | 人間 |
+| **SCD2 – Contract** | 設計者 | 開発者 | Schema整合検証 | 人間 |
+| **SCD3 – Test** | QA／テスター | 開発補助 | Example生成、曖昧語修正 | 人間 |
+| **SCD4 – Implementation** | 開発者 | 技術リード | コード提案、差分要約 | 人間 |
+| **SCD5 – Conformance** | QA／CI管理者 | 品質担当 | 自動検証ログ整形 | 人間 |
+| **SCD6 – Feedback** | QA／設計者 | プロジェクト責任者 | 改訂提案、要約 | 人間 |
 
 > **原則:**  
 > AI assistance **MAY** be used for validation or generation tasks,  
@@ -144,7 +155,7 @@ flowchart TD
 
 ---
 
-## 7. 教育レベル構造 / *Education and Skill Levels*
+## 8. 教育レベル構造 / *Education and Skill Levels*
 
 | レベル | 対象読者 | 習得目的 | 主な利用資料 |
 |:--|:--|:--|:--|
@@ -158,15 +169,15 @@ flowchart TD
 
 ---
 
-## 8. 運用統合モデル / *Operations and Feedback Integration*
+## 9. 運用統合モデル / *Operations and Feedback Integration*
 
 ```mermaid
 flowchart TD
-    A[P1: 仕様更新・要求追加] --> B[P2: 契約・設計更新]
-    B --> C[P3: テスト自動実行]
-    C --> D[P5: 結果集計・逸脱記録]
-    D --> E[P6: 判断・承認]
-    E --> F[P1: 改訂・仕様反映]
+    A[SCD1: 仕様更新・要求追加] --> B[SCD2: 契約・設計更新]
+    B --> C[SCD3: テスト自動実行]
+    C --> D[SCD5: 結果集計・逸脱記録]
+    D --> E[SCD6: 判断・承認]
+    E --> F[SCD1: 改訂・仕様反映]
     F --> A
 ```
 
@@ -176,20 +187,20 @@ flowchart TD
 
 ---
 
-## 9. フェーズコード参照表 / *Phase Code Reference Table*
+## 10. フェーズコード参照表 / *Phase Code Reference Table*
 
 | コード | フェーズ名 | 主な目的 |
 |:--|:--|:--|
-| **P1** | Spec Phase | 要求定義と形式化 |
-| **P2** | Contract Phase | インタフェース・仕様の確定 |
-| **P3** | Test Phase | Example仕様による検証設計 |
-| **P4** | Implementation Phase | テスト駆動による実装 |
-| **P5** | Conformance Phase | 適合性の自動検証 |
-| **P6** | Feedback Phase | 結果の反映と再整合 |
+| **SCD1** | Spec Phase | 要求定義と形式化 |
+| **SCD2** | Contract Phase | インタフェース・仕様の確定 |
+| **SCD3** | Test Phase | Example仕様による検証設計 |
+| **SCD4** | Implementation Phase | テスト駆動による実装 |
+| **SCD5** | Conformance Phase | 適合性の自動検証 |
+| **SCD6** | Feedback Phase | 結果の反映と再整合 |
 
 ---
 
-## 10. 要約 / *Summary*
+## 11. 要約 / *Summary*
 
 Spec–Conformance Development Cycle（SCD）は、  
 **「計画 → 実装 → 検証 → 改善 → 再整合」** の全過程を一体化した自己整合型開発モデルである。  
@@ -204,7 +215,7 @@ Spec–Conformance Development Cycle（SCD）は、
 
 ---
 
-## 11. 改訂履歴 / *Revision History*
+## 12. 改訂履歴 / *Revision History*
 
 | Version | Date | Description |
 |:--|:--|:--|
