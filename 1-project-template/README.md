@@ -1,15 +1,15 @@
 # 🧱 プロジェクト雛型ガイド — *Project Template Overview (v2.0.0)*
 
-**対象範囲:** `1-project-template/`  
-**上位文書:** [G0000-STD-ADPT-ProjectAdaptationGuide](../0-standards/0-adpt/G0000-STD-ADPT-ProjectAdaptationGuide.md)  
-**準拠標準:** [G0100 DocumentPolicy](../0-standards/1-doc/G0100-STD-DOC0-DocumentPolicy.md), [G0200 CycleOverview](../0-standards/2-scd/G0200-STD-SCD0-CycleOverview.md), [G0300 CodingStandard](../0-standards/3-cod/G0300-STD-COD0-CodingStandard.md)
+**対象範囲:** `1-project-template/`
+**上位文書:** [G0000-STD-ADPT-ProjectAdaptationGuide](../0-standards/0-adpt/G0000-STD-ADPT-ProjectAdaptationGuide.md)
+**準拠標準:** [G0100-STD-DOC0 DocumentPolicy](../0-standards/1-doc/G0100-STD-DOC0-DocumentPolicy.md), [G0300-STD-COD0 CodingStandard](../0-standards/3-cod/G0300-STD-COD0-CodingStandard.md)
 
 ---
 
 ## 🎯 1. 目的 / *Purpose*
 
-本ディレクトリは、DocFoundry標準体系に準拠した **新規プロジェクト導入用の雛型構成** を提供します。  
-あらゆるプロジェクトは、本雛型をコピーすることで、  
+本ディレクトリは、DocFoundry標準体系に準拠した **新規プロジェクト導入用の雛型構成** を提供します。
+あらゆるプロジェクトは、本雛型をコピーすることで、
 **標準文書・CI・構成管理の初期状態を即時整備** できます。
 
 > 🚀 *「標準を使ってプロジェクトを始めるための最小単位」*
@@ -89,8 +89,8 @@ flowchart LR
   C --> G[T4 Deviation]
 ```
 
-- 本テンプレートは SCDモデルの「導入インスタンス」。  
-- 各プロジェクト文書（P0xxx系）は、標準文書（G0xxx系）にトレースされる。  
+- 本テンプレートは SCDモデルの「導入インスタンス」。
+- 各プロジェクト文書（P0xxx系）は、標準文書（G0xxx系）にトレースされる。
 - 変更・逸脱は ADR（T3）により正規化・審査される。
 
 ---
@@ -126,12 +126,12 @@ flowchart LR
 
 ---
 
-**Status:** Stable  
-**Lifecycle:** Canonical  
-**Location:** `1-project-template/README.md`  
-**上位文書:** [G0000-STD-ADPT](../0-standards/0-adpt/G0000-STD-ADPT-ProjectAdaptationGuide.md)  
+**Status:** Stable
+**Lifecycle:** Canonical
+**Location:** `1-project-template/README.md`
+**上位文書:** [G0000-STD-ADPT](../0-standards/0-adpt/G0000-STD-ADPT-ProjectAdaptationGuide.md)
 
 ---
 
-このREADMEは、DocFoundry標準体系における  
-「プロジェクト適用層」の正式定義文書として使用可能です。  
+このREADMEは、DocFoundry標準体系における
+「プロジェクト適用層」の正式定義文書として使用可能です。

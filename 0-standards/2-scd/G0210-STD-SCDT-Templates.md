@@ -24,14 +24,14 @@ confidentiality: "Public"
 
 ## 1. 目的と位置づけ（Purpose & Scope）
 
-本書は ExchangeApi 開発標準 v3.0 における全フェーズ（SCD1〜SCD6, SCDM）を支える  
-**共通テンプレートセット（T1〜T4）および用語集・教育リソース** を提供する。  
+本書は ExchangeApi 開発標準 v3.0 における全フェーズ（SCD1〜SCD6, SCDM）を支える
+**共通テンプレートセット（T1〜T4）および用語集・教育リソース** を提供する。
 
 目的は以下のとおり：
 
-- 各フェーズで使用する標準テンプレートを一元管理する。  
-- ReqID・Conformance・ADR・Deviation の共通形式を維持する。  
-- 教育・監査・CI整合の基礎資産として運用する。  
+- 各フェーズで使用する標準テンプレートを一元管理する。
+- ReqID・Conformance・ADR・Deviation の共通形式を維持する。
+- 教育・監査・CI整合の基礎資産として運用する。
 
 ---
 

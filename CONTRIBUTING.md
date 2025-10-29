@@ -14,7 +14,7 @@ version: 1.0.0
 - 変更理由は `T3-ADR` に必ず記録する。
 
 ## 2. 命名・版管理
-- 文書ID: `G####-STD-` + カテゴリ + 名称  
+- 文書ID: `G####-STD-` + カテゴリ + 名称
 - バージョン: Semantic Versioning 準拠 (`vMAJOR.MINOR.PATCH`)
 
 ## 3. レビュー体制

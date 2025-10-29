@@ -62,7 +62,7 @@ inherit_from: "G0300-STD-COD0"
 
 ## 5. 例外・エラー（Exceptions）
 - **基本方針（MUST）**：例外は例外的事象に限定。フロー制御に使わない。
-- **ガード節（MUST）**：早期失敗。`ArgumentNullException.ThrowIfNull(x);` 等を使用。  
+- **ガード節（MUST）**：早期失敗。`ArgumentNullException.ThrowIfNull(x);` 等を使用。
   **例**：`ArgumentOutOfRangeException.ThrowIfNegative(value);`
 - **例外型（SHOULD）**：ドメイン/契約/環境に応じた独自例外を `Exception` 直系で定義。`ApplicationException` は使用しない。
 - **再スロー（MUST）**：`throw;` でスタックを保持。ラップ時は `innerException` を設定し、意味のあるメッセージとコンテキスト（識別子）を含む。
@@ -99,7 +99,7 @@ inherit_from: "G0300-STD-COD0"
 - **公開API Doc必須（MUST）**：`<summary>`, `<param>`, `<returns>`, `<exception>`, `<remarks>`, `<example>`。
 - **品質要件（SHOULD）**：要約は1文で明確、例外は契約に基づき網羅、例は**可動コード**を意識。
 - **非公開API（MAY）**：必要時のみDoc。コメントは「何を/なぜ」中心。
-- **null許容の整合（SHOULD）**：公開APIでは、戻り値や引数の null 許容は XML Doc と属性（例：`[NotNull]`, `[MaybeNull]`）で一貫して表明する。  
+- **null許容の整合（SHOULD）**：公開APIでは、戻り値や引数の null 許容は XML Doc と属性（例：`[NotNull]`, `[MaybeNull]`）で一貫して表明する。
   ※属性は `System.Diagnostics.CodeAnalysis` 名前空間のものを指す。
 
 ## 12. スタイル/フォーマット（.editorconfig）
@@ -202,7 +202,7 @@ valid_until: "2026-10-31"
 - **ビルド**：`Nullable=enable`/`TreatWarningsAsErrors=true` の確認。
 - **静的解析**：Roslyn アナライザの結果が**0エラー**であること。
 - **スタイル**：`.editorconfig` 準拠（未使用 using 削除、ブレース必須）。
-- **非同期**：同期ブロック検査（`.Result`/`.Wait()` の禁止リスト）。  
+- **非同期**：同期ブロック検査（`.Result`/`.Wait()` の禁止リスト）。
   ※検査は Roslyn カスタムルールまたは CI ソーススキャンにより実施（運用ドキュメント参照）。
 - **Doc**：公開APIのXML Docカバレッジしきい値（組織既定）。
 
