@@ -24,12 +24,12 @@ confidentiality: "Public"
 
 ## 1. フェーズ概要（Purpose & Scope）
 
-本フェーズは、実装（Impl）と仕様（Spec／Contract／Test）が完全に整合しているかを  
-**Conformance Testing（適合試験）** により自動的に検証する段階である。  
+本フェーズは、実装（Impl）と仕様（Spec／Contract／Test）が完全に整合しているかを
+**Conformance Testing（適合試験）** により自動的に検証する段階である。
 
-目的：  
-- すべてのReqIDに対しテスト結果が期待通りであることを保証する。  
-- 不適合（Deviation）を自動検出・登録・修正へ接続する。  
+目的：
+- すべてのReqIDに対しテスト結果が期待通りであることを保証する。
+- 不適合（Deviation）を自動検出・登録・修正へ接続する。
 - 開発全体の品質整合性を定量的に可視化する。
 
 ---
@@ -109,8 +109,8 @@ confidentiality: "Public"
 | **Zero‑Deviation** | L3 | 不適合ゼロ状態。Conformance完了条件。 |
 
 ### D. 参照文書
-- G0204‑STD‑SCD4‑ImplPhase（実装フェーズ）  
-- G0210‑STD‑SCDT‑Templates（共通テンプレート集）  
+- G0204‑STD‑SCD4‑ImplPhase（実装フェーズ）
+- G0210‑STD‑SCDT‑Templates（共通テンプレート集）
 - G0220‑STD‑SCDM‑PhaseActionMap（実務行動マップ）
 
 ---

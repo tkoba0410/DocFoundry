@@ -11,13 +11,13 @@ confidentiality: "Internal"
 scope: "Project"
 lifecycle: "Draft"
 description: "プロジェクトのソースコード構造および実装方針を定義する。"
-related_docs: ["G0204-STD-SCD4-ImplPhase","G0103-STD-DOC3-CodingStandard"]
+related_docs: ["G0204-STD-SCD4-ImplPhase","G0300-STD-COD0-CodingStandard","G0301-STD-COD1-Lang-CSharp"]
 ---
 
 # [IMP-SRCG] ソースコード構造ガイド
 
 ## 1. 目的
-本書は、SCDモデルの **Implementation Phase（G0204）** に基づき、  
+本書は、SCDモデルの **Implementation Phase（G0204）** に基づき、
 `src/` ディレクトリ以下に配置する実装コードの構造、命名規則、責務分離の方針を示す。
 
 ## 2. ディレクトリ構成例
@@ -30,21 +30,21 @@ src/
 ```
 
 ## 3. 命名・配置規則
-- **クラス名**：PascalCase、ファイル名と一致（C#標準準拠）  
-- **名前空間**：`ProjectName.Layer.Component` 構成（例：`ExchangeApi.Core.Trade`）  
-- **フォルダ構成**：DDDの層に基づき、循環依存を禁止（MUST）  
-- **コメント標準**：`/// <summary>` XMLコメント形式で記述（MUST）  
-- **コード規約**：`G0103-STD-DOC3`（CodingStandard）および `G0104-LANG-CS` に準拠。
+- **クラス名**：PascalCase、ファイル名と一致（C#標準準拠）
+- **名前空間**：`ProjectName.Layer.Component` 構成（例：`ExchangeApi.Core.Trade`）
+- **フォルダ構成**：DDDの層に基づき、循環依存を禁止（MUST）
+- **コメント標準**：`/// <summary>` XMLコメント形式で記述（MUST）
+- **コード規約**：`G0300-STD-COD0`（CodingStandard）および `G0301-STD-COD1-Lang-CSharp` に準拠。
 
 ## 4. ビルド・構築ルール
-- .NET 8.0を標準とし、`dotnet build` / `dotnet test` により検証する。  
-- 外部パッケージは NuGet を通じて明示管理（ローカルコピー禁止）。  
-- 公開API契約は `project-template/docs/P0202-REQ-OVRV-Overview.md` に対応。
+- .NET 8.0を標準とし、`dotnet build` / `dotnet test` により検証する。
+- 外部パッケージは NuGet を通じて明示管理（ローカルコピー禁止）。
+- 公開API契約は `1-project-template/docs/P0200-REQ-OVRV-Overview.md` に対応。
 
 ## 5. 関連標準
-- G0204-STD-SCD4-ImplPhase（Implementation Phase）  
-- G0103-STD-DOC3-CodingStandard（Core Coding Rules）  
-- G0104-STD-LANG-CS（C#言語規範）
+- G0204-STD-SCD4-ImplPhase（Implementation Phase）
+- G0300-STD-COD0-CodingStandard（Core Coding Rules）
+- G0301-STD-COD1-Lang-CSharp（C#言語規範）
 
 ## 6. 改訂履歴
 | 版 | 日付 | 内容 |

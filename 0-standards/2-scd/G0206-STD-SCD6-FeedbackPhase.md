@@ -24,12 +24,12 @@ confidentiality: "Public"
 
 ## 1. フェーズ概要（Purpose & Scope）
 
-本フェーズは、Conformance（適合確認）で検出された不適合（Deviation）を分析し、  
-**仕様・設計・実装・テストのいずれかを修正して閉ループ化する** 段階である。  
+本フェーズは、Conformance（適合確認）で検出された不適合（Deviation）を分析し、
+**仕様・設計・実装・テストのいずれかを修正して閉ループ化する** 段階である。
 
-目的：  
-- 不適合を放置せず、原因を特定し再試験まで完結させる。  
-- ADR／Spec／Contractを更新し、同一問題の再発を防ぐ。  
+目的：
+- 不適合を放置せず、原因を特定し再試験まで完結させる。
+- ADR／Spec／Contractを更新し、同一問題の再発を防ぐ。
 - “Rolling Conformance” による自己修復型サイクルを完結させる。
 
 ---
@@ -109,8 +109,8 @@ confidentiality: "Public"
 | **Rolling Conformance** | L3 | 常時整合状態を維持する継続的SCD手法。 |
 
 ### D. 参照文書
-- G0205‑STD‑SCD5‑ConformancePhase（適合確認フェーズ）  
-- G0210‑STD‑SCDT‑Templates（共通テンプレート集）  
+- G0205‑STD‑SCD5‑ConformancePhase（適合確認フェーズ）
+- G0210‑STD‑SCDT‑Templates（共通テンプレート集）
 - G0220‑STD‑SCDM‑PhaseActionMap（実務行動マップ）
 
 ---

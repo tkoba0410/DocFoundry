@@ -22,16 +22,16 @@ x-ai:
 
 # [STD-DOC1] Compliance Pack（Checklist + Automation Guide）
 
-目的は、**1ファイルで準拠確認（レビュー時）と自動化実装（CI時）に必要な情報を完結**させることである。  
+目的は、**1ファイルで準拠確認（レビュー時）と自動化実装（CI時）に必要な情報を完結**させることである。
 本書は codex-AI による**自動準拠判定・修正提案の基準文書**として機能する。
 
 ---
 
 ## 1. 適用範囲と判定方式
 
-- 対象：`docs/` 配下のすべての Markdown 文書（`*.md`）  
-- 単位：**1ファイル単位**  
-- 判定：**✅ 準拠 / ⚠ 要修正 / ❌ 未準拠**  
+- 対象：`docs/` 配下のすべての Markdown 文書（`*.md`）
+- 単位：**1ファイル単位**
+- 判定：**✅ 準拠 / ⚠ 要修正 / ❌ 未準拠**
 - 分類：チェック項目は **A/B/C** の3区分で扱う（§3 参照）
 
 ---
@@ -66,22 +66,22 @@ x-ai:
 ## 3. 自動化区分（A/B/C）
 
 ### 3.1 区分定義
-- **A: Deterministic / Schema-Lint Layer**  
-  正規表現・JSON Schema・CIルールで完全自動判定可能。  
-  codex-AIは `severity` に基づき自動修正またはPRリジェクトを行う。  
+- **A: Deterministic / Schema-Lint Layer**
+  正規表現・JSON Schema・CIルールで完全自動判定可能。
+  codex-AIは `severity` に基づき自動修正またはPRリジェクトを行う。
 
-- **B: Semantic / LLM Layer**  
-  意味解釈を要する。codex-AIは確率スコアを算出し、`x-ai.threshold_B` 以上を合格とする。  
+- **B: Semantic / LLM Layer**
+  意味解釈を要する。codex-AIは確率スコアを算出し、`x-ai.threshold_B` 以上を合格とする。
 
-- **C: Human / Review Layer**  
-  組織文脈を含む判断を人間が実施。codex-AIは補助コメントを提示する。  
+- **C: Human / Review Layer**
+  組織文脈を含む判断を人間が実施。codex-AIは補助コメントを提示する。
 
 ---
 
 ## 4. CI 実装ガイド
 
 ### 4.1 JSON Schema（A区分）
-- 位置：`/schemas/dcmm.schema.json`  
+- 位置：`/schemas/dcmm.schema.json`
 - 主な定義項目：
   - `version`: `^v\d+\.\d+\.\d+$`
   - `date`: `^\d{4}-\d{2}-\d{2}$`
@@ -104,33 +104,33 @@ filename_without_ext == front_matter.doc_id + "-" + TitleCamelCase
 ```
 
 ### 4.3 LLM 自動判定（B区分：項目13）
-1. 本文から見出しと主要要約（最大 1,000 文字）を抽出。  
-2. G0100 §3.2 / §3.5 のカテゴリ定義をプロンプトに付与。  
-3. codex-AIは「一致／不一致／不明」と確率スコアを返す。  
-4. スコア ≥ `x-ai.threshold_B`（既定：0.8）を合格とする。  
+1. 本文から見出しと主要要約（最大 1,000 文字）を抽出。
+2. G0100 §3.2 / §3.5 のカテゴリ定義をプロンプトに付与。
+3. codex-AIは「一致／不一致／不明」と確率スコアを返す。
+4. スコア ≥ `x-ai.threshold_B`（既定：0.8）を合格とする。
 
 ---
 
 ## 5. 人間レビュー指針（C区分）
 
 ### 5.1 PII 非記載（項目10）
-- 対象：署名、個人連絡先、アカウントID、SNSハンドル等。  
-- 原則：疑わしい場合は役職・チーム名へ**全置換**。  
+- 対象：署名、個人連絡先、アカウントID、SNSハンドル等。
+- 原則：疑わしい場合は役職・チーム名へ**全置換**。
 
 ### 5.2 owner / reviewers 表記（項目11）
-- 許容例：`"Project Maintainer"`, `"Documentation Review Team"`  
-- 非許容例：実名・社員番号・SNSハンドル等。  
+- 許容例：`"Project Maintainer"`, `"Documentation Review Team"`
+- 非許容例：実名・社員番号・SNSハンドル等。
 
 ---
 
 ## 6. 運用（レビューフロー）
 
-1. **Schema 検証（A）** → 失敗時は即終了。  
-2. **正規表現検証（A）** → 一致しない場合はPR差戻し。  
-3. **LLM 判定（B）** → スコア判定し合格／要再確認を出力。  
-4. **リンタ（A）** → Markdown整形。  
-5. **人間レビュー（C）** → 承認または修正要求。  
-6. **レポート生成** → 出力形式は `x-ai.report_format`（既定: jsonl）。  
+1. **Schema 検証（A）** → 失敗時は即終了。
+2. **正規表現検証（A）** → 一致しない場合はPR差戻し。
+3. **LLM 判定（B）** → スコア判定し合格／要再確認を出力。
+4. **リンタ（A）** → Markdown整形。
+5. **人間レビュー（C）** → 承認または修正要求。
+6. **レポート生成** → 出力形式は `x-ai.report_format`（既定: jsonl）。
 
 ---
 
@@ -147,7 +147,7 @@ auto_fix:
   restrict_pii: true
 ```
 
-codex-AIはこの設定を読み込み、A区分ルールを即時自動修正対象とし、  
+codex-AIはこの設定を読み込み、A区分ルールを即時自動修正対象とし、
 B区分をスコア判定、C区分をコメント提案に留める。
 
 ---

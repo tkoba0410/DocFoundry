@@ -24,14 +24,14 @@ confidentiality: "Public"
 
 ## 1. フェーズ概要（Purpose & Scope）
 
-本フェーズの目的は、テスト（Example／Spec）で定義された要件を、  
-**Test‑Driven Development（TDD）** に基づいて実装へと具現化することである。  
+本フェーズの目的は、テスト（Example／Spec）で定義された要件を、
+**Test‑Driven Development（TDD）** に基づいて実装へと具現化することである。
 
-すべての実装はテストを起点に行われ、品質を落とさず継続的開発を可能にする。  
+すべての実装はテストを起点に行われ、品質を落とさず継続的開発を可能にする。
 
-目的：  
-- 仕様・テストと完全に整合した実装を行う。  
-- Red→Green→Refactor サイクルを徹底する。  
+目的：
+- 仕様・テストと完全に整合した実装を行う。
+- Red→Green→Refactor サイクルを徹底する。
 - CI／ADR／T2ログで実装履歴を追跡可能にする。
 
 ---
@@ -113,15 +113,15 @@ def add(a, b):
 | **CI/CD** | L3 | 継続的統合・継続的デプロイメントの自動化概念。 |
 
 ### C. Pull Request運用ルール
-- 1PR＝1目的（例：ReqID追加、ADR修正、Deviation対応）  
-- CI成功（100% Pass）以外のPRはマージ禁止（MUST NOT）  
-- PRタイトル命名例：  
-  - `feat(req): add API-R003 retry policy`  
-  - `fix(test): update timeout scenario for API-R002`  
+- 1PR＝1目的（例：ReqID追加、ADR修正、Deviation対応）
+- CI成功（100% Pass）以外のPRはマージ禁止（MUST NOT）
+- PRタイトル命名例：
+  - `feat(req): add API-R003 retry policy`
+  - `fix(test): update timeout scenario for API-R002`
 
 ### D. 参照文書
-- G0203‑STD‑SCD3‑TestPhase（テスト策定フェーズ）  
-- G0210‑STD‑SCDT‑Templates（共通テンプレート集）  
+- G0203‑STD‑SCD3‑TestPhase（テスト策定フェーズ）
+- G0210‑STD‑SCDT‑Templates（共通テンプレート集）
 - G0220‑STD‑SCDM‑PhaseActionMap（実務行動マップ）
 
 ---

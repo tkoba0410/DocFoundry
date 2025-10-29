@@ -1,16 +1,16 @@
 # 🧭 リポジトリ概要 — *DocFoundry Integrated Repository*
 
-**構成対象:** `standards/` + `project-template/`  
+**構成対象:** `standards/` + `project-template/`
 **改訂目的:** メタ標準（G0000-STD-ADPT）および SCDモデル（Spec–Conformance Development）準拠の体系に統一。
 
 ---
 
 ## 📘 1. 概要 / *Overview*
 
-このリポジトリは、  
-**開発標準文書群（standards）** と **プロジェクト雛型（project-template）** を統合した「導入一体型構成」です。  
+このリポジトリは、
+**開発標準文書群（standards）** と **プロジェクト雛型（project-template）** を統合した「導入一体型構成」です。
 
-小規模導入や初期段階での標準運用を想定しており、  
+小規模導入や初期段階での標準運用を想定しており、
 **2件目以降のプロジェクト開始時に standards を独立リポジトリ化** することを前提としています。
 
 ---
@@ -65,27 +65,27 @@ repo-root/
 
 ## 🚀 5. 利用手順（新規プロジェクト開始時）
 
-1️⃣ `1-project-template/` をコピーし、新規PJディレクトリを作成  
+1️⃣ `1-project-template/` をコピーし、新規PJディレクトリを作成
 　例：`cp -r 1-project-template project-alpha`
 
-2️⃣ `config/project-config.yml` を編集し、プロジェクト識別子・契約方式を定義。  
-3️⃣ 必要に応じて `project-coding-overrides.yml` に差異を定義。  
-4️⃣ `/docs/` 以下の雛型を用いて OVR, REQ, ARC, IMP, TST, OPS, SEC 文書を作成。  
-5️⃣ `/ci/workflows/` の CI を実行し、Core／Lang／Conformance 検証を実施。  
-6️⃣ `/compliance/` に ReqID / Matrix / ADR / Deviation を記録。  
+2️⃣ `config/project-config.yml` を編集し、プロジェクト識別子・契約方式を定義。
+3️⃣ 必要に応じて `project-coding-overrides.yml` に差異を定義。
+4️⃣ `/docs/` 以下の雛型を用いて OVR, REQ, ARC, IMP, TST, OPS, SEC 文書を作成。
+5️⃣ `/ci/workflows/` の CI を実行し、Core／Lang／Conformance 検証を実施。
+6️⃣ `/compliance/` に ReqID / Matrix / ADR / Deviation を記録。
 
 ---
 
 ## 🔗 6. 標準との関係
 
 - **参照優先順位**
-  1. G0300（Coding Standard – Core）  
-  2. G0301（Language Module – C# 等）  
+  1. G0300（Coding Standard – Core）
+  2. G0301（Language Module – C# 等）
   3. project-coding-overrides.yml（差異定義）
 
 - **不整合時の扱い**
-  - Core／Lang に反する差異は ADR（T3）で承認必須。  
-  - 差異は有効期限を設定し、FeedbackPhase（G0206）で再評価。  
+  - Core／Lang に反する差異は ADR（T3）で承認必須。
+  - 差異は有効期限を設定し、FeedbackPhase（G0206）で再評価。
 
 ---
 
@@ -138,5 +138,5 @@ flowchart TB
 ---
 
 ### 💡 今後の推奨補足
-- CODEOWNERS と release tagging 規約を補足文書として追加（例：`G0103-STD-OPS-CODEOWNERS.md`）  
+- CODEOWNERS と release tagging 規約を補足文書として追加（例：`G0103-STD-OPS-CODEOWNERS.md`）
 - standards リポジトリ分離後は、本README を `org-docfoundry-template/` 側に移設予定。

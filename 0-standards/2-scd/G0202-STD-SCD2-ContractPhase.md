@@ -24,12 +24,12 @@ confidentiality: "Public"
 
 ## 1. フェーズ概要（Purpose & Scope）
 
-本フェーズは、仕様（Spec）で定義された要求を技術的契約（Contract）として固定する段階である。  
-Contract-First 原則に基づき、**全チームが共有する唯一の真実源（Single Source of Truth）** を確立することを目的とする。  
+本フェーズは、仕様（Spec）で定義された要求を技術的契約（Contract）として固定する段階である。
+Contract-First 原則に基づき、**全チームが共有する唯一の真実源（Single Source of Truth）** を確立することを目的とする。
 
-目的：  
-- API／DTO／Schema を正式な契約仕様として定義する。  
-- 各フェーズが同一の契約仕様を参照する基盤を作る。  
+目的：
+- API／DTO／Schema を正式な契約仕様として定義する。
+- 各フェーズが同一の契約仕様を参照する基盤を作る。
 - Breaking 変更を検知・管理し、安定した開発を維持する。
 
 ---
@@ -97,13 +97,13 @@ Contract-First 原則に基づき、**全チームが共有する唯一の真実
 | **SSoT（Single Source of Truth）** | L3 | 唯一の信頼情報源。契約仕様が基準となる。 |
 
 ### B. 参考ツール例
-- `spectral lint`：OpenAPI／JSON Schemaのルール検証  
-- `buf breaking check`：gRPC／Protobufの互換性検証  
-- `ADR-Tools`：ADR作成・履歴管理自動化ツール  
+- `spectral lint`：OpenAPI／JSON Schemaのルール検証
+- `buf breaking check`：gRPC／Protobufの互換性検証
+- `ADR-Tools`：ADR作成・履歴管理自動化ツール
 
 ### C. 参照文書
-- G0200‑STD‑SCD0‑CycleOverview（開発サイクル概要）  
-- G0210‑STD‑SCDT‑Templates（共通テンプレート集）  
+- G0200‑STD‑SCD0‑CycleOverview（開発サイクル概要）
+- G0210‑STD‑SCDT‑Templates（共通テンプレート集）
 - G0220‑STD‑SCDM‑PhaseActionMap（実務行動マップ）
 
 ---

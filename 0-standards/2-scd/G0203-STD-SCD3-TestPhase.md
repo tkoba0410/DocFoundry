@@ -24,14 +24,14 @@ confidentiality: "Public"
 
 ## 1. フェーズ概要（Purpose & Scope）
 
-本フェーズの目的は、仕様（Spec）および契約（Contract）をもとに、  
-**動かして確認できる仕様（Executable Specification）** を定義することである。  
+本フェーズの目的は、仕様（Spec）および契約（Contract）をもとに、
+**動かして確認できる仕様（Executable Specification）** を定義することである。
 
-Example（例示仕様）を作成し、CIで自動的に検証される状態を確立する。  
+Example（例示仕様）を作成し、CIで自動的に検証される状態を確立する。
 
-目的：  
-- 仕様の曖昧さをなくし、全員が同じ動作を想定できるようにする。  
-- ReqIDに基づき、Exampleとして動作を確認可能にする。  
+目的：
+- 仕様の曖昧さをなくし、全員が同じ動作を想定できるようにする。
+- ReqIDに基づき、Exampleとして動作を確認可能にする。
 - 自動テスト結果（T2ログ）と設計判断（T3）を連携する。
 
 ---
@@ -109,8 +109,8 @@ Feature: Login authentication
 | **CI** | L3 | Continuous Integration：自動テスト実行プロセス。 |
 
 ### C. 参照文書
-- G0200‑STD‑SCD0‑CycleOverview（開発サイクル概要）  
-- G0210‑STD‑SCDT‑Templates（共通テンプレート集）  
+- G0200‑STD‑SCD0‑CycleOverview（開発サイクル概要）
+- G0210‑STD‑SCDT‑Templates（共通テンプレート集）
 - G0220‑STD‑SCDM‑PhaseActionMap（実務行動マップ）
 
 ---

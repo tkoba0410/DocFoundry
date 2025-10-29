@@ -24,14 +24,14 @@ confidentiality: "Public"
 
 ## 1. 目的と位置づけ / *Purpose and Scope*
 
-本書は、開発活動を「継続的に整合し続ける循環体系」として捉える。  
-その中心概念を **Spec–Conformance Development Cycle（SCD）** と定義し、  
-仕様（Spec）・契約（Contract）・テスト（Test）・実装（Implementation）・適合確認（Conformance）・フィードバック（Feedback）の各工程が  
+本書は、開発活動を「継続的に整合し続ける循環体系」として捉える。
+その中心概念を **Spec–Conformance Development Cycle（SCD）** と定義し、
+仕様（Spec）・契約（Contract）・テスト（Test）・実装（Implementation）・適合確認（Conformance）・フィードバック（Feedback）の各工程が
 常に整合を保ちながら連続して進む枠組みを示す。
 
-**目的：**  
-- 開発を止めず、常に整合状態を維持する（Continuous Conformance）。  
-- 要求・設計・検証・改善をひとつの循環構造で統合する。  
+**目的：**
+- 開発を止めず、常に整合状態を維持する（Continuous Conformance）。
+- 要求・設計・検証・改善をひとつの循環構造で統合する。
 - 教育・運用・品質保証に再利用可能な共通フレームを提供する。
 
 ---
@@ -69,8 +69,8 @@ confidentiality: "Public"
  └───────────────┘
 ```
 
-> 各フェーズはトレーサビリティにより結合し、  
-> 仕様変更や実装差分を循環の中で即座に吸収する。  
+> 各フェーズはトレーサビリティにより結合し、
+> 仕様変更や実装差分を循環の中で即座に吸収する。
 
 ---
 
@@ -88,9 +88,9 @@ flowchart TD
     class A,B,C,D,E,F phase;
 ```
 
-> **定義:**  
-> “Continuous Conformance” とは、開発プロセスのどの段階でも整合性を検証し、  
-> 修正が必要な場合は即座にループへ戻す運用を指す。  
+> **定義:**
+> “Continuous Conformance” とは、開発プロセスのどの段階でも整合性を検証し、
+> 修正が必要な場合は即座にループへ戻す運用を指す。
 > これは従来の「静的品質管理」から「動的整合管理」への転換を意味する。
 
 ---
@@ -106,8 +106,8 @@ flowchart TD
 | **SCD5 – Conformance** | 実装と仕様の整合を検証 | 自動テスト／統計評価 | Traceability Matrix、検証レポート |
 | **SCD6 – Feedback** | 結果を仕様・設計へ反映 | Closed-Loop改善 | 改訂仕様、Decision Record |
 
-> **備考:**  
-> 各工程は独立ではなく、SCDサイクル内で相互に整合を確認し続ける。  
+> **備考:**
+> 各工程は独立ではなく、SCDサイクル内で相互に整合を確認し続ける。
 
 ---
 
@@ -131,10 +131,10 @@ flowchart TD
 | 実装 ⇄ 検証 | 適合結果をコード変更へ反映。 |
 | 検証 ⇄ 仕様 | 改訂が再び仕様書に戻り、循環を完結させる。 |
 
-**成果物例:**  
-- Traceability Matrix（要求⇄テスト⇄実装）  
-- Architecture Decision Record (ADR)  
-- Deviation Log（不適合記録）  
+**成果物例:**
+- Traceability Matrix（要求⇄テスト⇄実装）
+- Architecture Decision Record (ADR)
+- Deviation Log（不適合記録）
 
 ---
 
@@ -149,8 +149,8 @@ flowchart TD
 | **SCD5 – Conformance** | QA／CI管理者 | 品質担当 | 自動検証ログ整形 | 人間 |
 | **SCD6 – Feedback** | QA／設計者 | プロジェクト責任者 | 改訂提案、要約 | 人間 |
 
-> **原則:**  
-> AI assistance **MAY** be used for validation or generation tasks,  
+> **原則:**
+> AI assistance **MAY** be used for validation or generation tasks,
 > but final approval and accountability **MUST** remain with human reviewers.
 
 ---
@@ -163,8 +163,8 @@ flowchart TD
 | **L2 – Practitioner** | 開発者・設計者 | 各フェーズの実務運用を実践 | 各フェーズガイド |
 | **L3 – Auditor** | 品質保証・PM・教育担当 | プロセス監査と教育支援 | トレーサビリティ資料、チェックリスト |
 
-> **備考:**  
-> 本サイクルは教育体系としても利用可能であり、  
+> **備考:**
+> 本サイクルは教育体系としても利用可能であり、
 > L1→L2→L3の段階的学習を通じてプロセス全体を体得できる。
 
 ---
@@ -181,8 +181,8 @@ flowchart TD
     F --> A
 ```
 
-> **概要:**  
-> CI/CD などの自動化基盤と連携することで、  
+> **概要:**
+> CI/CD などの自動化基盤と連携することで、
 > フィードバックループを止めずに品質を維持する“循環心臓部”として機能する。
 
 ---
@@ -202,13 +202,13 @@ flowchart TD
 
 ## 11. 要約 / *Summary*
 
-Spec–Conformance Development Cycle（SCD）は、  
-**「計画 → 実装 → 検証 → 改善 → 再整合」** の全過程を一体化した自己整合型開発モデルである。  
+Spec–Conformance Development Cycle（SCD）は、
+**「計画 → 実装 → 検証 → 改善 → 再整合」** の全過程を一体化した自己整合型開発モデルである。
 
-本モデルは、  
-- あらゆる開発ドメインに適用できる汎用的プロセス、  
-- 自動化と人間判断の責任分担を両立する設計、  
-- 教育・品質・継続改善を同一循環で扱う構造、  
+本モデルは、
+- あらゆる開発ドメインに適用できる汎用的プロセス、
+- 自動化と人間判断の責任分担を両立する設計、
+- 教育・品質・継続改善を同一循環で扱う構造、
 を特徴とする。
 
 > 📘 **本書は、特定プロジェクトに依存しない汎用的なSCD標準フレームとして参照可能である。**
