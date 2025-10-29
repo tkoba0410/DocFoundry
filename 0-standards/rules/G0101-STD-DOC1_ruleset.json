@@ -6,7 +6,7 @@
     "base_policy_version": "2.3.5",
     "compliance_pack_doc_id": "G0101-STD-DOC1",
     "compliance_pack_version": "1.1.0",
-    "schema_ref": "/schemas/dcmm.schema.json",
+    "schema_ref": "/schemas/dcmm.doc.schema.json",
     "report": {
       "format": "jsonl",
       "severity_order": [

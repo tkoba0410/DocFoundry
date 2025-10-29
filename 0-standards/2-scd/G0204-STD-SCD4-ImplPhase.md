@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0204-STD-SCD4"
 title: "実装フェーズガイド（v3.0統一構成）"
-version: "v3.0.0"
+version: "v1.0.0"
 date: "2025-10-15"
 status: "Approved"
 lifecycle: "Canonical"
@@ -12,17 +12,28 @@ reviewers:
   - "Implementation-Engineering-Guild"
   - "Quality-Assurance-Guild"
 confidentiality: "Public"
+inherit_from: ["G0100-STD-DOC0"]
+x-schema: "/schemas/dcmm.scd.schema.json"
 ---
 
 # [SCD-IMPL] 実装フェーズガイド（v3.0統一構成）
 
-**Version:** v3.0.0
+**Version:** v1.0.0
 **Date:** 2025-10-15
 **Status:** Approved
 
 ---
 
-## 1. フェーズ概要（Purpose & Scope）
+## 1. 表紙情報
+- 文書番号: `G0204-STD-SCD4`
+- バージョン: **v1.0.0**
+- 日付: 2025-10-15
+- 状態: Approved
+
+---
+
+
+## 2. フェーズ概要（Purpose & Scope）
 
 本フェーズの目的は、テスト（Example／Spec）で定義された要件を、
 **Test‑Driven Development（TDD）** に基づいて実装へと具現化することである。
@@ -36,7 +47,7 @@ confidentiality: "Public"
 
 ---
 
-## 2. フェーズ原則（Principles）
+## 3. フェーズ原則（Principles）
 
 | No | 原則名 | 内容 |
 |:--|:--|:--|
@@ -48,7 +59,7 @@ confidentiality: "Public"
 
 ---
 
-## 3. 実務ガイド（Practical Flow）
+## 4. 実務ガイド（Practical Flow）
 
 | ステップ | 内容 | 担当 | AI支援（MAY） | 成果物 |
 |:--|:--|:--|:--|:--|
@@ -60,7 +71,7 @@ confidentiality: "Public"
 
 ---
 
-## 4. 成果物（Deliverables）
+## 5. 成果物（Deliverables）
 
 | 成果物 | 形式 | 内容 | 備考 |
 |:--|:--|:--|:--|
@@ -72,7 +83,7 @@ confidentiality: "Public"
 
 ---
 
-## 5. チェックリスト（Checklist）
+## 6. チェックリスト（Checklist）
 
 | No | 確認項目 | 判定 | 意義 |
 |:--|:--|:--|:--|
@@ -88,7 +99,7 @@ confidentiality: "Public"
 
 ---
 
-## 6. 付録（Appendix）
+## 7. 付録（Appendix）
 
 ### A. 簡易TDD例
 ```python
@@ -130,6 +141,7 @@ def add(a, b):
 
 | Version | Date | Description |
 |:--|:--|:--|
+| v1.0.0 | 2025-10-15 | DocFoundry 初版FIXとして再ベースライン。 |
 | v3.0.0 | 2025-10-15 | DCMMメタデータ更新と実装フェーズ標準の整合。 |
 
 ---

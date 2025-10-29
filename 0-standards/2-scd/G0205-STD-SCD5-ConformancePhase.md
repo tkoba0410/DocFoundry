@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0205-STD-SCD5"
 title: "適合確認フェーズガイド（v3.0統一構成）"
-version: "v3.0.0"
+version: "v1.0.0"
 date: "2025-10-15"
 status: "Approved"
 lifecycle: "Canonical"
@@ -12,17 +12,28 @@ reviewers:
   - "Conformance-Engineering-Guild"
   - "Quality-Assurance-Guild"
 confidentiality: "Public"
+inherit_from: ["G0100-STD-DOC0"]
+x-schema: "/schemas/dcmm.scd.schema.json"
 ---
 
 # [SCD-CONF] 適合確認フェーズガイド（v3.0統一構成）
 
-**Version:** v3.0.0
+**Version:** v1.0.0
 **Date:** 2025-10-15
 **Status:** Approved
 
 ---
 
-## 1. フェーズ概要（Purpose & Scope）
+## 1. 表紙情報
+- 文書番号: `G0205-STD-SCD5`
+- バージョン: **v1.0.0**
+- 日付: 2025-10-15
+- 状態: Approved
+
+---
+
+
+## 2. フェーズ概要（Purpose & Scope）
 
 本フェーズは、実装（Impl）と仕様（Spec／Contract／Test）が完全に整合しているかを
 **Conformance Testing（適合試験）** により自動的に検証する段階である。
@@ -34,7 +45,7 @@ confidentiality: "Public"
 
 ---
 
-## 2. フェーズ原則（Principles）
+## 3. フェーズ原則（Principles）
 
 | No | 原則名 | 内容 |
 |:--|:--|:--|
@@ -46,7 +57,7 @@ confidentiality: "Public"
 
 ---
 
-## 3. 実務ガイド（Practical Flow）
+## 4. 実務ガイド（Practical Flow）
 
 | ステップ | 内容 | 担当 | AI支援（MAY） | 成果物 |
 |:--|:--|:--|:--|:--|
@@ -58,7 +69,7 @@ confidentiality: "Public"
 
 ---
 
-## 4. 成果物（Deliverables）
+## 5. 成果物（Deliverables）
 
 | 成果物 | 形式 | 内容 | 備考 |
 |:--|:--|:--|:--|
@@ -70,7 +81,7 @@ confidentiality: "Public"
 
 ---
 
-## 5. チェックリスト（Checklist）
+## 6. チェックリスト（Checklist）
 
 | No | 確認項目 | 判定 | 意義 |
 |:--|:--|:--|:--|
@@ -86,7 +97,7 @@ confidentiality: "Public"
 
 ---
 
-## 6. 付録（Appendix）
+## 7. 付録（Appendix）
 
 ### A. Conformance出力例（T2抜粋）
 | ReqID | Result | ImplRef | RunID | 備考 |
@@ -119,6 +130,7 @@ confidentiality: "Public"
 
 | Version | Date | Description |
 |:--|:--|:--|
+| v1.0.0 | 2025-10-15 | DocFoundry 初版FIXとして再ベースライン。 |
 | v3.0.0 | 2025-10-15 | DCMM準拠メタデータ追加と適合フェーズ指針更新。 |
 
 ---

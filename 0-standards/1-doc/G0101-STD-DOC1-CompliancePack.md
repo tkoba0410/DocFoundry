@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0101-STD-DOC1"
 title: "Compliance Pack (Checklist + Automation) for G0100-STD-DOC0"
-version: "v1.1.0"
+version: "v1.0.0"
 date: "2025-10-30"
 status: "Approved"
 owner: "Documentation Review Team"
@@ -13,11 +13,12 @@ lifecycle: "Canonical"
 description: "Executable compliance and automation package extending the G0100 Document Policy with CI/AI validation features."
 inherit_from: "G0100-STD-DOC0"
 related_docs: ["G0100-STD-DOC0"]
+x-schema: "/schemas/dcmm.doc.schema.json"
 x-ai:
   threshold_B: 0.8
   report_format: "jsonl"
   rule_prefix: "DOCCHK-"
-  x-schema: "/schemas/dcmm.schema.json"
+x-schema: "/schemas/dcmm.doc.schema.json"
 ---
 
 # [STD-DOC1] Compliance Pack（Checklist + Automation Guide）
@@ -27,7 +28,15 @@ x-ai:
 
 ---
 
-## 1. 適用範囲と判定方式
+## 1. 表紙情報
+- 文書番号: `G0101-STD-DOC1`
+- バージョン: **v1.0.0**
+- 日付: 2025-10-30
+- 状態: Approved
+
+---
+
+## 2. 適用範囲と判定方式
 
 - 対象：`docs/` 配下のすべての Markdown 文書（`*.md`）
 - 単位：**1ファイル単位**
@@ -36,7 +45,7 @@ x-ai:
 
 ---
 
-## 2. 準拠チェックリスト
+## 3. 準拠チェックリスト
 
 | # | rule_id | 検査項目 | 要件概要 | 区分 | severity | 判定 | 備考 |
 |:-:|:--|:--|:--|:--:|:--:|:--:|:--|
@@ -63,7 +72,7 @@ x-ai:
 
 ---
 
-## 3. 自動化区分（A/B/C）
+## 4. 自動化区分（A/B/C）
 
 ### 3.1 区分定義
 - **A: Deterministic / Schema-Lint Layer**
@@ -78,10 +87,10 @@ x-ai:
 
 ---
 
-## 4. CI 実装ガイド
+## 5. CI 実装ガイド
 
 ### 4.1 JSON Schema（A区分）
-- 位置：`/schemas/dcmm.schema.json`
+- 位置：`/schemas/dcmm.doc.schema.json`
 - 主な定義項目：
   - `version`: `^v\d+\.\d+\.\d+$`
   - `date`: `^\d{4}-\d{2}-\d{2}$`
@@ -111,7 +120,7 @@ filename_without_ext == front_matter.doc_id + "-" + TitleCamelCase
 
 ---
 
-## 5. 人間レビュー指針（C区分）
+## 6. 人間レビュー指針（C区分）
 
 ### 5.1 PII 非記載（項目10）
 - 対象：署名、個人連絡先、アカウントID、SNSハンドル等。
@@ -123,7 +132,7 @@ filename_without_ext == front_matter.doc_id + "-" + TitleCamelCase
 
 ---
 
-## 6. 運用（レビューフロー）
+## 7. 運用（レビューフロー）
 
 1. **Schema 検証（A）** → 失敗時は即終了。
 2. **正規表現検証（A）** → 一致しない場合はPR差戻し。
@@ -134,7 +143,7 @@ filename_without_ext == front_matter.doc_id + "-" + TitleCamelCase
 
 ---
 
-## 7. codex-AI 実装設定例
+## 8. codex-AI 実装設定例
 
 ```yaml
 # codex-ai-config.yaml
@@ -152,9 +161,8 @@ B区分をスコア判定、C区分をコメント提案に留める。
 
 ---
 
-## 8. 改訂履歴
+## 9. 改訂履歴
 
 | 版 | 日付 | 内容 |
 |----|------|------|
-| v1.0.0 | "2025-10-23" | 初版。G0110（Checklist）と G0111（Automation Guide）を統合。 |
-| v1.1.0 | "2025-10-30" | rule_id・severity追加、Front Matter拡張、codex-AI実行指針を新設。 |
+| v1.0.0 | "2025-10-30" | DocFoundry 初版FIXとしてChecklistとAutomation Guideを統合。 |

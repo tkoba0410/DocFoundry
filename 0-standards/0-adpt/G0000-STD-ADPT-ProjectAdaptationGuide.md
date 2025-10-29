@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0000-STD-ADPT"
 title: "Project Adaptation Guide"
-version: "v3.0.0"
+version: "v1.0.0"
 date: "2025-10-31"
 status: "Approved"
 owner: "Documentation Review Team"
@@ -11,8 +11,9 @@ confidentiality: "Public"
 scope: "Generic"
 lifecycle: "Canonical"
 description: "Integrates all adaptation and implementation policies for standards layers (G01–G03) and provides unified project adaptation procedures derived from G0102-STD-DOC2."
-inherit_from: "G0101-STD-DOC1"
+inherit_from: ["G0100-STD-DOC0"]
 related_docs: ["G0100-STD-DOC0","G0101-STD-DOC1","G0102-STD-DOC2","G0200-STD-SCD0","G0300-STD-COD0","G0301-STD-COD1"]
+x-schema: "/schemas/dcmm.doc.schema.json"
 ---
 
 # [STD-ADPT] Project Adaptation Guide
@@ -20,18 +21,26 @@ related_docs: ["G0100-STD-DOC0","G0101-STD-DOC1","G0102-STD-DOC2","G0200-STD-SCD
 
 ---
 
-## 1. 目的と位置づけ
+## 1. 表紙情報
+- 文書番号: `G0000-STD-ADPT`
+- バージョン: **v1.0.0**
+- 日付: 2025-10-31
+- 状態: Approved
+
+---
+
+## 2. 目的と位置づけ
 
 本書は、文書標準体系（G0100 Document Policy）および準拠検証基盤（G0101 Compliance Pack）を、
 すべての Generic 標準層（G02xx〜G03xx）および各プロジェクト文書（P系）へ適用するための
 包括的なガイドラインを定義する。
 
-本書の改訂 (v3.0.0) では、旧 G0102-STD-DOC2（Project Adaptation Guide）の内容を吸収・統合し、
+本書の改訂 (v1.0.0) では、旧 G0102-STD-DOC2（Project Adaptation Guide）の内容を吸収・統合し、
 「プロジェクト適用手順」「設定例」「CI適用ガイド」を包含した。
 
 ---
 
-## 2. 適用範囲
+## 3. 適用範囲
 
 | 層 | 対象 | 説明 |
 |----|------|------|
@@ -45,7 +54,7 @@ G0100 と G0101 の標準を継承しなければならない。
 
 ---
 
-## 3. 階層構造と適用関係
+## 4. 階層構造と適用関係
 
 ```mermaid
 graph TD
@@ -57,7 +66,7 @@ graph TD
 
 ---
 
-## 4. プロジェクト適用要領（G0102統合）
+## 5. プロジェクト適用要領（G0102統合）
 
 ### 4.1 適用対象
 
@@ -77,7 +86,7 @@ graph TD
 | 項目 | 説明 | 設定例（ExampleProject） |
 |------|------|----------------------|
 | 文書格納ルート | PJ標準文書の配置パス | `/projects/example/docs/` |
-| 共通スキーマ参照 | DCMMスキーマ定義のパス | `/schemas/dcmm.schema.json` |
+| 共通スキーマ参照 | DCMMスキーマ定義のパス | `/schemas/dcmm.doc.schema.json` |
 | 検証ルール | 準拠ルールセットJSON | `/rules/G0101-STD-DOC1_ruleset.json` |
 | 自動修正スコープ | A区分ルール | `["A"]` |
 | 機密区分 | 内部限定（Confidential）または内部公開（Internal） | `"Internal"` |
@@ -108,13 +117,15 @@ graph TD
   rules/
     G0101-STD-DOC1_ruleset.json
   schemas/
-    dcmm.schema.json
+    dcmm.doc.schema.json
+    dcmm.scd.schema.json
+    dcmm.cod.schema.json
   codex-ai-config.yaml
 ```
 
 ---
 
-## 5. 運用ルールと設定例（CI / codex-AI適用）
+## 6. 運用ルールと設定例（CI / codex-AI適用）
 
 ### 5.1 設定ファイル例（汎用化）
 
@@ -131,7 +142,7 @@ auto_fix:
   restrict_pii: true
 
 validation:
-  schema_ref: "/schemas/dcmm.schema.json"
+  schema_ref: "/schemas/dcmm.doc.schema.json"
   version_check: true
 
 report:
@@ -162,7 +173,7 @@ jobs:
 
 ---
 
-## 6. バージョン互換ポリシー
+## 7. バージョン互換ポリシー
 
 - 各層の文書 (G01〜G03, P系) は、本書で定義する「適用範囲と責務」を満たす限り、
   Minor / Patch バージョンを独立して更新してよい。
@@ -170,7 +181,7 @@ jobs:
 
 ---
 
-## 7. 運用上の注意
+## 8. 運用上の注意
 
 - G0102 由来の設定項目・手順は、すべて汎用化済み。
 - 個別プロジェクト固有設定は、本書 §4.2 の表をベースに独自 YAML として保持。
@@ -178,9 +189,10 @@ jobs:
 
 ---
 
-## 8. 改訂履歴
+## 9. 改訂履歴
 
 | 版 | 日付 | 内容 |
 |----|------|------|
+| v1.0.0 | 2025-10-31 | DocFoundry 初版FIXとして標準文書群を統一。 |
 | v2.0.0 | 2025-10-23 | standards層統合版として再構築。 |
 | v3.0.0 | 2025-10-31 | 旧 G0102-STD-DOC2 の内容を統合。Project適用要領と設定例を追加。 |

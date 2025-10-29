@@ -2,7 +2,7 @@
 schema: "https://schema.org/CreativeWork"
 doc_id: "G0202-STD-SCD2"
 title: "契約確立フェーズガイド（v3.0統一構成）"
-version: "v3.0.0"
+version: "v1.0.0"
 date: "2025-10-15"
 status: "Approved"
 lifecycle: "Canonical"
@@ -12,17 +12,28 @@ reviewers:
   - "Contract-Design-Council"
   - "Quality-Assurance-Guild"
 confidentiality: "Public"
+inherit_from: ["G0100-STD-DOC0"]
+x-schema: "/schemas/dcmm.scd.schema.json"
 ---
 
 # [SCD-CONTRACT] 契約確立フェーズガイド（v3.0統一構成）
 
-**Version:** v3.0.0
+**Version:** v1.0.0
 **Date:** 2025-10-15
 **Status:** Approved
 
 ---
 
-## 1. フェーズ概要（Purpose & Scope）
+## 1. 表紙情報
+- 文書番号: `G0202-STD-SCD2`
+- バージョン: **v1.0.0**
+- 日付: 2025-10-15
+- 状態: Approved
+
+---
+
+
+## 2. フェーズ概要（Purpose & Scope）
 
 本フェーズは、仕様（Spec）で定義された要求を技術的契約（Contract）として固定する段階である。
 Contract-First 原則に基づき、**全チームが共有する唯一の真実源（Single Source of Truth）** を確立することを目的とする。
@@ -34,7 +45,7 @@ Contract-First 原則に基づき、**全チームが共有する唯一の真実
 
 ---
 
-## 2. フェーズ原則（Principles）
+## 3. フェーズ原則（Principles）
 
 | No | 原則名 | 内容 |
 |:--|:--|:--|
@@ -46,7 +57,7 @@ Contract-First 原則に基づき、**全チームが共有する唯一の真実
 
 ---
 
-## 3. 実務ガイド（Practical Flow）
+## 4. 実務ガイド（Practical Flow）
 
 | ステップ | 内容 | 担当 | AI支援（MAY） | 成果物 |
 |:--|:--|:--|:--|:--|
@@ -57,7 +68,7 @@ Contract-First 原則に基づき、**全チームが共有する唯一の真実
 
 ---
 
-## 4. 成果物（Deliverables）
+## 5. 成果物（Deliverables）
 
 | 成果物 | 形式 | 内容 | 備考 |
 |:--|:--|:--|:--|
@@ -69,7 +80,7 @@ Contract-First 原則に基づき、**全チームが共有する唯一の真実
 
 ---
 
-## 5. チェックリスト（Checklist）
+## 6. チェックリスト（Checklist）
 
 | No | 確認項目 | 判定 | 意義 |
 |:--|:--|:--|:--|
@@ -85,7 +96,7 @@ Contract-First 原則に基づき、**全チームが共有する唯一の真実
 
 ---
 
-## 6. 付録（Appendix）
+## 7. 付録（Appendix）
 
 ### A. 用語定義（Glossary, L1〜L3対応）
 | 用語 | レベル | 定義 |
@@ -112,6 +123,7 @@ Contract-First 原則に基づき、**全チームが共有する唯一の真実
 
 | Version | Date | Description |
 |:--|:--|:--|
+| v1.0.0 | 2025-10-15 | DocFoundry 初版FIXとして再ベースライン。 |
 | v3.0.0 | 2025-10-15 | DCMM準拠のメタデータ整備と整合性レビューを反映。 |
 
 ---

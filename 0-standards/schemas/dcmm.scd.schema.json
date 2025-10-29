@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.org/schemas/dcmm.schema.json",
-  "title": "Document Configuration Metadata Model (DCMM)",
-  "description": "Schema defining the required structure for all document Front Matter sections as per G0100-STD-DOC0.",
+  "$id": "https://example.org/schemas/dcmm.scd.schema.json",
+  "title": "Document Conformance Metadata Model (SCD)",
+  "description": "Schema defining the required structure for Spec–Conformance Development (SCD) standard documents.",
   "type": "object",
   "required": [
     "schema",
@@ -93,22 +93,14 @@
       "description": "Brief description or abstract of the document."
     },
     "inherit_from": {
-      "description": "Optional doc_id of a parent or base document.",
-      "oneOf": [
-        {
-          "type": "string",
-          "pattern": "^[GP]\\d{4}-[A-Z]{3}-[A-Z0-9]{4}$"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "pattern": "^[GP]\\d{4}-[A-Z]{3}-[A-Z0-9]{4}$"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        }
-      ]
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[GP]\\d{4}-[A-Z]{3}-[A-Z0-9]{4}$"
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "List of base documents that SCD standards inherit from."
     },
     "related_docs": {
       "type": "array",
@@ -131,23 +123,5 @@
   },
   "propertyNames": {
     "pattern": "^(x-|schema|doc_id|title|version|date|status|owner|reviewers|confidentiality|scope|lifecycle|description|inherit_from|related_docs)$"
-  },
-  "examples": [
-    {
-      "schema": "https://schema.org/CreativeWork",
-      "doc_id": "G0100-STD-DOC0",
-      "title": "Document Policy",
-      "version": "v2.3.5",
-      "date": "2025-10-30",
-      "status": "Approved",
-      "owner": "Project Maintainer",
-      "reviewers": [
-        "Documentation Review Team"
-      ],
-      "confidentiality": "Public",
-      "scope": "Generic",
-      "lifecycle": "Canonical",
-      "description": "Defines universal document management structure."
-    }
-  ]
+  }
 }

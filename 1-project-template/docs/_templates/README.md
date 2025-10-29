@@ -1,15 +1,28 @@
 ---
 schema: DOCF-TEMPLATES
+doc_id: TEMPLATE-GUIDE
 title: Document Templates Guide
-version: 1.0.0
+version: v1.0.0
+date: 2025-10-31
+status: Approved
 ---
 
 # 🧩 Document Templates Guide
 
-## 1. 概要
+---
+
+## 1. 表紙情報
+- 文書番号: `TEMPLATE-GUIDE`
+- バージョン: **v1.0.0**
+- 日付: 2025-10-31
+- 状態: Approved
+
+---
+
+## 2. 概要
 このディレクトリには、OVR/REQ/ARC/IMP/TST/OPS/SEC/STD の各文書種別のテンプレートが格納される。
 
-## 2. 命名規約
+## 3. 命名規約
 `P####-<TYPE>-OVRV-Overview.md`
 
 | TYPE | 用途 |
@@ -23,7 +36,7 @@ version: 1.0.0
 | SEC | セキュリティ |
 | STD | 標準／準拠性証跡 |
 
-## 3. Checklist
+## 4. Checklist
 | No | 確認項目 | 判定 |
 |----|------------|------|
 | 1 | すべてのTYPEにテンプレートが存在 |  |

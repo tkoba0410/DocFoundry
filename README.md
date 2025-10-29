@@ -1,5 +1,9 @@
 # 🧭 リポジトリ概要 — *DocFoundry Integrated Repository*
 
+> 本リポジトリの全標準文書は **G0100-STD-DOC0（Document Policy）** および  
+> **G0101-STD-DOC1（Compliance Pack）** に準拠して作成されています。  
+> これらを基準として文書管理・CI自動検証が行われます。
+
 **構成対象:** `standards/` + `project-template/`
 **改訂目的:** メタ標準（G0000-STD-ADPT）および SCDモデル（Spec–Conformance Development）準拠の体系に統一。
 
