@@ -1,7 +1,0 @@
-# DocFoundry Repository Ownership Rules
-# 標準文書 (0-standards/) は Documentation Team 管理
-# プロジェクト雛形 (1-project-template/) は Project Team 管理
-
-/0-standards/*          @DocumentationTeam
-/1-project-template/*   @ProjectTeam
-/.github/*              @QA
