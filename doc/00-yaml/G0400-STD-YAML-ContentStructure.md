@@ -1,7 +1,8 @@
 ---
 
-schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
-identifier: "G0400-STD-YAMLContentStructure"
+schema: "https://schema.org/CreativeWork"
+@type: "CreativeWork"       # ← G0100/G0110と統一
+identifier: "G0400-STD-YAML-ContentStructure"
 name: "YAML文書内容構造標準（YAML Content Structure Standard）"
 version: "v2.1.0"
 datePublished: "2025-11-06"
@@ -70,12 +71,14 @@ sections:
       text: "ユーザはデータを登録できる。"
       priority: "must"
   constraints:
-    - id: "CST-001"
+    - id: "CsST-001"
       text: "登録データの容量は100MB以内とする。"
 
 creator:
   @type: "Organization"
   name: "Documentation Team"
+status: "Publication Approved"   # ← status位置をFront Matter上部へ移動
+
 ```
 
 ## 5. 用語定義

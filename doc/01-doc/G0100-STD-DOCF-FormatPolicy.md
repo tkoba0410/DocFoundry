@@ -75,7 +75,7 @@ description: "Module design memo."
 ---
 ```
 
-* 追加キーは使用しない（MUST）。
+* 追加キーは使用しない（MUST）。ただし、`status` および `creator` をJSON-LD構造で記述する場合は例外とする（SHOULD）。
 * `datePublished` は初版日を示し、**改訂時は履歴で管理する（SHOULD）**。
 
 #### 3.3.1 Front Matter キー説明表
@@ -161,7 +161,7 @@ description: "Module design memo."
 ## 5. 禁止事項
 
 * 拡張子 `.md` 以外のファイル形式を使用しない。
-* 追加Front Matterキー（例：`_status`、`related_docs`）を記述しない。
+* 非標準キーを追加しない（MUST）。ただし、CreativeWork仕様内の `status` は許容する（SHOULD）。
 * 同一カテゴリ内で4桁番号重複を許可しない。
 * H1タイトルとファイル名の不一致を残さない。
 

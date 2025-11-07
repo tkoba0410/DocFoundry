@@ -3,11 +3,14 @@ schema: "https://schema.org/CreativeWork"
 @type: "CreativeWork"
 identifier: "G0110-STD-DOCO-OperationalPolicy"
 name: "Personal Software Documentation Operational Policy"
-version: "v4.2.0"
+version: "v4.2.1"
 datePublished: "2025-11-12"
-inLanguage: ["ja", "en"]
-creator: "Individual Developer"
-description: "Adds collaborative review and CI automation guidelines to remove residual ambiguity and fully stabilize operational policy."
+status: "Approved"                     # ← G0400と統一
+creator:
+  @type: "Person"                      # ← G0400に合わせJSON-LD形式
+  name: "Individual Developer"
+description: "Defines unified operation, revision, and publication management policy compliant with Format Policy v4.3.0."
+
 ---
 
 # [STD-DOCO] 文書運用・保守規約（Operational Policy v4.2.0）
