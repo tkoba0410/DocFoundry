@@ -2,8 +2,8 @@
 
 schema: "https://schema.org/CreativeWork"
 @type: "CreativeWork"       # ← G0100/G0110と統一
-identifier: "G0400-STD-YAML-ContentStructure"
-name: "YAML文書内容構造標準（YAML Content Structure Standard）"
+identifier: "G0400-STD-YML0-ContentStructure"
+name: "YAML文書内容構造標準（YML0: YAML Content Structure Standard）"
 version: "v2.1.0"
 datePublished: "2025-11-06"
 status: "Publication Approved"

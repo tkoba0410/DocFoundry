@@ -2,8 +2,8 @@
 
 schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
 @type: "CreativeWork"
-identifier: "G0410-STD-YAML-LayerModel"
-name: "YAML構造三層モデル標準（YAML Layer Model Standard）"
+identifier: "G0410-STD-YML1-LayerModel"
+name: "YAML構造三層モデル標準（YML1: YAML Layer Model Standard）"
 version: "v1.0.0"
 datePublished: "2025-11-07"
 status: "Draft"
