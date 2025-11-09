@@ -4,27 +4,21 @@ schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
 @type: "CreativeWork"
 identifier: "G0300-STD-COD0-CodingStandard"
 name: "Coding Standard – Core (Language-Agnostic)"
-version: "v1.2.0"
+version: "v1.2.1"
 datePublished: "2025-11-09"
-status: "Draft (Reorganized Structure)"
+status: "Star5 Alignment Draft"
 creator:
 @type: "Organization"
 name: "Documentation Team"
 inLanguage: ["ja", "en"]
 description: >
-言語非依存のコーディング原則を定義する標準文書。v1.2.0では章構成を再編し、
-原則・適用・適合性・測定・検証の五層構造に整理した。
-related_docs:
+言語非依存のコーディング原則を定義する標準文書。
+本版では G0000-STD-OVRV-OverView（Star5 Edition） に完全整合し、
+L4 層として体系的位置付けを明確化。
+原則・適用・適合性・測定・検証の五層構造に整理し、Profile 概念を OVRV に準拠して再定義した。
+-----------------------------------------------------
 
-* "G0100-STD-DOCF-FormatPolicy"
-* "G0110-STD-DOCO-OperationalPolicy"
-* "G0400-STD-YML0-ContentStructure"
-* "G0410-STD-YML1-LayerModel"
-* "G0420-STD-YML2-SyntaxStyleGuide"
-
----
-
-# [STD-COD0] Coding Standard – Core (Language-Agnostic)
+# [STD-COD0] Coding Standard – Core (Language-Agnostic / Star5 Alignment Draft)
 
 ---
 
@@ -41,7 +35,7 @@ related_docs:
 ## 3. 規範レベル
 
 RFC 2119 に準拠し、**MUST / SHOULD / MAY / MUST NOT / SHOULD NOT** を用いる。
-逸脱は「#15 逸脱管理」に従い、T4-Deviation 形式で管理する。
+逸脱は「#18 逸脱管理」に従い、T4-Deviation 形式で管理する。
 
 ---
 
@@ -121,13 +115,20 @@ ADRはARC文書で管理。
 
 ## 14. プロファイル運用指針
 
-* Core / Strict / Lite の3階層を定義。
+本標準は **DocFoundary 標準群の L4 層** として位置付けられる（OVRV準拠）。
 
-  * **Core**: 本標準のMUST要件を完全に満たす。
-  * **Strict**: Coreより厳格な社内運用プロファイル。
-  * **Lite**: 研究・試作・教育用の緩和版（Annex D）。
-* `profile_ref` による適用優先度：Strict > Core > Lite。
-* CI／検証ツールは `profile_ref` で自動切替可能とする。
+### 14.1 Profile層定義
+
+本標準は G0000-STD-OVRV-OverView で定義される階層構造に従い、以下の3つの運用Profileを持つ：
+
+| 名称         | 概要                            | 想定利用者      |
+| :--------- | :---------------------------- | :--------- |
+| **Core**   | OVRV準拠の基準プロファイル。MUST要件を完全遵守。  | 個人・OSS開発   |
+| **Strict** | Coreより厳格な検証基準。CI連携前提。         | チーム・CI運用環境 |
+| **Lite**   | 教育・研究・試作向け緩和版。OVRV 5.適用範囲に準拠。 | 教育・試作・R&D  |
+
+`profile_ref` による適用優先度は **Strict > Core > Lite**。
+CI／検証ツールは OVRV 章4「運用分離方針」に従い、Profileごとに挙動を切替可能とする。
 
 ## 15. 適合性（Conformance）
 
@@ -189,14 +190,19 @@ valid_until: "2026-11-30"
 PII = Personally Identifiable Information
 ADR = Architectural Decision Record
 SCD = 開発ライフサイクル定義モデル
+OVRV = Documentation Standard – General Overview（体系全体指針）
+
+※ 本標準は OVRV で定義される L4「Coding」層に属し、
+他の層（L1〜L3: Format/Operation/YAML）と静的整合を維持する。
 
 ## 20. 改版履歴
 
-| 版      | 日付           | 内容                              |
-| ------ | ------------ | ------------------------------- |
-| v1.2.0 | "2025-11-09" | 章構成を再編（案B適用）。適用・適合・測定・検証を明確化。   |
-| v1.1.0 | "2025-11-09" | Front Matter統一、Annex追加、メトリクス分割。 |
-| v1.0.0 | "2025-10-27" | 初版（正式採用）。                       |
+| 版      | 日付           | 内容                                                     |
+| :----- | :----------- | :----------------------------------------------------- |
+| v1.2.1 | "2025-11-09" | OVRV（Star5 Edition）に整合化。Profile表記・用語整合・Front Matter更新。 |
+| v1.2.0 | "2025-11-09" | 章構成を再編（案B適用）。適用・適合・測定・検証を明確化。                          |
+| v1.1.0 | "2025-11-09" | Front Matter統一、Annex追加、メトリクス分割。                        |
+| v1.0.0 | "2025-10-27" | 初版（正式採用）。                                              |
 
 ---
 
@@ -240,13 +246,15 @@ jobs:
 
 ---
 
-# Annex C. 用語整合（G0410 8.4 準拠）
+# Annex C. 用語整合（G0410 8.4 / OVRV 準拠）
 
 | 意味  | 採用キー                               | 非推奨キー                 |
-| --- | ---------------------------------- | --------------------- |
+| :-- | :--------------------------------- | :-------------------- |
 | 発行日 | `datePublished` / `date_published` | `date`                |
 | 作成者 | `creator`                          | `author`, `editor`    |
 | 説明  | `description`                      | `summary`, `abstract` |
+
+> 本標準は G0000-STD-OVRV-OverView v1.0.1 に準拠し、すべてのメタデータキー・語彙整合を統一する。
 
 ---
 
