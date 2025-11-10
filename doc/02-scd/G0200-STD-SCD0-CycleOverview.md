@@ -18,7 +18,7 @@ reviewers:
   lifecycle: "Canonical"
   scope: "Generic"
   owner: "Standards-Governance-Team"
-  inherit_from: ["G0100-STD-DOCF"]
+  inherit_from: ["G0100-STD-DOC0"]
 
 ---
 
@@ -204,7 +204,7 @@ L1（基礎） → L2（実務） → L3（監査）の3層構造。
 | v1.2.0  | 2025-11-11 | 構造を全面再編成（章5本＋Annex6本）として体系を明確化。 |
 | v1.1.1  | 2025-11-11 | 目次追加・矢印整合化・整形調整。                |
 | v1.1.0  | 2025-11-10 | Annex追加・抽象構造化。                  |
-| v1.0.1  | 2025-11-10 | DOCF整合修正。                       |
+| v1.0.1  | 2025-11-10 | DOC0整合修正。                       |
 | v1.0.0  | 2025-10-15 | 初版FIX。                          |
 
 ---

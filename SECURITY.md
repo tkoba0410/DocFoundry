@@ -1,5 +1,5 @@
 ---
-schema: DOCF-SEC
+schema: DOC0-SEC
 title: DocFoundry Security Policy
 version: 1.0.0
 ---

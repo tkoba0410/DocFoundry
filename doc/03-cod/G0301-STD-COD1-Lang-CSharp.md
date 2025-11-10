@@ -17,7 +17,7 @@ description: >
 related_docs:
 
 * "G0300-STD-COD0"
-* "G0100-STD-DOCF-FormatPolicy"
+* "G0100-STD-DOC0-FormatPolicy"
   x-schema: "/schemas/dcmm.cod.schema.json"
 
 ---
@@ -177,7 +177,7 @@ valid_until: "2026-11-30"
 
 | 版      | 日付           | 内容                                                         |
 | ------ | ------------ | ---------------------------------------------------------- |
-| v1.1.1 | "2025-11-09" | 運用・CI・逸脱管理要素を除外し、純粋な言語規範版に改訂。Front MatterとTOCをDOCF準拠化      |
+| v1.1.1 | "2025-11-09" | 運用・CI・逸脱管理要素を除外し、純粋な言語規範版に改訂。Front MatterとTOCをDOC0準拠化      |
 | v1.1.0 | "2025-11-09" | Star5整合改訂：Front Matter統一、YAML snake_case化、T4-Deviation参照追加 |
 | v1.0.0 | "2025-10-28" | 初版（DocFoundary準拠）                                          |
 

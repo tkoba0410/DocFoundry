@@ -127,7 +127,7 @@ major更新は互換非保証、minor更新は後方互換維持とする。
 
 | 文書ID                             | 名称           | 関係           |
 | -------------------------------- | ------------ | ------------ |
-| G0100-STD-DOCF-FormatPolicy      | 文書構造・書式規約    | 上位（形式基盤）     |
+| G0100-STD-DOC0-FormatPolicy      | 文書構造・書式規約    | 上位（形式基盤）     |
 | G0400-STD-YAML-ContentStructure  | YAML文書内容構造標準 | 下位（実装仕様）     |
 | G0110-STD-DOCO-OperationalPolicy | 文書運用・保守規約    | 補助（検証運用は別建て） |
 

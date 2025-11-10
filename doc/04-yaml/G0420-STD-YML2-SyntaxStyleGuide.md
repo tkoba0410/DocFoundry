@@ -10,7 +10,7 @@ status: "Star5 Edition (Refined)"
 inLanguage: ["ja"]
 creator: "Documentation Team"
 confidentiality: "Public"
-glossary_ref: "G0100-STD-DOCF-Glossary"
+glossary_ref: "G0100-STD-DOC0-Glossary"
 description: "DocFoundary プロジェクトにおける YAML 記述スタイルの完全標準。コメント規則を統合し、Lint対応・Annex参照導線を追加。Glossary参照を明記し、章構成の明瞭性と保守性を向上。"
 --------------------------------------------------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ description: "DocFoundary プロジェクトにおける YAML 記述スタイル
 | G0400-STD-YML0-ContentStructure  | YAML構造仕様 | 上位 |
 | G0410-STD-YML1-LayerModel        | 三層モデル理念  | 上位 |
 | G0110-STD-DOCO-OperationalPolicy | 運用規約     | 補助 |
-| G0100-STD-DOCF-Glossary          | 共通用語集    | 参照 |
+| G0100-STD-DOC0-Glossary          | 共通用語集    | 参照 |
 
 ---
 
@@ -159,7 +159,7 @@ version: "v1.2.1"  # コメントは40文字以内
 
 * 本ガイドは DocFoundary の YAML 書式の完全標準（Star5 Edition）である。
 * G0400/G0410 に矛盾する場合はそれらを優先（MUST）。
-* 用語定義は G0100-STD-DOCF-Glossary を参照（MUST）。
+* 用語定義は G0100-STD-DOC0-Glossary を参照（MUST）。
 
 ---
 

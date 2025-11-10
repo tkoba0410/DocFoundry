@@ -2,7 +2,7 @@
 
 schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
 "@type": "CreativeWork"
-identifier: "G0100-STD-DOCF-FormatPolicy"
+identifier: "G0100-STD-DOC0-FormatPolicy"
 name: "Documentation Format Standard (v5.6.0 / Final Logical Edition)"
 version: "v5.6.0"
 datePublished: "2025-11-11"
@@ -17,7 +17,7 @@ description: >
   Defines structure, taxonomy, naming, metadata, and Markdown formatting rules in coherent logical order.
 -------------------------------------------------------------------------------------------------------
 
-# [STD-DOCF] ドキュメント書式標準（Documentation Format Standard / v5.6.0）
+# [STD-DOC0] ドキュメント書式標準（Documentation Format Standard / v5.6.0）
 
 ## 目次（Table of Contents）
 
@@ -110,7 +110,7 @@ DocFoundary 標準群では、**日本語（`ja`）を唯一の公式言語コ�
 | **Prefix**     | 文書スコープ。`G`（汎用）または`P`（プロジェクト）。                 | G0100 / P0300       |
 | **4桁番号**       | 上2桁＝カテゴリ群番号／下2桁＝カテゴリ内順序。                      | 0100, 0110          |
 | **カテゴリ（3文字）**  | 文書種別コード（例：REQ, ARC, OPS）。                     | REQ                 |
-| **文書コード（4文字）** | 英大文字＋数字4桁以内（例示正規表現 `^[A-Z]{1,4}[0-9]{0,3}$`）。 | DOCF, MODL          |
+| **文書コード（4文字）** | 英大文字＋数字4桁以内（例示正規表現 `^[A-Z]{1,4}[0-9]{0,3}$`）。 | DOC0, MODL          |
 | **タイトル**       | UpperCamelCase推奨。日本語も可。                       | FormatPolicy / 実装方針 |
 
 ---
@@ -174,7 +174,7 @@ Front Matter は **唯一の固定構文**に従う。
 ---
 schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
-identifier: "G0100-STD-DOCF-FormatPolicy"
+identifier: "G0100-STD-DOC0-FormatPolicy"
 name: "Documentation Format Standard"
 version: "v5.6.0"
 datePublished: "2025-11-11"
@@ -334,4 +334,4 @@ DocFoundary 標準群では、シーケンス図、フローチャート、ER図
 | v5.5.0        | "2025-11-11" | 表記詳細ルールを追加し、Markdown表現仕様を完全定義。                    |
 | v5.4.0        | "2025-11-11" | 目次をタイトル直後に移動。TOC整合を確立。                            |
 | v5.3.0〜v5.3.2 | "2025-11-11" | 見出し整合・カテゴリ体系統一・構造順再整理。                            |
-| v5.0.0〜v5.2.1 | "2025-11-11" | DOCF統合版の初期設計・安定化。                                 |
+| v5.0.0〜v5.2.1 | "2025-11-11" | DOC0統合版の初期設計・安定化。                                 |
