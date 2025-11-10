@@ -1,242 +1,211 @@
-<!-- Auto-updated via Codex-AI Mechanical Fix Plan v3.2 (Enhanced) -->
 ---
-schema: "https://schema.org/CreativeWork"
+
+schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
 @type: "CreativeWork"
 identifier: "G0200-STD-SCD0"
-name: "開発サイクル概要（v3.1汎用版・Spec–Conformance Development Cycle）"
-version: "v1.0.0"
-datePublished: "2025-10-15"
-status: "Draft"
+name: "開発サイクル概要（Spec–Conformance Development Cycle）"
+version: "v1.2.0"
+datePublished: "2025-11-11"
+status: "Approved"
 creator:
-  @type: Organization
-  name: Documentation Team
+@type: Organization
+name: "Documentation Team"
 reviewers:
-  - "Quality-Assurance-Guild"
-  - "Product-Compliance-Board"
-confidentiality: "Public"
-lifecycle: "Canonical"
-scope: "Generic"
-owner: "Standards-Governance-Team"
-inherit_from: ["G0100-STD-DOC0"]
-x-schema: "/schemas/dcmm.scd.schema.json"
----
 
-# [SCD-CYCL] 開発サイクル概要（v3.1汎用版・Spec–Conformance Development Cycle）
-
-**Version:** v1.0.0
-**Date:** 2025-10-15
-**Status:** Draft
+* "Quality-Assurance-Guild"
+* "Product-Compliance-Board"
+  confidentiality: "Public"
+  lifecycle: "Canonical"
+  scope: "Generic"
+  owner: "Standards-Governance-Team"
+  inherit_from: ["G0100-STD-DOCF"]
 
 ---
 
-## 1. 表紙情報
-- 文書番号: `G0200-STD-SCD0`
-- バージョン: **v1.0.0**
-- 日付: 2025-10-15
-- 状態: Draft
+# [SCD-CYCL] 開発サイクル概要（Spec–Conformance Development Cycle）
+
+**Version:** v1.2.0
+**Date:** 2025-11-11
+**Status:** Approved
 
 ---
 
+## 📑 目次 / *Table of Contents*
 
-## 2. 目的と位置づけ / *Purpose and Scope*
-
-本書は、開発活動を「継続的に整合し続ける循環体系」として捉える。
-その中心概念を **Spec–Conformance Development Cycle（SCD）** と定義し、
-仕様（Spec）・契約（Contract）・テスト（Test）・実装（Implementation）・適合確認（Conformance）・フィードバック（Feedback）の各工程が
-常に整合を保ちながら連続して進む枠組みを示す。
-
-**目的：**
-- 開発を止めず、常に整合状態を維持する（Continuous Conformance）。
-- 要求・設計・検証・改善をひとつの循環構造で統合する。
-- 教育・運用・品質保証に再利用可能な共通フレームを提供する。
-
----
-
-## 3. サイクル構造 / *Spec–Conformance Development Cycle Overview*
-
-```
- ┌───────────────┐
- │ SCD1: 仕様 (Spec) │ ← 要求を形式化（RFC2119）
- └───────┬───────┘
-         │
-         ▼
- ┌───────────────┐
- │ SCD2: 契約 (Contract) │ ← インタフェース・データ仕様の確定
- └───────┬───────┘
-         │
-         ▼
- ┌───────────────┐
- │ SCD3: テスト (Test) │ ← 仕様をExampleとして具体化
- └───────┬───────┘
-         │
-         ▼
- ┌───────────────┐
- │ SCD4: 実装 (Implementation) │ ← Test-Drivenで最小実装を導出
- └───────┬───────┘
-         │
-         ▼
- ┌───────────────┐
- │ SCD5: 適合確認 (Conformance) │ ← 自動検証と品質統計
- └───────┬───────┘
-         │
-         ▼
- ┌───────────────┐
- │ SCD6: フィードバック │ ← 結果を仕様・設計へ還流
- └───────────────┘
-```
-
-> 各フェーズはトレーサビリティにより結合し、
-> 仕様変更や実装差分を循環の中で即座に吸収する。
+1. [序章：文書概要](#1-序章文書概要)
+2. [理念と原則](#2-理念と原則)
+3. [サイクル構造とフェーズ概要](#3-サイクル構造とフェーズ概要)
+4. [トレーサビリティと責任体系](#4-トレーサビリティと責任体系)
+5. [教育・改善体系](#5-教育改善体系)
+6. [Annex I：教育補助構造（概念モデル）](#annex-i教育補助構造概念モデル)
+7. [Annex II：参照体系構造（Cross-Reference Framework）](#annex-ii参照体系構造cross-reference-framework)
+8. [Annex III：継続整合の評価原則](#annex-iii継続整合の評価原則)
+9. [Annex IV：承認体系の原則](#annex-iv承認体系の原則)
+10. [Annex V：運用連携の位置づけ](#annex-v運用連携の位置づけ)
+11. [Annex VI：承認条件（Definition of Done）](#annex-vi承認条件definition-of-done)
+12. [改訂履歴](#改訂履歴--revision-history)
 
 ---
 
-## 4. 継続整合ループ / *Continuous Conformance Loop*
+## 1. 序章：文書概要
+
+本書は、開発活動を **Spec–Conformance Development Cycle（SCD）** として定義し、
+仕様（Spec）→ 契約（Contract）→ テスト（Test）→ 実装（Implementation）→ 適合確認（Conformance）→ フィードバック（Feedback）
+の循環構造を示す。これは DocFoundary 標準の中心的サイクルであり、全開発活動における再現可能性と継続的整合を目的とする。
+
+---
+
+## 2. 理念と原則
+
+### 2.1 基本理念
+
+* **Continuous Conformance（継続整合）** を核とする。
+  → 開発の全段階で「検証 → 修正 → 再整合」を繰り返す。
+* **動的品質管理** への転換。
+  → 静的なレビュー中心の品質保証から、循環的・実証的品質保証へ。
+
+### 2.2 運用原則
+
+| No | 原則                     | 内容                    |
+| :- | :--------------------- | :-------------------- |
+| 1  | Contract-First         | 契約仕様を先に固定し、他要素がそれに従う。 |
+| 2  | Single Source of Truth | 契約仕様を唯一の基準とする。        |
+| 3  | Test-Driven            | 仕様はテストで動作を示す。         |
+| 4  | Traceable              | 要求から検証まで追跡可能であること。    |
+| 5  | Feedback-Oriented      | 検証結果が仕様へ戻る。           |
+
+---
+
+## 3. サイクル構造とフェーズ概要
+
+### 3.1 開発サイクル（Mermaid表示）
 
 ```mermaid
 flowchart TD
-    A[PSCD1: Spec] --> B[SCD2: Contract]
-    B --> C[SCD3: Test]
-    C --> D[SCD4: Implementation]
-    D --> E[SCD5: Conformance]
-    E --> F[SCD6: Feedback]
+    A([SCD1: 仕様 Spec]) --> B([SCD2: 契約 Contract])
+    B --> C([SCD3: テスト Test])
+    C --> D([SCD4: 実装 Implementation])
+    D --> E([SCD5: 適合確認 Conformance])
+    E --> F([SCD6: フィードバック Feedback])
     F --> A
     classDef phase fill:#eef,stroke:#555,stroke-width:1px;
     class A,B,C,D,E,F phase;
 ```
 
-> **定義:**
-> “Continuous Conformance” とは、開発プロセスのどの段階でも整合性を検証し、
-> 修正が必要な場合は即座にループへ戻す運用を指す。
-> これは従来の「静的品質管理」から「動的整合管理」への転換を意味する。
+### 3.2 フェーズ構成
+
+| コード  | フェーズ名               | 目的                            | 成果物              |
+| :--- | :------------------ | :---------------------------- | :--------------- |
+| SCD1 | 仕様 (Spec)           | 要求を形式化し、次工程へ渡す基礎を作る           | 要求一覧、仕様書         |
+| SCD2 | 契約 (Contract)       | Schema／Interfaceを確定し他工程の基準を提供 | 契約仕様書、データモデル     |
+| SCD3 | テスト (Test)          | Example仕様を作成し、動作を明確化          | Example仕様、テストケース |
+| SCD4 | 実装 (Implementation) | テストを通過する最小実装を作成               | ソースコード、変更記録      |
+| SCD5 | 適合確認 (Conformance)  | 自動検証により整合を確認                  | 検証ログ、Matrix      |
+| SCD6 | フィードバック (Feedback)  | 結果を仕様・設計へ還流                   | 改訂仕様、ADR         |
+
+### 3.3 テンプレート対応（T1〜T4）
+
+| テンプレート                 | 用途    | 関連フェーズ    |
+| :--------------------- | :---- | :-------- |
+| T1: ReqID              | 要求定義  | SCD1      |
+| T2: Conformance Matrix | 整合検証  | SCD3〜SCD5 |
+| T3: ADR                | 判断記録  | SCD2〜SCD6 |
+| T4: Deviation Record   | 不適合記録 | SCD5〜SCD6 |
 
 ---
 
-## 5. フェーズ構成と目的 / *Phases and Objectives*
+## 4. トレーサビリティと責任体系
 
-| フェーズ（コード） | ゴール | 主な手法 | 代表成果物 |
-|:--|:--|:--|:--|
-| **SCD1 – Spec** | 要求を明確化し形式化 | RFC2119 / 要求分析 | 仕様書、要求一覧 |
-| **SCD2 – Contract** | インタフェース・データ仕様を確定 | Contract-First、Schema定義 | データ仕様書、設計契約 |
-| **SCD3 – Test** | 仕様をExampleとして具現化 | BDD、シナリオ駆動 | Example仕様、テストケース |
-| **SCD4 – Implementation** | テストに基づき最小実装を導出 | TDD、コードレビュー | 実装コード、変更記録 |
-| **SCD5 – Conformance** | 実装と仕様の整合を検証 | 自動テスト／統計評価 | Traceability Matrix、検証レポート |
-| **SCD6 – Feedback** | 結果を仕様・設計へ反映 | Closed-Loop改善 | 改訂仕様、Decision Record |
+### 4.1 トレーサビリティ軸
 
-> **備考:**
-> 各工程は独立ではなく、SCDサイクル内で相互に整合を確認し続ける。
+> 要求 → テスト → 実装 → 検証 → 仕様更新 の流れを維持する。
+> すべての成果はこの連鎖の中で相互検証される。
 
----
+### 4.2 責任体系
 
-## 6. テンプレート対応表 / *Template Correlation (T1–T4)*
-
-| テンプレート | 主な用途 | 関連フェーズ |
-|:--|:--|:--|
-| **T1: ReqID** | 要求定義・承認 | SCD1 |
-| **T2: Conformance Matrix** | 整合検証・統計記録 | SCD3〜SCD5 |
-| **T3: ADR (Decision Record)** | 判断・設計履歴 | SCD2〜SCD6 |
-| **T4: Deviation Record** | 不適合・是正追跡 | SCD5〜SCD6 |
+| 項目      | 主担当       | AI補助       | 最終判断 |
+| :------ | :-------- | :--------- | :--- |
+| 仕様定義    | 要求分析者     | 曖昧語検出      | 人間   |
+| 契約確立    | 設計者       | Schema整合判定 | 人間   |
+| テスト設計   | QA／テスター   | Example提案  | 人間   |
+| 実装      | 開発者       | 差分要約       | 人間   |
+| 適合確認    | QA／CI管理者  | 自動検証       | 人間   |
+| フィードバック | プロジェクト責任者 | 要約・分析      | 人間   |
 
 ---
 
-## 7. トレーサビリティ構造 / *Traceability Framework*
+## 5. 教育・改善体系
 
-| 対応軸 | 対象 | 説明 |
-|:--|:--|:--|
-| 要求 テスト | 仕様が具体的に検証可能であることを保証。 |
-| テスト 実装 | 実装がテストにより裏付けられることを保証。 |
-| 実装 検証 | 適合結果をコード変更へ反映。 |
-| 検証 仕様 | 改訂が再び仕様書に戻り、循環を完結させる。 |
+### 5.1 教育レベル構造
 
-**成果物例:**
-- Traceability Matrix（要求⇄テスト⇄実装）
-- Architecture Decision Record (ADR)
-- Deviation Log（不適合記録）
+L1（基礎） → L2（実務） → L3（監査）の3層構造。
 
----
+* L1: 構造と用語を理解する。
+* L2: 各フェーズの実務を遂行できる。
+* L3: 開発と品質を監査・教育できる。
 
-## 8. チームの役割とAI支援範囲 / *Roles and AI Responsibility*
+### 5.2 改善フィードバック
 
-| フェーズ | 主担当 | 補助担当 | AI支援（MAY） | 最終判断（MUST） |
-|:--|:--|:--|:--|:--|
-| **SCD1 – Spec** | 要求分析者 | QA | 曖昧語検出、構文提案 | 人間 |
-| **SCD2 – Contract** | 設計者 | 開発者 | Schema整合検証 | 人間 |
-| **SCD3 – Test** | QA／テスター | 開発補助 | Example生成、曖昧語修正 | 人間 |
-| **SCD4 – Implementation** | 開発者 | 技術リード | コード提案、差分要約 | 人間 |
-| **SCD5 – Conformance** | QA／CI管理者 | 品質担当 | 自動検証ログ整形 | 人間 |
-| **SCD6 – Feedback** | QA／設計者 | プロジェクト責任者 | 改訂提案、要約 | 人間 |
-
-> **原則:**
-> AI assistance **MAY** be used for validation or generation tasks,
-> but final approval and accountability **MUST** remain with human reviewers.
+* 教育で得られた知見 → フィードバック工程へ。
+* フィードバック結果 → 教育資料へ反映。
+  → 開発と教育を循環的に接続することで、プロセスと知識の両輪を維持する。
 
 ---
 
-## 9. 教育レベル構造 / *Education and Skill Levels*
+## Annex I：教育補助構造（概念モデル）
 
-| レベル | 対象読者 | 習得目的 | 主な利用資料 |
-|:--|:--|:--|:--|
-| **L1 – Foundation** | 新規参加者・QA担当 | SCD全体構造と用語を理解 | 本書、入門資料 |
-| **L2 – Practitioner** | 開発者・設計者 | 各フェーズの実務運用を実践 | 各フェーズガイド |
-| **L3 – Auditor** | 品質保証・PM・教育担当 | プロセス監査と教育支援 | トレーサビリティ資料、チェックリスト |
-
-> **備考:**
-> 本サイクルは教育体系としても利用可能であり、
-> L1→L2→L3の段階的学習を通じてプロセス全体を体得できる。
+教育・研修用途では、フェーズと担当の関係を概念的に示す。
+具体的な教材や図は教育資料にて管理する。
 
 ---
 
-## 10. 運用統合モデル / *Operations and Feedback Integration*
+## Annex II：参照体系構造（Cross-Reference Framework）
 
-```mermaid
-flowchart TD
-    A[SCD1: 仕様更新・要求追加] --> B[SCD2: 契約・設計更新]
-    B --> C[SCD3: テスト自動実行]
-    C --> D[SCD5: 結果集計・逸脱記録]
-    D --> E[SCD6: 判断・承認]
-    E --> F[SCD1: 改訂・仕様反映]
-    F --> A
-```
-
-> **概要:**
-> CI/CD などの自動化基盤と連携することで、
-> フィードバックループを止めずに品質を維持する“循環心臓部”として機能する。
+本書は他フェーズ標準およびテンプレート文書との参照関係を持つ。
+関係定義は運用層（G0110）で管理される。
 
 ---
 
-## 11. フェーズコード参照表 / *Phase Code Reference Table*
+## Annex III：継続整合の評価原則
 
-| コード | フェーズ名 | 主な目的 |
-|:--|:--|:--|
-| **SCD1** | Spec Phase | 要求定義と形式化 |
-| **SCD2** | Contract Phase | インタフェース・仕様の確定 |
-| **SCD3** | Test Phase | Example仕様による検証設計 |
-| **SCD4** | Implementation Phase | テスト駆動による実装 |
-| **SCD5** | Conformance Phase | 適合性の自動検証 |
-| **SCD6** | Feedback Phase | 結果の反映と再整合 |
+継続整合（Continuous Conformance）は、整合 → 検証 → 改善 → 再整合 の連続過程として運用される。
+測定方法や評価指標は実装・運用標準で定義される。
 
 ---
 
-## 12. 要約 / *Summary*
+## Annex IV：承認体系の原則
 
-Spec–Conformance Development Cycle（SCD）は、
-**「計画 → 実装 → 検証 → 改善 → 再整合」** の全過程を一体化した自己整合型開発モデルである。
-
-本モデルは、
-- あらゆる開発ドメインに適用できる汎用的プロセス、
-- 自動化と人間判断の責任分担を両立する設計、
-- 教育・品質・継続改善を同一循環で扱う構造、
-を特徴とする。
-
-> 📘 **本書は、特定プロジェクトに依存しない汎用的なSCD標準フレームとして参照可能である。**
+各フェーズにはレビュー担当 → 承認担当の順に責任が定義される。
+承認体系は組織やプロジェクトにより異なるが、判断プロセスの一貫性が求められる。
 
 ---
 
-## 13. 改訂履歴 / *Revision History*
+## Annex V：運用連携の位置づけ
 
-| Version | Date | Description |
-| --- | --- | --- |
-| v1.0.0 | 2025-10-15 | DocFoundry 初版FIXとして再ベースライン。 |
-| v3.1.0 | 2025-10-15 | YAMLメタデータと構成をG0100/G0101準拠に整備。 |
+本書（理念層） ⇄ 運用層（実装層）の関係を保持する。
+リポジトリ構成・CI連携の詳細は運用文書に委譲する。
+
+---
+
+## Annex VI：承認条件（Definition of Done）
+
+* 章構成とフェーズ表記の一貫性を確認する。
+* `inherit_from` が有効であること。
+* 関連文書の参照整合を検証する。
+* Lint／Markdown検証を通過していること。
+* 改訂履歴が最新であること。
+
+---
+
+## 改訂履歴 / *Revision History*
+
+| Version | Date       | Description                     |
+| ------- | ---------- | ------------------------------- |
+| v1.2.0  | 2025-11-11 | 構造を全面再編成（章5本＋Annex6本）として体系を明確化。 |
+| v1.1.1  | 2025-11-11 | 目次追加・矢印整合化・整形調整。                |
+| v1.1.0  | 2025-11-10 | Annex追加・抽象構造化。                  |
+| v1.0.1  | 2025-11-10 | DOCF整合修正。                       |
+| v1.0.0  | 2025-10-15 | 初版FIX。                          |
 
 ---
 
