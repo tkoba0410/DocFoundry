@@ -7,11 +7,8 @@ name: "Documentation Format Standard (v5.6.0 / Final Logical Edition)"
 version: "v5.6.0"
 datePublished: "2025-11-11"
 status: "Approved"
-creator:
-"@type": "Person"
-name: "Individual Developer"
-based_on: "G0000-STD-OVRV-OverView v2.4.0"
 inLanguage: ["ja"]
+creator: "Person"
 description: >
   Final logical edition of the DocFoundary Format Standard.
   Defines structure, taxonomy, naming, metadata, and Markdown formatting rules in coherent logical order.

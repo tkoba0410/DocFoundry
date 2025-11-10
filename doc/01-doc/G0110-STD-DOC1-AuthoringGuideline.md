@@ -8,9 +8,7 @@ version: "v1.1.0"
 datePublished: "2025-11-11"
 status: "Approved"
 inLanguage: ["ja"]
-creator:
-"@type": "Person"
-name: "Documentation Team"
+creator: "Person"
 description: "Defines writing and stylistic principles for all DocFoundary standard documents. Focuses on authoring methodology, content design, and stylistic consistency rather than structural format."
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
