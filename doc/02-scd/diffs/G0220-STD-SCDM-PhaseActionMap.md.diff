@@ -1,0 +1,42 @@
+diff --git a/doc/02-scd/G0220-STD-SCDM-PhaseActionMap.md b/doc/02-scd/G0220-STD-SCDM-PhaseActionMap.md
+index 0a2f122..68aa317 100644
+--- a/doc/02-scd/G0220-STD-SCDM-PhaseActionMap.md
++++ b/doc/02-scd/G0220-STD-SCDM-PhaseActionMap.md
+@@ -1,17 +1,22 @@
++<!-- Auto-updated via Codex-AI Mechanical Fix Plan v3.2 (Enhanced) -->
+ ---
+ schema: "https://schema.org/CreativeWork"
+-doc_id: "G0220-STD-SCDM"
+-title: "フェーズ別実務行動マップ（v3.1汎用統合版）"
++@type: "CreativeWork"
++identifier: "G0220-STD-SCDM"
++name: "フェーズ別実務行動マップ（v3.1汎用統合版）"
+ version: "v1.0.0"
+-date: "2025-10-30"
++datePublished: "2025-10-30"
+ status: "Approved"
+-lifecycle: "Canonical"
+-scope: "Generic"
+-owner: "Standards-Governance-Team"
++creator:
++  @type: Organization
++  name: Documentation Team
+ reviewers:
+   - "Operations-Enablement-Guild"
+   - "Quality-Assurance-Guild"
+ confidentiality: "Public"
++lifecycle: "Canonical"
++scope: "Generic"
++owner: "Standards-Governance-Team"
+ links:
+   - doc_id: "G0200-STD-SCD0"
+     relation: "base_on"
+@@ -137,7 +142,7 @@ flowchart TD
+ ## 9. 改訂履歴 / *Revision History*
+ 
+ | Version | Date | Description |
+-|:--|:--|:--|
++| --- | --- | --- |
+ | v1.0.0 | 2025-10-30 | DocFoundry 初版FIXとして再ベースライン。 |
+ | v3.1.0 | 2025-10-30 | ExchangeApi依存表現を除去し、DCMMリンクを追加。 |
+ | v3.0.1 | 2025-10-15 | DCMM準拠のメタデータ整備とフェーズ行動表の整合。 |

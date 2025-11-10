@@ -1,0 +1,90 @@
+diff --git a/doc/02-scd/G0203-STD-SCD3-TestPhase.md b/doc/02-scd/G0203-STD-SCD3-TestPhase.md
+index 6aac0d1..f3bfe22 100644
+--- a/doc/02-scd/G0203-STD-SCD3-TestPhase.md
++++ b/doc/02-scd/G0203-STD-SCD3-TestPhase.md
+@@ -1,17 +1,22 @@
++<!-- Auto-updated via Codex-AI Mechanical Fix Plan v3.2 (Enhanced) -->
+ ---
+ schema: "https://schema.org/CreativeWork"
+-doc_id: "G0203-STD-SCD3"
+-title: "テスト策定フェーズガイド（v3.0統一構成）"
++@type: "CreativeWork"
++identifier: "G0203-STD-SCD3"
++name: "テスト策定フェーズガイド（v3.0統一構成）"
+ version: "v1.0.0"
+-date: "2025-10-15"
++datePublished: "2025-10-15"
+ status: "Approved"
+-lifecycle: "Canonical"
+-scope: "Generic"
+-owner: "Standards-Governance-Team"
++creator:
++  @type: Organization
++  name: Documentation Team
+ reviewers:
+   - "Test-Engineering-Guild"
+   - "Quality-Assurance-Guild"
+ confidentiality: "Public"
++lifecycle: "Canonical"
++scope: "Generic"
++owner: "Standards-Governance-Team"
+ inherit_from: ["G0100-STD-DOC0"]
+ x-schema: "/schemas/dcmm.scd.schema.json"
+ ---
+@@ -53,7 +58,7 @@ Example（例示仕様）を作成し、CIで自動的に検証される状態
+ |:--|:--|:--|
+ | 1 | **Behavior‑Driven** | テストは「どう動作するか」を明確に記述する。Exampleは仕様の一部である。 |
+ | 2 | **Executable Specification** | Exampleはドキュメントではなく、実際に動かして確認する仕様書である。 |
+-| 3 | **Traceable** | ReqID ⇄ Example ⇄ Result ⇄ ADR ⇄ T2 を相互に結びつける。 |
++| 3 | **Traceable** | ReqID Example Result ADR T2 を相互に結びつける。 |
+ | 4 | **Automated Validation** | ExampleはCIで自動実行され、T2ログとして保存される。 |
+ | 5 | **Human Oversight** | 最終承認は人間が行う（MUST）。 |
+ 
+@@ -79,7 +84,7 @@ Example（例示仕様）を作成し、CIで自動的に検証される状態
+ | **Test Reports** | HTML／JSON | CI結果レポート | 自動生成 |
+ | **T2: AI Validation Log** | JSON／Markdown | 自動実行結果ログ | CI出力 |
+ | **T3: ADR** | Markdown | テスト判断・変更理由 | `docs/adr/` |
+-| **Conformance Matrix** | Markdown | ReqID ⇄ Example ⇄ Result | 自動更新 |
++| **Conformance Matrix** | Markdown | ReqID Example Result | 自動更新 |
+ 
+ ---
+ 
+@@ -87,13 +92,13 @@ Example（例示仕様）を作成し、CIで自動的に検証される状態
+ 
+ | No | 確認項目 | 判定 | 意義 |
+ |:--|:--|:--|:--|
+-| 1 | 全ReqIDに対応するExampleが定義されている | ☐ | 仕様網羅性の確認 |
+-| 2 | Exampleが仕様どおりに動作している | ☐ | 一貫性維持 |
+-| 3 | 曖昧な表現が修正されている | ☐ | テスト精度確保 |
+-| 4 | ADR（T3）がリンクされている | ☐ | 判断の追跡性 |
+-| 5 | 未解決の逸脱（Deviation）がない | ☐ | 品質担保 |
+-| 6 | CI結果がT2に出力されている | ☐ | 自動検証完了 |
+-| 7 | Pass率100%を維持している | ☐ | 適合完了条件 |
++| 1 | 全ReqIDに対応するExampleが定義されている | | 仕様網羅性の確認 |
++| 2 | Exampleが仕様どおりに動作している | | 一貫性維持 |
++| 3 | 曖昧な表現が修正されている | | テスト精度確保 |
++| 4 | ADR（T3）がリンクされている | | 判断の追跡性 |
++| 5 | 未解決の逸脱（Deviation）がない | | 品質担保 |
++| 6 | CI結果がT2に出力されている | | 自動検証完了 |
++| 7 | Pass率100%を維持している | | 適合完了条件 |
+ 
+ > **完了基準:** 全項目がチェック済みであれば「テスト策定フェーズ完了（MUST）」とする。
+ 
+@@ -119,7 +124,7 @@ Feature: Login authentication
+ | **T3** | L2 | ADR：設計・判断の記録。 |
+ | **CI** | L3 | Continuous Integration：自動テスト実行プロセス。 |
+ 
+-### C. 参照文書
++### C. 参照文書（References）
+ - G0200‑STD‑SCD0‑CycleOverview（開発サイクル概要）
+ - G0210‑STD‑SCDT‑Templates（共通テンプレート集）
+ - G0220‑STD‑SCDM‑PhaseActionMap（実務行動マップ）
+@@ -129,7 +134,7 @@ Feature: Login authentication
+ ## 8. 改訂履歴 / *Revision History*
+ 
+ | Version | Date | Description |
+-|:--|:--|:--|
++| --- | --- | --- |
+ | v1.0.0 | 2025-10-15 | DocFoundry 初版FIXとして再ベースライン。 |
+ | v3.0.0 | 2025-10-15 | DCMMメタデータ更新とSCDテスト指針の整合化。 |
+ 

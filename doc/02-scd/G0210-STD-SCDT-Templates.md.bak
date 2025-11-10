@@ -1,22 +1,17 @@
-<!-- Auto-updated via Codex-AI Mechanical Fix Plan v3.2 (Enhanced) -->
 ---
 schema: "https://schema.org/CreativeWork"
-@type: "CreativeWork"
-identifier: "G0210-STD-SCDT"
-name: "開発フェーズ共通テンプレート集（v3.0統一構成）"
+doc_id: "G0210-STD-SCDT"
+title: "開発フェーズ共通テンプレート集（v3.0統一構成）"
 version: "v1.0.0"
-datePublished: "2025-10-15"
+date: "2025-10-15"
 status: "Approved"
-creator:
-  @type: Organization
-  name: Documentation Team
+lifecycle: "Canonical"
+scope: "Generic"
+owner: "Standards-Governance-Team"
 reviewers:
   - "Template-Management-Guild"
   - "Quality-Assurance-Guild"
 confidentiality: "Public"
-lifecycle: "Canonical"
-scope: "Generic"
-owner: "Standards-Governance-Team"
 inherit_from: ["G0100-STD-DOC0"]
 x-schema: "/schemas/dcmm.scd.schema.json"
 ---
@@ -56,7 +51,7 @@ x-schema: "/schemas/dcmm.scd.schema.json"
 | No | テンプレート名 | 用途 | 主な利用フェーズ | 管理形式 |
 |:--|:--|:--|:--|:--|
 | **T1** | ReqID一覧表 | 要求ID・要求強度（MUST/SHOULD/MAY）を管理 | SCD1（Spec） | CSV／YAML／Markdown |
-| **T2** | Conformance Matrix (AI Validation Log対応) | ReqID Test Impl 整合を追跡 | SCD3〜SCD5 | CSV／Markdown |
+| **T2** | Conformance Matrix (AI Validation Log対応) | ReqID ⇄ Test ⇄ Impl 整合を追跡 | SCD3〜SCD5 | CSV／Markdown |
 | **T3** | ADR（Architecture Decision Record） | 設計判断・根拠・変更理由の記録 | SCD2／SCD4／SCD6 | Markdown |
 | **T4** | Deviation Record | 不適合項目と再試験結果の追跡 | SCD5／SCD6 | JSON／Markdown |
 
@@ -73,8 +68,8 @@ x-schema: "/schemas/dcmm.scd.schema.json"
 ### **T2: Conformance Matrix (AI Validation Log対応)**
 | ReqID | TestID | ImplRef | Status | CI RunID | T2 LogRef | 備考 |
 |:--|:--|:--|:--|:--|:--|:--|
-| API-R001 | ApiClientTests.R001 | ApiClient | Passed | 2025-10-07-#134 | T2-Log-001 | 自動 |
-| API-R002 | ApiClientTests.R002 | ApiClient | Failed | 2025-10-08-#135 | T2-Log-002 | 要再試験 |
+| API-R001 | ApiClientTests.R001 | ApiClient | ✅ Passed | 2025-10-07-#134 | T2-Log-001 | 自動 |
+| API-R002 | ApiClientTests.R002 | ApiClient | ⚠️ Failed | 2025-10-08-#135 | T2-Log-002 | 要再試験 |
 
 ### **T3: ADR (Architecture Decision Record)**
 | No | 日付 | 判断概要 | 背景・選択肢 | 決定内容 | 関連ReqID | 承認者 |
@@ -85,8 +80,8 @@ x-schema: "/schemas/dcmm.scd.schema.json"
 ### **T4: Deviation Record**
 | No | 発生日 | 関連ReqID | 概要 | 対応状況 | 再検証結果 | 登録者 |
 |:--|:--|:--|:--|:--|:--|:--|
-| DEV-001 | 2025-10-08 | API-R002 | タイムアウト例外発生 | 修正完了 | 再試験合格 | QA |
-| DEV-002 | 2025-10-21 | API-R003 | 仕様未対応項目あり | 対応中 | | QA |
+| DEV-001 | 2025-10-08 | API-R002 | タイムアウト例外発生 | 修正完了 | ✅ 再試験合格 | QA |
+| DEV-002 | 2025-10-21 | API-R003 | 仕様未対応項目あり | 対応中 | ⏳ | QA |
 
 ---
 

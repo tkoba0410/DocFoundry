@@ -1,0 +1,81 @@
+diff --git a/doc/02-scd/G0204-STD-SCD4-ImplPhase.md b/doc/02-scd/G0204-STD-SCD4-ImplPhase.md
+index ed02f11..eba7069 100644
+--- a/doc/02-scd/G0204-STD-SCD4-ImplPhase.md
++++ b/doc/02-scd/G0204-STD-SCD4-ImplPhase.md
+@@ -1,17 +1,22 @@
++<!-- Auto-updated via Codex-AI Mechanical Fix Plan v3.2 (Enhanced) -->
+ ---
+ schema: "https://schema.org/CreativeWork"
+-doc_id: "G0204-STD-SCD4"
+-title: "実装フェーズガイド（v3.0統一構成）"
++@type: "CreativeWork"
++identifier: "G0204-STD-SCD4"
++name: "実装フェーズガイド（v3.0統一構成）"
+ version: "v1.0.0"
+-date: "2025-10-15"
++datePublished: "2025-10-15"
+ status: "Approved"
+-lifecycle: "Canonical"
+-scope: "Generic"
+-owner: "Standards-Governance-Team"
++creator:
++  @type: Organization
++  name: Documentation Team
+ reviewers:
+   - "Implementation-Engineering-Guild"
+   - "Quality-Assurance-Guild"
+ confidentiality: "Public"
++lifecycle: "Canonical"
++scope: "Generic"
++owner: "Standards-Governance-Team"
+ inherit_from: ["G0100-STD-DOC0"]
+ x-schema: "/schemas/dcmm.scd.schema.json"
+ ---
+@@ -54,7 +59,7 @@ x-schema: "/schemas/dcmm.scd.schema.json"
+ | 1 | **Specification‑Driven Implementation** | 実装は仕様とテストに従い、意図を超える機能を追加しない。 |
+ | 2 | **Test‑First Development** | コードを書く前にテストを書く。失敗から正解を導く流れを守る。 |
+ | 3 | **Refactor Continuously** | テスト通過後も設計品質を保ち改善を続ける。 |
+-| 4 | **Traceable & Auditable** | ReqID ⇄ Test ⇄ Implementation ⇄ ADR ⇄ T2 が追跡可能であること。 |
++| 4 | **Traceable & Auditable** | ReqID Test Implementation ADR T2 が追跡可能であること。 |
+ | 5 | **CI Integration** | すべての変更はCIジョブで自動検証される。 |
+ 
+ ---
+@@ -77,7 +82,7 @@ x-schema: "/schemas/dcmm.scd.schema.json"
+ |:--|:--|:--|:--|
+ | **実装コード** | ソースコード | 仕様を満たす最小実装 | `src/` |
+ | **自動テスト** | Unit／Integration | ReqIDに基づく検証 | `tests/` |
+-| **Conformance Matrix** | Markdown／JSON | ReqID⇄Test⇄Impl対応表 | CIで更新 |
++| **Conformance Matrix** | Markdown／JSON | ReqIDTestImpl対応表 | CIで更新 |
+ | **T2: AI Validation Log** | JSON／Markdown | CI実行結果の記録 | 自動生成 |
+ | **T3: ADR** | Markdown | 設計・判断・リファクタ理由 | PR連携 |
+ 
+@@ -87,13 +92,13 @@ x-schema: "/schemas/dcmm.scd.schema.json"
+ 
+ | No | 確認項目 | 判定 | 意義 |
+ |:--|:--|:--|:--|
+-| 1 | 全ReqIDに対応するテストが存在する | ☐ | 仕様と実装の整合性 |
+-| 2 | 全テストが通過（Green）状態である | ☐ | 実装完了確認 |
+-| 3 | コーディング規約・Lintに準拠している | ☐ | 品質統一 |
+-| 4 | Matrix／ADR／T2が更新済み | ☐ | 追跡可能性維持 |
+-| 5 | 設計品質（リファクタ後）を維持している | ☐ | 技術的負債防止 |
+-| 6 | CIジョブが100%成功している | ☐ | 自動検証完了 |
+-| 7 | PR単位が1目的で明確である | ☐ | 履歴追跡性 |
++| 1 | 全ReqIDに対応するテストが存在する | | 仕様と実装の整合性 |
++| 2 | 全テストが通過（Green）状態である | | 実装完了確認 |
++| 3 | コーディング規約・Lintに準拠している | | 品質統一 |
++| 4 | Matrix／ADR／T2が更新済み | | 追跡可能性維持 |
++| 5 | 設計品質（リファクタ後）を維持している | | 技術的負債防止 |
++| 6 | CIジョブが100%成功している | | 自動検証完了 |
++| 7 | PR単位が1目的で明確である | | 履歴追跡性 |
+ 
+ > **完了基準:** 全項目がチェック済みであれば「実装フェーズ完了（MUST）」とする。
+ 
+@@ -140,7 +145,7 @@ def add(a, b):
+ ## 8. 改訂履歴 / *Revision History*
+ 
+ | Version | Date | Description |
+-|:--|:--|:--|
++| --- | --- | --- |
+ | v1.0.0 | 2025-10-15 | DocFoundry 初版FIXとして再ベースライン。 |
+ | v3.0.0 | 2025-10-15 | DCMMメタデータ更新と実装フェーズ標準の整合。 |
+ 
