@@ -13,8 +13,8 @@ name: "Individual Developer"
 based_on: "G0000-STD-OVRV-OverView v2.4.0"
 inLanguage: ["ja"]
 description: >
-Final logical edition of the DocFoundary Format Standard.
-Defines structure, taxonomy, naming, metadata, and Markdown formatting rules in coherent logical order.
+  Final logical edition of the DocFoundary Format Standard.
+  Defines structure, taxonomy, naming, metadata, and Markdown formatting rules in coherent logical order.
 -------------------------------------------------------------------------------------------------------
 
 # [STD-DOCF] ドキュメント書式標準（Documentation Format Standard / v5.6.0）
