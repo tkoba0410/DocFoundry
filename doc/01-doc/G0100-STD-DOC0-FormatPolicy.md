@@ -12,7 +12,8 @@ creator: "Person"
 description: >
   Final logical edition of the DocFoundary Format Standard.
   Defines structure, taxonomy, naming, metadata, and Markdown formatting rules in coherent logical order.
--------------------------------------------------------------------------------------------------------
+
+---
 
 # [STD-DOC0] ドキュメント書式標準（Documentation Format Standard / v5.6.0）
 

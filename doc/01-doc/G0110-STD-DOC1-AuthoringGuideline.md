@@ -10,7 +10,8 @@ status: "Approved"
 inLanguage: ["ja"]
 creator: "Person"
 description: "Defines writing and stylistic principles for all DocFoundary standard documents. Focuses on authoring methodology, content design, and stylistic consistency rather than structural format."
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---
 
 ## 目次（Table of Contents）
 
