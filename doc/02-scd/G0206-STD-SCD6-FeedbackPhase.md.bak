@@ -1,22 +1,17 @@
-<!-- Auto-updated via Codex-AI Mechanical Fix Plan v3.2 (Enhanced) -->
 ---
 schema: "https://schema.org/CreativeWork"
-@type: "CreativeWork"
-identifier: "G0206-STD-SCD6"
-name: "フィードバックフェーズガイド（v3.0統一構成）"
+doc_id: "G0206-STD-SCD6"
+title: "フィードバックフェーズガイド（v3.0統一構成）"
 version: "v1.0.0"
-datePublished: "2025-10-15"
+date: "2025-10-15"
 status: "Approved"
-creator:
-  @type: Organization
-  name: Documentation Team
+lifecycle: "Canonical"
+scope: "Generic"
+owner: "Standards-Governance-Team"
 reviewers:
   - "Feedback-Operations-Guild"
   - "Quality-Assurance-Guild"
 confidentiality: "Public"
-lifecycle: "Canonical"
-scope: "Generic"
-owner: "Standards-Governance-Team"
 inherit_from: ["G0100-STD-DOC0"]
 x-schema: "/schemas/dcmm.scd.schema.json"
 ---
@@ -91,13 +86,13 @@ x-schema: "/schemas/dcmm.scd.schema.json"
 
 | No | 確認項目 | 判定 | 意義 |
 |:--|:--|:--|:--|
-| 1 | すべてのFailがT4に登録されている | | 不適合管理の徹底 |
-| 2 | 原因分析・対策がADR（T3）に記録されている | | 再発防止の根拠 |
-| 3 | 修正版が再試験でPassしている | | 修正効果の確認 |
-| 4 | Conformance Matrix（T2）が最新化されている | | 整合性維持 |
-| 5 | Spec／Contractが更新反映済み | | 文書整合の回復 |
-| 6 | 未解決Deviationが存在しない（Zero Pending） | | フェーズ完了条件 |
-| 7 | Closed‑Loop完了が承認済み | | SCDサイクル完結 |
+| 1 | すべてのFailがT4に登録されている | ☐ | 不適合管理の徹底 |
+| 2 | 原因分析・対策がADR（T3）に記録されている | ☐ | 再発防止の根拠 |
+| 3 | 修正版が再試験でPassしている | ☐ | 修正効果の確認 |
+| 4 | Conformance Matrix（T2）が最新化されている | ☐ | 整合性維持 |
+| 5 | Spec／Contractが更新反映済み | ☐ | 文書整合の回復 |
+| 6 | 未解決Deviationが存在しない（Zero Pending） | ☐ | フェーズ完了条件 |
+| 7 | Closed‑Loop完了が承認済み | ☐ | SCDサイクル完結 |
 
 > **完了基準:** Deviation=0、全更新反映済みで「フィードバックフェーズ完了（MUST）」とする。
 
@@ -134,7 +129,7 @@ x-schema: "/schemas/dcmm.scd.schema.json"
 ## 8. 改訂履歴 / *Revision History*
 
 | Version | Date | Description |
-| --- | --- | --- |
+|:--|:--|:--|
 | v1.0.0 | 2025-10-15 | DocFoundry 初版FIXとして再ベースライン。 |
 | v3.0.0 | 2025-10-15 | DCMM準拠メタデータ追加とフィードバック指針の整合。 |
 

@@ -1,0 +1,57 @@
+diff --git a/doc/02-scd/G0200-STD-SCD0-CycleOverview.md b/doc/02-scd/G0200-STD-SCD0-CycleOverview.md
+index ce79f2a..6afd4ba 100644
+--- a/doc/02-scd/G0200-STD-SCD0-CycleOverview.md
++++ b/doc/02-scd/G0200-STD-SCD0-CycleOverview.md
+@@ -1,17 +1,22 @@
++<!-- Auto-updated via Codex-AI Mechanical Fix Plan v3.2 (Enhanced) -->
+ ---
+ schema: "https://schema.org/CreativeWork"
+-doc_id: "G0200-STD-SCD0"
+-title: "開発サイクル概要（v3.1汎用版・Spec–Conformance Development Cycle）"
++@type: "CreativeWork"
++identifier: "G0200-STD-SCD0"
++name: "開発サイクル概要（v3.1汎用版・Spec–Conformance Development Cycle）"
+ version: "v1.0.0"
+-date: "2025-10-15"
++datePublished: "2025-10-15"
+ status: "Draft"
+-lifecycle: "Canonical"
+-scope: "Generic"
+-owner: "Standards-Governance-Team"
++creator:
++  @type: Organization
++  name: Documentation Team
+ reviewers:
+   - "Quality-Assurance-Guild"
+   - "Product-Compliance-Board"
+ confidentiality: "Public"
++lifecycle: "Canonical"
++scope: "Generic"
++owner: "Standards-Governance-Team"
+ inherit_from: ["G0100-STD-DOC0"]
+ x-schema: "/schemas/dcmm.scd.schema.json"
+ ---
+@@ -137,10 +142,10 @@ flowchart TD
+ 
+ | 対応軸 | 対象 | 説明 |
+ |:--|:--|:--|
+-| 要求 ⇄ テスト | 仕様が具体的に検証可能であることを保証。 |
+-| テスト ⇄ 実装 | 実装がテストにより裏付けられることを保証。 |
+-| 実装 ⇄ 検証 | 適合結果をコード変更へ反映。 |
+-| 検証 ⇄ 仕様 | 改訂が再び仕様書に戻り、循環を完結させる。 |
++| 要求 テスト | 仕様が具体的に検証可能であることを保証。 |
++| テスト 実装 | 実装がテストにより裏付けられることを保証。 |
++| 実装 検証 | 適合結果をコード変更へ反映。 |
++| 検証 仕様 | 改訂が再び仕様書に戻り、循環を完結させる。 |
+ 
+ **成果物例:**
+ - Traceability Matrix（要求⇄テスト⇄実装）
+@@ -229,7 +234,7 @@ Spec–Conformance Development Cycle（SCD）は、
+ ## 13. 改訂履歴 / *Revision History*
+ 
+ | Version | Date | Description |
+-|:--|:--|:--|
++| --- | --- | --- |
+ | v1.0.0 | 2025-10-15 | DocFoundry 初版FIXとして再ベースライン。 |
+ | v3.1.0 | 2025-10-15 | YAMLメタデータと構成をG0100/G0101準拠に整備。 |
+ 

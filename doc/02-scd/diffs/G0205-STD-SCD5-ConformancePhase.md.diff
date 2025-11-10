@@ -1,0 +1,74 @@
+diff --git a/doc/02-scd/G0205-STD-SCD5-ConformancePhase.md b/doc/02-scd/G0205-STD-SCD5-ConformancePhase.md
+index 7865a78..b0190e8 100644
+--- a/doc/02-scd/G0205-STD-SCD5-ConformancePhase.md
++++ b/doc/02-scd/G0205-STD-SCD5-ConformancePhase.md
+@@ -1,17 +1,22 @@
++<!-- Auto-updated via Codex-AI Mechanical Fix Plan v3.2 (Enhanced) -->
+ ---
+ schema: "https://schema.org/CreativeWork"
+-doc_id: "G0205-STD-SCD5"
+-title: "適合確認フェーズガイド（v3.0統一構成）"
++@type: "CreativeWork"
++identifier: "G0205-STD-SCD5"
++name: "適合確認フェーズガイド（v3.0統一構成）"
+ version: "v1.0.0"
+-date: "2025-10-15"
++datePublished: "2025-10-15"
+ status: "Approved"
+-lifecycle: "Canonical"
+-scope: "Generic"
+-owner: "Standards-Governance-Team"
++creator:
++  @type: Organization
++  name: Documentation Team
+ reviewers:
+   - "Conformance-Engineering-Guild"
+   - "Quality-Assurance-Guild"
+ confidentiality: "Public"
++lifecycle: "Canonical"
++scope: "Generic"
++owner: "Standards-Governance-Team"
+ inherit_from: ["G0100-STD-DOC0"]
+ x-schema: "/schemas/dcmm.scd.schema.json"
+ ---
+@@ -85,13 +90,13 @@ x-schema: "/schemas/dcmm.scd.schema.json"
+ 
+ | No | 確認項目 | 判定 | 意義 |
+ |:--|:--|:--|:--|
+-| 1 | 全ReqIDがConformance対象となっている | ☐ | テスト網羅性確保 |
+-| 2 | T2（Matrix）が最新化されている | ☐ | 整合データ維持 |
+-| 3 | 不適合（Deviation）がT4に記録されている | ☐ | 逸脱追跡 |
+-| 4 | Conformance結果がCIに保存されている | ☐ | 自動化確認 |
+-| 5 | 適合率100%（Failなし）を達成している | ☐ | フェーズ完了条件 |
+-| 6 | 承認者が結果をレビュー済である | ☐ | 品質保証 |
+-| 7 | 結果がチームに共有されている | ☐ | 透明性 |
++| 1 | 全ReqIDがConformance対象となっている | | テスト網羅性確保 |
++| 2 | T2（Matrix）が最新化されている | | 整合データ維持 |
++| 3 | 不適合（Deviation）がT4に記録されている | | 逸脱追跡 |
++| 4 | Conformance結果がCIに保存されている | | 自動化確認 |
++| 5 | 適合率100%（Failなし）を達成している | | フェーズ完了条件 |
++| 6 | 承認者が結果をレビュー済である | | 品質保証 |
++| 7 | 結果がチームに共有されている | | 透明性 |
+ 
+ > **完了基準:** 適合率100%、Deviation=0の状態で「適合確認フェーズ完了（MUST）」とする。
+ 
+@@ -102,8 +107,8 @@ x-schema: "/schemas/dcmm.scd.schema.json"
+ ### A. Conformance出力例（T2抜粋）
+ | ReqID | Result | ImplRef | RunID | 備考 |
+ |:--|:--|:--|:--|:--|
+-| API‑R001 | ✅ Pass | ApiClient | #134 | 自動 |
+-| API‑R002 | ⚠️ Fail | ApiClient | #135 | Timeout異常 |
++| API‑R001 | Pass | ApiClient | #134 | 自動 |
++| API‑R002 | Fail | ApiClient | #135 | Timeout異常 |
+ 
+ ### B. Deviation記録例（T4抜粋）
+ | No | 関連ReqID | 概要 | 対応状況 | 再試験 | 登録者 |
+@@ -129,7 +134,7 @@ x-schema: "/schemas/dcmm.scd.schema.json"
+ ## 8. 改訂履歴 / *Revision History*
+ 
+ | Version | Date | Description |
+-|:--|:--|:--|
++| --- | --- | --- |
+ | v1.0.0 | 2025-10-15 | DocFoundry 初版FIXとして再ベースライン。 |
+ | v3.0.0 | 2025-10-15 | DCMM準拠メタデータ追加と適合フェーズ指針更新。 |
+ 
