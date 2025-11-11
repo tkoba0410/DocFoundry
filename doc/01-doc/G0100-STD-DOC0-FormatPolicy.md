@@ -1,43 +1,43 @@
 ---
 
-schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
+schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
 identifier: "G0100-STD-DOC0-FormatPolicy"
-name: "Documentation Format Standard (v5.6.0 / Final Logical Edition)"
-version: "v5.6.0"
+name: "Documentation Format Standard (v5.7.1 / Final Logical Edition)"
+version: "v5.7.1"
 datePublished: "2025-11-11"
-status: "Approved"
 inLanguage: ["ja"]
-creator: "Person"
+creator:
+  "@type": "Person"
+  name: "Individual Developer"
 description: >
   Final logical edition of the DocFoundary Format Standard.
   Defines structure, taxonomy, naming, metadata, and Markdown formatting rules in coherent logical order.
 
 ---
 
-# [STD-DOC0] ドキュメント書式標準（Documentation Format Standard / v5.6.0）
+
+# [STD-DOC0] ドキュメント書式標準（Documentation Format Standard / v5.7.1）
 
 ## 目次（Table of Contents）
 
-* [1. 定義と適用範囲](#1-定義と適用範囲definition-and-scope)
-* [2. 文書体系とカテゴリ構造](#2-文書体系とカテゴリ構造document-taxonomy-and-category-model)
-* [3. ファイル命名規則](#3-ファイル命名規則naming-convention)
-* [4. 文書構造とメタデータ](#4-文書構造とメタデータstructure--metadata)
-
-  * [4.1 目次](#41-目次table-of-contents)
-  * [4.2 Front Matter構造](#42-front-matter構造creativework-schema)
-  * [4.3 Front Matter固定仕様](#43-front-matter固定仕様error-free-form)
-  * [4.4 バージョンと改訂履歴](#44-バージョンと改訂履歴versioning--revision-history)
-* [5. Markdown書式標準](#5-markdown書式標準markdown-formatting-standard)
-
-  * [5.1 表記詳細ルール](#51-表記詳細ルールformatting-details)
-* [6. 禁止事項](#6-禁止事項prohibited-items)
-* [附録A. 参照文書](#附録a-参照文書referenced-standards)
-* [Revision History](#revision-historyrevision-history)
+* [1. 定義と適用範囲](#1)
+* [2. 文書体系とカテゴリ構造](#2)
+* [3. ファイル命名規則](#3)
+* [4. 文書構造とメタデータ](#4)
+  * [4.1 目次](#4-1)
+  * [4.2 Front Matter構造および固定仕様](#4-2)
+  * [4.3 バージョンと改訂履歴](#4-3)
+* [5. Markdown書式標準](#5)
+  * [5.1 表記詳細ルール](#5-1)
+* [6. 禁止事項](#6)
+* [附録A. 参照文書](#A)
+* [Revision History](#rev)
 
 ---
 
 ## 1. 定義と適用範囲（definition-and-scope）
+<a id="1"></a>
 
 本標準は、DocFoundary 標準群における **Markdown 文書の形式層仕様** を定義する。
 文書の意味や運用手順ではなく、その **構造・命名・書式** を統一し、再現性と整合性を保証することを目的とする。
@@ -56,8 +56,9 @@ DocFoundary 全体で共通利用される Markdown 文書の形式を標準化�
 ---
 
 ## 2. 文書体系とカテゴリ構造（document-taxonomy-and-category-model）
+<a id="2"></a>
 
-本章では、DocFoundary 標準群で使用されるカテゴリ、ステータス、および言語コードを定義する。
+本章では、DocFoundary 標準群で使用されるカテゴリ、および言語コードを定義する。
 これらは文書構造の基本分類として本文内で正式に定義され、別レジストリ文書（G0121）への参照は不要である。
 
 ### 2.1 Categories（カテゴリ定義）
@@ -73,17 +74,7 @@ DocFoundary 全体で共通利用される Markdown 文書の形式を標準化�
 | RPT | 報告書（Report）                | 実施結果・評価・総括をまとめる文書    | G0700-RPT-RPTA-AnalysisReport         |
 | REF | 参考資料（Reference）            | 用語集・例示・補足資料を提供する文書   | G0120-REF-DOCR-ReferenceSamples       |
 
-### 2.2 Status（文書状態）
-
-DocFoundary 標準群では、文書状態（status）は **Draft** と **Approved** のみを公式値（MUST）とする。
-他の状態（Reviewing, Deprecated など）は運用層（OPS）で扱う。
-
-| 値        | 意味          | 用途例               |
-| -------- | ----------- | ----------------- |
-| Draft    | 作成中・承認待ちの文書 | 新規作成時、改訂中の文書      |
-| Approved | 承認済み・安定版    | 公開および他文書からの参照可能状態 |
-
-### 2.3 Language Codes（言語コード）
+### 2.2 Language Codes（言語コード）
 
 DocFoundary 標準群では、**日本語（`ja`）を唯一の公式言語コード（MUST）** とする。
 他言語（例：`en`, `ko`, `zh`）は補助翻訳用として扱い、文書の正本としては認めない。
@@ -98,6 +89,7 @@ DocFoundary 標準群では、**日本語（`ja`）を唯一の公式言語コ�
 ---
 
 ## 3. ファイル命名規則（naming-convention）
+<a id="3"></a>
 
 ```
 {Prefix}{4桁番号}-{カテゴリ3}-{文書4}-{タイトル}.md
@@ -114,8 +106,10 @@ DocFoundary 標準群では、**日本語（`ja`）を唯一の公式言語コ�
 ---
 
 ## 4. 文書構造とメタデータ（structure--metadata）
+<a id="4"></a>
 
 ### 4.1 目次（table-of-contents）
+<a id="4-1"></a>
 
 目次（TOC: Table of Contents）は、文書全体の構造を示すために設ける。
 DocFoundary標準文書では、以下の要件を満たさなければならない（MUST）。
@@ -134,10 +128,8 @@ DocFoundary標準文書では、以下の要件を満たさなければならな
 
 #### (3) アンカー命名
 
-* 章タイトルの日本語と英語副題を**小文字＋ハイフン連結**で組み合わせる（MUST）。
-  例：`#3-文書構造と-front-matterdocument-structure-and-metadata`
-* 半角英数字とハイフン以外の文字を含めてはならない（MUST NOT）。
-* タイトル変更時は対応するアンカーも更新する（SHOULD）。
+* アンカーは **章番号のみ** を用いる（例：`#4-2`）。
+* 英語スラッグや日本語は使用しない（MUST NOT）。
 
 #### (4) 対象範囲
 
@@ -149,6 +141,7 @@ DocFoundary標準文書では、以下の要件を満たさなければならな
 > 生成方法やツールに依存しない最小限の書式で定義する。
 
 ## 4.2 Front Matter構造および固定仕様（creativework-schema / error-free-form）
+<a id="4-2"></a>
 
 Front Matter は Schema.org の `CreativeWork` に準拠し、下表の9キーのみで構成する。構文・順序・定数値は固定し、変更を許可するのは `identifier`, `name`, `version`, `datePublished`, `description` のみ。この形式以外は不許可とし、CI / Lint で常に同一結果を保証する。
 
@@ -213,7 +206,8 @@ description: "***"
 * ダブルクォート・キー順・配列形式を固定
 * 冪等実行で差分が出ないことを保証
 
-### 4.4 バージョンと改訂履歴（versioning--revision-history）
+### 4.3 バージョンと改訂履歴（versioning--revision-history）
+<a id="4-3"></a>
 
 #### (1) バージョン表記
 
@@ -231,6 +225,7 @@ description: "***"
 * 日付形式は ISO 8601（YYYY-MM-DD）。
 
 ## 5. Markdown書式標準（markdown-formatting-standard）
+<a id="5"></a>
 
 **準拠仕様:**
 
@@ -246,7 +241,7 @@ description: "***"
 
 | 区分                                 | 要件                                                        | 規範性                                            |      |
 | ---------------------------------- | --------------------------------------------------------- | ---------------------------------------------- | ---- |
-| **表（Tables）**                      | `                                                         | ` 罫線による標準Markdown表を用い、セル内改行は禁止。外枠線や結合セルは使用しない。 | MUST |
+| **表（Tables）**                      | ` 罫線による標準Markdown表を用い、セル内改行は禁止。外枠線や結合セルは使用しない。 | MUST |
 | **コードブロック（Code Blocks）**           | 三重バッククォートで囲み、必ず言語名を指定する（例：`yaml / `csharp）。               | MUST                                           |      |
 | **引用（Blockquote）**                 | `>` は1段階のみ許可。多段引用は禁止。引用中に他要素（表・画像）を含めない。                  | MUST                                           |      |
 | **日付・時刻（Date and Time）**           | ISO 8601形式（例: `2025-11-11`、`2025-11-11T10:00:00Z`）を使用。    | MUST                                           |      |
@@ -327,6 +322,8 @@ DocFoundary 標準群では、シーケンス図、フローチャート、ER図
 * 非標準キーを Front Matter に追加しない。
 * 同一カテゴリ内で4桁番号を重複させない。
 * H1タイトルとファイル名を不一致のままにしない。
+* Front Matter に `status` やその他の状態管理キーを追加してはならない（MUST NOT）。
+  文書状態は運用層（OPS）によって一元管理され、形式層で保持してはならない。
 
 ---
 
