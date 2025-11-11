@@ -3,7 +3,7 @@
 schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
 identifier: "G0100-STD-DOC0-FormatPolicy"
-name: "Documentation Format Standard (v5.7.1 / Final Logical Edition)"
+name: "ドキュメント書式標準（v5.7.1／最終論理版）"
 version: "v5.7.1"
 datePublished: "2025-11-11"
 inLanguage: ["ja"]
@@ -11,11 +11,10 @@ creator:
   "@type": "Person"
   name: "Individual Developer"
 description: >
-  Final logical edition of the DocFoundary Format Standard.
-  Defines structure, taxonomy, naming, metadata, and Markdown formatting rules in coherent logical order.
+ DocFoundary における書式標準の最終論理版。
+ 構造・分類・命名・メタデータ・Markdown書式の規則を一貫した論理順で定義する。
 
 ---
-
 
 # [STD-DOC0] ドキュメント書式標準（Documentation Format Standard / v5.7.1）
 
@@ -155,12 +154,12 @@ Front Matter は Schema.org の `CreativeWork` に準拠し、下表の9キー�
 | `schema`        | string | ✅  | ❌  | スキーマURL。固定値 `"https://schema.org/CreativeWork"`                    |
 | `@type`         | string | ✅  | ❌  | CreativeWork種別。固定値 `"CreativeWork"`                                |
 | `identifier`    | string | ✅  | ✅  | 文書ID（ファイル名と一致）                                                     |
-| `name`          | string | ✅  | ✅  | 英語タイトル                                                             |
+| `name`          | string | ✅  | ✅  | **日本語タイトル（単言語）**                                                             |
 | `version`       | string | ✅  | ✅  | バージョン (`vX.Y.Z`)                                                   |
 | `datePublished` | string | ✅  | ✅  | 発行日 (ISO 8601)                                                     |
 | `inLanguage`    | array  | ✅  | ❌  | 言語コード (固定値 `["ja"]`)                                               |
 | `creator`       | object | ✅  | ❌  | JSON-LD形式。固定構造 `"@type": "Person"`, `name: "Individual Developer"` |
-| `description`   | string | ✅  | ✅  | 文書概要（1〜3文、空文字不可）                                                   |
+| `description`   | string | ✅  | ✅  | **日本語の文書概要（1〜3文、空文字不可・単言語）**                           |
 
 ---
 
@@ -171,14 +170,14 @@ Front Matter は Schema.org の `CreativeWork` に準拠し、下表の9キー�
 schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
 identifier: "***"
-name: "***"
+name: "***（日本語タイトル）"
 version: "***"
 datePublished: "***"
 inLanguage: ["ja"]
 creator:
   "@type": "Person"
   name: "Individual Developer"
-description: "***"
+description: "***（日本語で1〜3文の概要）"
 ---
 ```
 
@@ -369,12 +368,8 @@ DocFoundary 標準文書は **日本語を正本（`inLanguage: ["ja"]`）** と
 | 文書ID                               | 名称           | 関係        |
 | ---------------------------------- | ------------ | --------- |
 | G0000-STD-OVRV-OverView            | ドキュメント標準全体指針 | 上位理念層     |
-| G0400-STD-YML0-ContentStructure    | YAML内容構造標準   | 下位構造層     |
-| G0410-STD-YML1-LayerModel          | YAML階層モデル標準  | 関連構造層     |
-| G0120-REF-DOCR-ReferenceSamples    | 書式例・用語集      | 補助層       |
-| G0121-STD-REG-DocumentEnumerations | 列挙レジストリ      | 列挙原本層     |
-| G0300-ARC-COD0-CodingStandard      | コーディング標準     | 設計層参照     |
-| G0600-SEC-SECP-SecurityPolicy      | セキュリティ標準     | セキュリティ層参照 |
+| G0110-STD-DOC1-AuthoringGuideline     | 書式標準      | 形式層基準        |
+
 
 > **注:**
 > 参照文書は、DocFoundary 標準群の上位・下位・横断的関連を示すものであり、

@@ -3,7 +3,7 @@
 schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
 identifier: "G0110-STD-DOC1-AuthoringGuideline"
-name: "Documentation Authoring Guideline (v1.1.0 / Authoring & Style Edition)"
+name: "文書作成指針（v1.1.0／著述・文体版）"
 version: "v1.1.0"
 datePublished: "2025-11-11"
 inLanguage: ["ja"]
@@ -11,24 +11,23 @@ creator:
   "@type": "Person"
   name: "Individual Developer"
 description: >
-  Defines writing and stylistic principles for all DocFoundary standard documents.
-  Focuses on authoring methodology, content design, and stylistic consistency rather than structural format.
-# NOTE: `status` key removed to comply with G0100 section 6 (禁止事項).
+  DocFoundary 標準群における文書の書き方、構成、文体の原則を定義する。
+  構造的整合性よりも、内容設計・表現・文体の一貫性を重視する。
+  
 ---
+
+# [STD-DOC1] 文書設計指針（Documentation Authoring Guideline / v1.1.0）
 
 ## 目次（Table of Contents）
 
 * [1. 目的と適用範囲（Purpose and Scope）](#1-目的と適用範囲purpose-and-scope)
-
   * [1.1 目的](#11-目的)
   * [1.2 適用範囲](#12-適用範囲)
 * [2. 記述設計の原則（Authoring Principles）](#2-記述設計の原則authoring-principles)
-
   * [2.1 構造的整合性（Structural Consistency）](#21-構造的整合性structural-consistency)
   * [2.2 内容設計（Content Design）](#22-内容設計content-design)
   * [2.3 品質基準（Quality Principles）](#23-品質基準quality-principles)
 * [3. 表現・スタイルガイド（Stylistic Rules）](#3-表現スタイルガイドstylistic-rules)
-
   * [3.1 言語・文体ルール（Language and Tone）](#31-言語文体ルールlanguage-and-tone)
   * [3.2 構文と書式（Syntax and Formatting）](#32-構文と書式syntax-and-formatting)
   * [3.3 図表とコード記法（Figures and Code Notation）](#33-図表とコード記法figures-and-code-notation)
@@ -37,7 +36,7 @@ description: >
 * [附録A. 参考文書（Referenced Standards）](#附録a-参考文書referenced-standards)
 * [Revision History（改訂履歴）](#revision-history改訂履歴)
 
-# [STD-DOC1] 文書設計指針（Documentation Authoring Guideline / v1.1.0）
+---
 
 ## 1. 目的と適用範囲（Purpose and Scope）
 
@@ -136,11 +135,8 @@ G0100-STD-DOC0（書式標準）が定義する構造・形式に対し、本書
 
 | 文書ID                            | 名称        | 関係           |
 | ------------------------------- | --------- | ------------ |
+| G0000-STD-OVRV-OverView            | ドキュメント標準全体指針 | 上位理念層     |
 | G0100-STD-DOC0-FormatPolicy     | 書式標準      | 形式層基準        |
-| G0101-STD-DOCL-LintPolicy       | 検証標準      | 予定文書（Lint仕様） |
-| G0120-REF-DOCR-ReferenceSamples | 書式例・用語集   | 補助層          |
-| G0410-STD-YML1-LayerModel       | YAML階層モデル | 構造層参照        |
-| G0300-ARC-COD0-CodingStandard   | コーディング標準  | 設計層参照        |
 
 ---
 
