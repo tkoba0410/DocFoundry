@@ -20,36 +20,39 @@ description: >
 
 ## 目次（Table of Contents）
 
-* [1. 目的と適用範囲（Purpose and Scope）](#1-目的と適用範囲purpose-and-scope)
-  * [1.1 目的](#11-目的)
-  * [1.2 適用範囲](#12-適用範囲)
-* [2. 記述設計の原則（Authoring Principles）](#2-記述設計の原則authoring-principles)
-  * [2.1 構造的整合性（Structural Consistency）](#21-構造的整合性structural-consistency)
-  * [2.2 内容設計（Content Design）](#22-内容設計content-design)
-  * [2.3 品質基準（Quality Principles）](#23-品質基準quality-principles)
-* [3. 表現・スタイルガイド（Stylistic Rules）](#3-表現スタイルガイドstylistic-rules)
-  * [3.1 言語・文体ルール（Language and Tone）](#31-言語文体ルールlanguage-and-tone)
-  * [3.2 構文と書式（Syntax and Formatting）](#32-構文と書式syntax-and-formatting)
-  * [3.3 図表とコード記法（Figures and Code Notation）](#33-図表とコード記法figures-and-code-notation)
-* [4. 管理・運用上の留意点（Management Notes）](#4-管理運用上の留意点management-notes)
-* [5. 総括（Summary Directive）](#5-総括summary-directive)
-* [附録A. 参考文書（Referenced Standards）](#附録a-参考文書referenced-standards)
-* [Revision History（改訂履歴）](#revision-history改訂履歴)
+* [1. 目的と適用範囲（Purpose and Scope）](#1)
+  * [1.1 目的](#1-1)
+  * [1.2 適用範囲](#1-2)
+* [2. 記述設計の原則（Authoring Principles）](#2)
+  * [2.1 構造的整合性（Structural Consistency）](#2-1)
+  * [2.2 内容設計（Content Design）](#2-2)
+  * [2.3 品質基準（Quality Principles）](#2-3)
+* [3. 表現・スタイルガイド（Stylistic Rules）](#3)
+  * [3.1 言語・文体ルール（Language and Tone）](#3-1)
+  * [3.2 構文と書式（Syntax and Formatting）](#3-2)
+  * [3.3 図表とコード記法（Figures and Code Notation）](#3-3)
+* [4. 管理・運用上の留意点（Management Notes）](#4)
+* [5. 総括（Summary Directive）](#5)
+* [附録A. 参考文書（Referenced Standards）](#A)
+* [Revision History（改訂履歴）](#rev)
 
 ---
 
 ## 1. 目的と適用範囲（Purpose and Scope）
+<a id="1"></a>
 
 本指針は、DocFoundary 標準群における文書作成・記述・表現の統一を目的とする。
 G0100-STD-DOC0（書式標準）が定義する構造・形式に対し、本書は**内容と文体の品質指針**を提供する。
 
 ### 1.1 目的
+<a id="1-1"></a>
 
 * 文書記述の一貫性・可読性・検証性を確保する。
 * 曖昧さのない表現・文体・語彙使用を統一する。
 * 文書構造に従いながらも、自然で再現性の高い著述を支援する。
 
 ### 1.2 適用範囲
+<a id="1-2"></a>
 
 * 対象：すべての DocFoundary 標準文書（OVR, REQ, ARC, OPS, SEC, RPT, REF 系）。
 * 非対象：運用工程や自動検証手順など、構成外の技術的実装（G0101に委譲）。
@@ -57,8 +60,10 @@ G0100-STD-DOC0（書式標準）が定義する構造・形式に対し、本書
 ---
 
 ## 2. 記述設計の原則（Authoring Principles）
+<a id="2"></a>
 
 ### 2.1 構造的整合性（Structural Consistency）
+<a id="2-1"></a>
 
 * 文書は「目的 → 構造 → 表現 → 管理」の順で論理的に構成する（MUST）。
 * 章番号体系（1〜6 + 附録）はG0100と一致させ、欠番を許可しない（MUST）。
@@ -67,6 +72,7 @@ G0100-STD-DOC0（書式標準）が定義する構造・形式に対し、本書
 * 各章は独立して理解できるよう構成し、他文書への過度な依存を避ける（SHOULD）。
 
 ### 2.2 内容設計（Content Design）
+<a id="2-1"></a>
 
 * 各章には明確な目的と完結した内容を持たせる（MUST）。
 * 記述は具体的かつ検証可能であること。推測的・感想的な表現は禁止（MUST NOT）。
@@ -83,8 +89,10 @@ G0100-STD-DOC0（書式標準）が定義する構造・形式に対し、本書
 ---
 
 ## 3. 表現・スタイルガイド（Stylistic Rules）
+<a id="3"></a>
 
 ### 3.1 言語・文体ルール（Language and Tone）
+<a id="3-1"></a>
 
 * 日本語文体は「〜である」調に統一し、「〜です／ます」体は禁止（MUST）。
 * 技術用語・英語表現はカタカナ語を避け、原語表記（英語）を優先する（SHOULD）。
@@ -144,6 +152,7 @@ DocFoundary 標準文書は日本語を正本とする（`inLanguage: ["ja"]`）
 この分担により、構文検証と文体統制を独立して維持する。
 
 ### 3.2 構文と書式（Syntax and Formatting）
+<a id="3-2"></a>
 
 * リスト記号は `-` を推奨し（SHOULD）、番号付きリストは手順説明に限る。
 * 引用は `>` 1段階まで許可し、多段引用は禁止（MUST）。
@@ -152,6 +161,7 @@ DocFoundary 標準文書は日本語を正本とする（`inLanguage: ["ja"]`）
 * 行末改行は「半角スペース2個＋LF」とする（MUST）。
 
 ### 3.3 図表とコード記法（Figures and Code Notation）
+<a id="3-3"></a>
 
 * Mermaid図表を使用する場合、G0100 5.2節（Mermaid記法）に準拠する（MUST）。
 * 図表にはタイトル行（例：`%% 図3-1：構造概要`）を必ず記載する（MUST）。
@@ -161,6 +171,7 @@ DocFoundary 標準文書は日本語を正本とする（`inLanguage: ["ja"]`）
 ---
 
 ## 4. 管理・運用上の留意点（Management Notes）
+<a id="4"></a>
 
 | 項目         | 内容                                           |
 | ---------- | -------------------------------------------- |
@@ -172,6 +183,7 @@ DocFoundary 標準文書は日本語を正本とする（`inLanguage: ["ja"]`）
 ---
 
 ## 5. 総括（Summary Directive）
+<a id="5"></a>
 
 > 本指針（G0110）は、G0100が定義する「構造と書式」の上に、
 > **内容の明確性・表現の一貫性・記述品質の再現性** を保証するための著述基準を定義する。
@@ -180,6 +192,7 @@ DocFoundary 標準文書は日本語を正本とする（`inLanguage: ["ja"]`）
 ---
 
 ## 附録A. 参考文書（Referenced Standards）
+<a id="A"></a>
 
 | 文書ID                            | 名称        | 関係           |
 | ------------------------------- | --------- | ------------ |
@@ -189,6 +202,7 @@ DocFoundary 標準文書は日本語を正本とする（`inLanguage: ["ja"]`）
 ---
 
 ## Revision History（改訂履歴）
+<a id="rev"></a>
 
 | 版      | 日付           | 内容                                    |
 | ------ | ------------ | ------------------------------------- |
