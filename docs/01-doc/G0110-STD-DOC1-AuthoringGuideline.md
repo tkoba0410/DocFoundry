@@ -1,6 +1,6 @@
 ---
 
-schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
+schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
 identifier: "G0110-STD-DOC1-AuthoringGuideline"
 name: "文書作成指針（v2.1.0／最終整備版）"
