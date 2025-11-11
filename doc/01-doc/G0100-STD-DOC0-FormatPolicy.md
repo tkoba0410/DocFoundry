@@ -150,7 +150,7 @@ DocFoundary標準文書では、以下の要件を満たさなければならな
 
 ## 4.2 Front Matter構造および固定仕様（creativework-schema / error-free-form）
 
-Front Matter は Schema.org の `CreativeWork` に準拠し、下表の10キーのみで構成する。構文・順序・定数値は固定し、変更を許可するのは `identifier`, `name`, `version`, `datePublished`, `description` のみ。この形式以外は不許可とし、CI / Lint で常に同一結果を保証する。
+Front Matter は Schema.org の `CreativeWork` に準拠し、下表の9キーのみで構成する。構文・順序・定数値は固定し、変更を許可するのは `identifier`, `name`, `version`, `datePublished`, `description` のみ。この形式以外は不許可とし、CI / Lint で常に同一結果を保証する。
 
 ---
 
@@ -164,7 +164,6 @@ Front Matter は Schema.org の `CreativeWork` に準拠し、下表の10キー�
 | `name`          | string | ✅  | ✅  | 英語タイトル                                                             |
 | `version`       | string | ✅  | ✅  | バージョン (`vX.Y.Z`)                                                   |
 | `datePublished` | string | ✅  | ✅  | 発行日 (ISO 8601)                                                     |
-| `status`        | string | ✅  | ❌  | 文書状態。固定値 `"Approved"`                                              |
 | `inLanguage`    | array  | ✅  | ❌  | 言語コード (固定値 `["ja"]`)                                               |
 | `creator`       | object | ✅  | ❌  | JSON-LD形式。固定構造 `"@type": "Person"`, `name: "Individual Developer"` |
 | `description`   | string | ✅  | ✅  | 文書概要（1〜3文、空文字不可）                                                   |
@@ -181,7 +180,6 @@ identifier: "***"
 name: "***"
 version: "***"
 datePublished: "***"
-status: "Approved"
 inLanguage: ["ja"]
 creator:
   "@type": "Person"
@@ -202,7 +200,6 @@ description: "***"
 | `name`          | 非空文字列                                                              |
 | `version`       | 正規表現 `^v\\d+\\.\\d+\\.\\d+$`                                       |
 | `datePublished` | ISO 8601 日付 `"YYYY-MM-DD"`                                         |
-| `status`        | const `"Approved"`                                                 |
 | `inLanguage`    | const `["ja"]`                                                     |
 | `creator`       | const 構造 `{ "@type": "Person", "name": "Individual Developer" }`   |
 | `description`   | 1〜3文、空文字禁止                                                         |
@@ -215,7 +212,6 @@ description: "***"
 * インデント2スペース、LF改行、末尾改行1行
 * ダブルクォート・キー順・配列形式を固定
 * 冪等実行で差分が出ないことを保証
-
 
 ### 4.4 バージョンと改訂履歴（versioning--revision-history）
 
@@ -233,8 +229,6 @@ description: "***"
 * 列構成は **版・日付・内容** の3列固定。
 * 記録順序は降順（最新が上位）。
 * 日付形式は ISO 8601（YYYY-MM-DD）。
-
----
 
 ## 5. Markdown書式標準（markdown-formatting-standard）
 
@@ -330,7 +324,7 @@ DocFoundary 標準群では、シーケンス図、フローチャート、ER図
 ## 6. 禁止事項（prohibited-items）
 
 * `.md` 以外の拡張子を使用しない。
-* 非標準キーを Front Matter に追加しない（`status` を除く）。
+* 非標準キーを Front Matter に追加しない。
 * 同一カテゴリ内で4桁番号を重複させない。
 * H1タイトルとファイル名を不一致のままにしない。
 
