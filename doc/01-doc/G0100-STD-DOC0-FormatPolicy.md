@@ -148,42 +148,74 @@ DocFoundary標準文書では、以下の要件を満たさなければならな
 > 目次は、文書の章構成を正確に反映する**固定構文ブロック**であり、
 > 生成方法やツールに依存しない最小限の書式で定義する。
 
-### 4.2 Front Matter構造（creativework-schema）
+## 4.2 Front Matter構造および固定仕様（creativework-schema / error-free-form）
 
-| キー              | 型      | 必須 | 説明                                          |
-| --------------- | ------ | -- | ------------------------------------------- |
-| `schema`        | string | ✅  | スキーマURL (`https://schema.org/CreativeWork`) |
-| `@type`         | string | ✅  | CreativeWork種別                              |
-| `identifier`    | string | ✅  | 文書ID（ファイル名と一致）                              |
-| `name`          | string | ✅  | 英語タイトル                                      |
-| `version`       | string | ✅  | バージョン (`vX.Y.Z`)                            |
-| `datePublished` | string | ✅  | 発行日 (ISO 8601)                              |
-| `status`        | string | ✅  | 文書状態 (例: Draft / Approved)                  |
-| `inLanguage`    | array  | ✅  | 言語コード (ISO 639)                             |
-| `creator`       | object | ✅  | JSON-LD形式（Person または Organization）          |
-| `description`   | string | ✅  | 文書概要                                        |
+Front Matter は Schema.org の `CreativeWork` に準拠し、下表の10キーのみで構成する。構文・順序・定数値は固定し、変更を許可するのは `identifier`, `name`, `version`, `datePublished`, `description` のみ。この形式以外は不許可とし、CI / Lint で常に同一結果を保証する。
 
-### 4.3 Front Matter固定仕様（error-free-form）
+---
 
-Front Matter は **唯一の固定構文**に従う。
-この形式以外はサポート対象外とし、CI・Lint すべてで同一結果を保証する。
+### ✅ 構造定義（creativework-schema）
+
+| キー              | 型      | 必須 | 可変 | 説明                                                                 |
+| --------------- | ------ | -- | -- | ------------------------------------------------------------------ |
+| `schema`        | string | ✅  | ❌  | スキーマURL。固定値 `"https://schema.org/CreativeWork"`                    |
+| `@type`         | string | ✅  | ❌  | CreativeWork種別。固定値 `"CreativeWork"`                                |
+| `identifier`    | string | ✅  | ✅  | 文書ID（ファイル名と一致）                                                     |
+| `name`          | string | ✅  | ✅  | 英語タイトル                                                             |
+| `version`       | string | ✅  | ✅  | バージョン (`vX.Y.Z`)                                                   |
+| `datePublished` | string | ✅  | ✅  | 発行日 (ISO 8601)                                                     |
+| `status`        | string | ✅  | ❌  | 文書状態。固定値 `"Approved"`                                              |
+| `inLanguage`    | array  | ✅  | ❌  | 言語コード (固定値 `["ja"]`)                                               |
+| `creator`       | object | ✅  | ❌  | JSON-LD形式。固定構造 `"@type": "Person"`, `name: "Individual Developer"` |
+| `description`   | string | ✅  | ✅  | 文書概要（1〜3文、空文字不可）                                                   |
+
+---
+
+### ✅ 固定構文（error-free-form）
 
 ```yaml
 ---
 schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
-identifier: "G0100-STD-DOC0-FormatPolicy"
-name: "Documentation Format Standard"
-version: "v5.6.0"
-datePublished: "2025-11-11"
+identifier: "***"
+name: "***"
+version: "***"
+datePublished: "***"
 status: "Approved"
 inLanguage: ["ja"]
 creator:
   "@type": "Person"
   name: "Individual Developer"
-description: "Core format specification with error-free YAML header."
+description: "***"
 ---
 ```
+
+---
+
+### 📘 バリデーション規則
+
+| キー              | 検証条件                                                               |
+| --------------- | ------------------------------------------------------------------ |
+| `schema`        | const `"https://schema.org/CreativeWork"`                          |
+| `@type`         | const `"CreativeWork"`                                             |
+| `identifier`    | 正規表現 `^G[0-9]{4}-[A-Z]{3}-[A-Z0-9]{3,}-[A-Za-z0-9\\-]+$`（ファイル名と一致） |
+| `name`          | 非空文字列                                                              |
+| `version`       | 正規表現 `^v\\d+\\.\\d+\\.\\d+$`                                       |
+| `datePublished` | ISO 8601 日付 `"YYYY-MM-DD"`                                         |
+| `status`        | const `"Approved"`                                                 |
+| `inLanguage`    | const `["ja"]`                                                     |
+| `creator`       | const 構造 `{ "@type": "Person", "name": "Individual Developer" }`   |
+| `description`   | 1〜3文、空文字禁止                                                         |
+
+---
+
+### ⚙️ 運用方針
+
+* 固定値変更はエラー、可変項目のみ上書き可
+* インデント2スペース、LF改行、末尾改行1行
+* ダブルクォート・キー順・配列形式を固定
+* 冪等実行で差分が出ないことを保証
+
 
 ### 4.4 バージョンと改訂履歴（versioning--revision-history）
 
