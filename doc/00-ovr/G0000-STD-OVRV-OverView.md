@@ -1,21 +1,20 @@
 ---
-
-schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
-@type: "CreativeWork"
+schema: "https://schema.org/CreativeWork"
+"@type": "CreativeWork"
 identifier: "G0000-STD-OVRV-OverView"
-name: "Documentation Standard – General Overview (v2.4.0 / Canonical Edition)"
+name: "ドキュメント標準全体指針（v2.4.0／理念・総合版）"
 version: "v2.4.0"
 datePublished: "2025-11-09"
-status: "Canonical Edition"
+inLanguage: ["ja"]
 creator:
-@type: "Organization"
-name: "Documentation Team"
-inLanguage: ["ja", "en"]
-confidentiality: "Public"
+  "@type": "Person"
+  name: "Individual Developer"
 description: >
-Canonical Edition establishing the definitive and scalable framework for DocFoundary standards.
-Enhances philosophical depth and system linkage across individual and team development contexts.
-------------------------------------------------------------------------------------------------
+  DocFoundary 標準群全体の理念・原則・整合方針を定義する基幹文書。
+  個人開発からチーム開発まで一貫して適用可能な、文書標準の思想的・構造的基盤を示す。
+  ※本書は理念層（Overview Layer）に属し、必要に応じて英語併記を補助的に使用することを許容する。
+---
+
 
 # [STD-OVRV] ドキュメント標準全体指針（General Overview / Canonical Edition v2.4.0）
 
