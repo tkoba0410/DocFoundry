@@ -1,16 +1,19 @@
 ---
 
-schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
+schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
 identifier: "G0110-STD-DOC1-AuthoringGuideline"
 name: "Documentation Authoring Guideline (v1.1.0 / Authoring & Style Edition)"
 version: "v1.1.0"
 datePublished: "2025-11-11"
-status: "Approved"
 inLanguage: ["ja"]
-creator: "Person"
-description: "Defines writing and stylistic principles for all DocFoundary standard documents. Focuses on authoring methodology, content design, and stylistic consistency rather than structural format."
-
+creator:
+  "@type": "Person"
+  name: "Individual Developer"
+description: >
+  Defines writing and stylistic principles for all DocFoundary standard documents.
+  Focuses on authoring methodology, content design, and stylistic consistency rather than structural format.
+# NOTE: `status` key removed to comply with G0100 section 6 (禁止事項).
 ---
 
 ## 目次（Table of Contents）
@@ -60,7 +63,8 @@ G0100-STD-DOC0（書式標準）が定義する構造・形式に対し、本書
 
 * 文書は「目的 → 構造 → 表現 → 管理」の順で論理的に構成する（MUST）。
 * 章番号体系（1〜6 + 附録）はG0100と一致させ、欠番を許可しない（MUST）。
-* H1はタイトルのみ、H2は章、H3は節とする。H4以降の多段見出しは禁止（SHOULD NOT）。
+* H1はタイトルのみ、H2は章、H3は節とし、**H4以降は禁止（MUST NOT）**。
+  （G0100 4.1節の「目次階層は第1〜第3階層まで」に基づく）
 * 各章は独立して理解できるよう構成し、他文書への過度な依存を避ける（SHOULD）。
 
 ### 2.2 内容設計（Content Design）
@@ -85,13 +89,17 @@ G0100-STD-DOC0（書式標準）が定義する構造・形式に対し、本書
 
 * 日本語文体は「〜である」調に統一し、「〜です／ます」体は禁止（MUST）。
 * 技術用語・英語表現はカタカナ語を避け、原語表記（英語）を優先する（SHOULD）。
-* 英語副題は `(English Subtitle)` として全章に併記する（MUST）。
+* 英語副題の併記は、G0100 5.3節（Bilingual Notation）に従い、
+  以下のいずれかに該当する場合のみ行う（SHOULD）。
+  1. 英語が国際的に認知された正式名称である場合
+  2. 日本語訳のみでは意味が不明瞭な場合
+  3. 外部仕様や他標準文書との参照整合性を保つ必要がある場合
 * 専門語・略語には初出時に括弧付き説明を付す（MUST）。
 
 ### 3.2 構文と書式（Syntax and Formatting）
 
-* リスト記号は `-` に統一し、番号付きリストは手順説明に限る（SHOULD）。
-* 引用は `>` 1段階まで許可、多段引用は禁止（MUST）。
+* リスト記号は `-` を推奨し（SHOULD）、番号付きリストは手順説明に限る。
+* 引用は `>` 1段階まで許可し、多段引用は禁止（MUST）。
 * コードブロックは三重バッククォートで囲み、言語名を明示する（MUST）。
 * 表はMarkdown標準構文を使用し、セル内改行や罫線の装飾は禁止（MUST）。
 * 行末改行は「半角スペース2個＋LF」とする（MUST）。
