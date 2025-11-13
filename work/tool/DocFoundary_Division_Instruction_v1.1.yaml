@@ -1,0 +1,68 @@
+title: DocFoundary 文書分割指示書 v1.1（判断エスカレーション付き）
+description: DocFoundary標準文書を分冊（Volume）構造へ移行する際の手順と判断基準を定める指示書。
+sections:
+  divisionCriteria:
+    tokenThreshold: 3000
+    lineThreshold: 300
+    rules:
+    - 基準超過時は必ず分冊（MUST）
+  volumeMethod:
+    namingConvention: '{Prefix}{番号}-{カテゴリ}-{文書}-{タイトル}-{Vol番号}.md'
+    volumes:
+      Vol00: Index（本文なし）
+      Vol01_plus: 本文のみ（改訂履歴なし）
+    askWhen:
+    - Prefixが不明な場合
+    - タイトル構造が複雑な場合
+  unitRules:
+    splitUnit: 章単位
+    must:
+    - 章途中での分割は禁止（MUST NOT）
+    - コードはクラス／関数単位維持（MUST）
+    askWhen:
+    - 章が巨大で基準超過する場合
+    - 章が極端に小さくVolumesのバランスが悪い場合
+    - Vol間の再配置判断が必要な場合
+  volNumbering:
+    rules:
+      '00': Index
+      01_plus: 本編
+    askWhen:
+    - 附録を独立させるか迷う場合
+    - 第1章が極端に大きい場合
+  frontMatter:
+    required:
+    - identifier
+    - name
+    - description
+    - schema
+    - creator
+    - datePublished
+    askWhen:
+    - description更新範囲が不明な場合
+    - versionを統一すべきか判断が必要な場合
+  nameFormat:
+    format: '{日本語正式タイトル} 第N巻（第X,Y,Z章）'
+    askWhen:
+    - 序章や0章を含む場合
+    - 附録の巻配分判断が必要な場合
+  singleFileRules:
+    must:
+    - 基準内の場合は単一ファイルで完結（MUST）
+    - Vol番号なし（MUST）
+    - Vol00なし（MUST）
+    askWhen:
+    - 基準ギリギリの文書
+    - 将来増加の見込みでVolume化した方が良い場合
+  finalChecklist:
+    technical:
+    - tokens / lines 判定済み
+    - 章単位で分割
+    - ファイル名規則OK
+    - Front Matter完備
+    askWhen:
+    - Vol間バランスが悪い
+    - nameの章範囲が曖昧
+    - 附録の扱いが曖昧
+    - Vol00が特殊構成になる場合
+    - 再編の必要性を感じる場合
