@@ -13,7 +13,8 @@ name: "Individual Developer"
 description: >
 DocFoundary 標準群における文書作成・構成・表現・管理の原則を定義する最終整備版。
 章構成・用語・表記・書式を完全統一し、正式公開基準に適合させた。
---------------------------------
+
+---
 
 # [STD-DOC1] 文書設計指針（Documentation Authoring Guideline / v2.1.0）
 
@@ -235,10 +236,14 @@ graph TD
 
 ## 附録. 参考文書
 
-| 文書ID                        | 名称           | 関係    |
-| --------------------------- | ------------ | ----- |
-| G0000-STD-OVRV-OverView     | ドキュメント標準全体指針 | 上位理念層 |
-| G0100-STD-DOC0-FormatPolicy | 書式標準         | 形式層基準 |
+| 文書ID                        | 名称                         | 関係            |
+|------------------------------|------------------------------|-----------------|
+| G0000-STD-OVRV-OverView      | ドキュメント標準 全体概要・理念 | 上位理念層       |
+| G0100-STD-DOC0-FormatPolicy  | ドキュメント書式標準           | 形式層基準       |
+| G0400-STD-YML0-ContentStructure | YAML 内容構造標準            | 内容層基準       |
+| G0410-STD-YML1-LayerModel    | YAML 三層モデル               | 構造理念層       |
+| G0420-STD-YML2-SyntaxStyleGuide | YAML 記述スタイル標準        | 記述スタイル基準 |
+| G0120-STD-DOC2-DocumentOperation | 文書運用標準               | 運用層基準       |
 
 ---
 

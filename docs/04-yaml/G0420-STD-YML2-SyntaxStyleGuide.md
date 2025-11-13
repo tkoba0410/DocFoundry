@@ -12,7 +12,8 @@ creator: "Documentation Team"
 confidentiality: "Public"
 glossary_ref: "G0100-STD-DOC0-Glossary"
 description: "DocFoundary プロジェクトにおける YAML 記述スタイルの完全標準。コメント規則を統合し、Lint対応・Annex参照導線を追加。Glossary参照を明記し、章構成の明瞭性と保守性を向上。"
---------------------------------------------------------------------------------------------------------------------
+
+---
 
 # [STD-YML2] YAML記述スタイル標準（Syntax Style Guide） v1.2.1 / Star5 Edition (Refined)
 
@@ -24,7 +25,7 @@ description: "DocFoundary プロジェクトにおける YAML 記述スタイル
 
 * **目的**: YAML 文書の可読性・差分安定性・解析一貫性を最大化し、教育・CI検証にも適合させる。
 * **適用範囲**: DocFoundary におけるすべての YAML 形式文書。
-* **非対象**: 運用・CIルールは G0110 に委譲。
+* **非対象**: 運用・検証・CI関連は G0120-STD-DOC2（DocumentOperation）に委譲
 
 ### 関連文書一覧
 
@@ -32,8 +33,7 @@ description: "DocFoundary プロジェクトにおける YAML 記述スタイル
 | -------------------------------- | -------- | -- |
 | G0400-STD-YML0-ContentStructure  | YAML構造仕様 | 上位 |
 | G0410-STD-YML1-LayerModel        | 三層モデル理念  | 上位 |
-| G0110-STD-DOCO-OperationalPolicy | 運用規約     | 補助 |
-| G0100-STD-DOC0-Glossary          | 共通用語集    | 参照 |
+| G0120-STD-DOC2-DocumentOperation | 共通用語集    | 参照 |
 
 ---
 

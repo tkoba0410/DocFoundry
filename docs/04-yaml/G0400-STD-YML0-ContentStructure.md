@@ -13,7 +13,8 @@ confidentiality: "Public"
 lifecycle: "Canonical"
 inLanguage: ["ja"]
 description: "本標準は、文書内容をYAML形式で構造化するための体系的指針を定義する。JSON Schemaによる形式保証とSchema.orgによる意味付けを中核とし、運用層をProfileとして分離する構成を採用する。5部構成に再整理し、付録に最小Schema・テンプレート・CI例を含む正式発行版。"
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---
 
 # G0400-STD-YAMLContentStructure（v2.1.0 / Publication Approved）
 
@@ -58,7 +59,7 @@ identifier: "G0501-STD-SPEC"
 name: "System Specification"
 version: "v1.0.0"
 date_published: "2025-11-06"
-in_language: ["ja"]  # BCP47形式の言語タグ（例：ja, en-US）
+inlanguage: ["ja"]  # BCP47形式の言語タグ（例：ja, en-US）
 schema_version: "1.0"
 
 sections:
@@ -71,7 +72,7 @@ sections:
       text: "ユーザはデータを登録できる。"
       priority: "must"
   constraints:
-    - id: "CsST-001"
+    - id: "CST-001"
       text: "登録データの容量は100MB以内とする。"
 
 creator:

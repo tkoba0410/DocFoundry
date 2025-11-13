@@ -48,19 +48,13 @@ description: "G0100-STD-DOC0 の総合編。分冊構成、目次、参照文書
 
 ---
 
-### Vol.03（附録）
-* [附録A. 参照文書](./G0100-STD-DOC0-AA-FormatPolic.md#A)
-* [Revision History](#rev)
-
----
-
 ## 附録A. 参照文書（Referenced Standards）
 | 文書ID | 名称 | 関係 |
 |------|------|------|
 | G0000-STD-OVRV-Overview | ドキュメント標準全体指針 | 上位理念層 |
 | G0110-STD-DOC1-AuthoringGuideline | 文書作成指針 | 形式層基準 |
 | G0300-ARC-COD0-CodingStandard | コーディング規約 | 設計層関連 |
-| G0410-STD-YML0-StructureDefinition | YAML構造定義 | 構造層関連 |
+| G0400-STD-YML0-ContentStructure | YAML構造定義 | 構造層関連 |
 
 ---
 
