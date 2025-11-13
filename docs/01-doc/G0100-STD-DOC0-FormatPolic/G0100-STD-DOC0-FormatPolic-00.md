@@ -1,7 +1,7 @@
 ---
 schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
-identifier: "G0100-STD-DOC0-00-FormatPolic"
+identifier: "G0100-STD-DOC0-FormatPolic-00"
 name: "ドキュメント書式標準 総合編（Index／参照・改訂情報）"
 version: "v5.7.1"
 datePublished: "2025-11-11"

@@ -1,0 +1,30 @@
+# G0130 Division Guideline YAML Checklist
+g0130_checklist:
+  front_matter:
+    schema: "required"
+    type: "required"
+    identifier: "must_match_filename"
+    name: "japanese_only_single_language"
+    description: "required"
+    version: "semantic_version"
+    datePublished: "ISO8601"
+    inLanguage: ["ja"]
+    creator:
+      - type: "Person"
+        role: "Individual Developer"
+  structure:
+    h1_title: "must_match_name"
+    headings_hierarchy: "H1 > H2 > H3"
+    allow_vol_structure: false
+  file_rules:
+    filename_pattern: "^G[0-9]{4}-[A-Z]{3}-[A-Z0-9]{3,}-[A-Za-z0-9\-]+$"
+    ascii_only: true
+    lines_limit:
+      recommended: 200
+      max: 300
+  quality:
+    must_not_have:
+      - "typos"
+      - "unused_vol_metadata"
+    consistency_checks:
+      - "MUST/MUST NOT logic consistent"
