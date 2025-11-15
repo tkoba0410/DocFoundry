@@ -1,7 +1,7 @@
 ---
 schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
-identifier: "G0100-STD-DOC0-01-FormatPolic"
+identifier: "G0100-STD-DOC0-01-FormatPolicy"
 name: "ドキュメント書式標準 第1巻（Vol.01：第1〜3章）"
 version: "v5.7.1"
 datePublished: "2025-11-11"
@@ -21,19 +21,19 @@ description: "ドキュメント書式標準の第1〜3章（定義・体系・�
 
 ---
 
-# 1. 定義と適用範囲（definition-and-scope）
+## 1. 定義と適用範囲（definition-and-scope）
 <a id="1"></a>
 
 本標準は、DocFoundary 標準群における **Markdown 文書の形式層仕様** を定義する。
 文書の意味や運用手順ではなく、その **構造・命名・書式** を統一し、再現性と整合性を保証することを目的とする。
 
-## 1.1 目的（purpose）
+### 1.1 目的（purpose）
 <a id="1-1"></a>
 
 DocFoundary 全体で共通利用される Markdown 文書の形式を標準化し、GFM / CommonMark 準拠の書式に統一する。
 また、本標準は全標準群に共通する **形式層（Format Layer）** の基盤仕様として位置づけられる。
 
-## 1.2 適用範囲（scope-of-application）
+### 1.2 適用範囲（scope-of-application）
 <a id="1-2"></a>
 
 * **対象**：設計書、仕様書、報告書など Markdown で作成される開発文書。
@@ -42,13 +42,13 @@ DocFoundary 全体で共通利用される Markdown 文書の形式を標準化�
 
 ---
 
-# 2. 文書体系とカテゴリ構造（document-taxonomy-and-category-model）
+## 2. 文書体系とカテゴリ構造（document-taxonomy-and-category-model）
 <a id="2"></a>
 
 本章では、DocFoundary 標準群で使用されるカテゴリ、および言語コードを定義する。
 これらは文書構造の基本分類として本文内で正式に定義され、別レジストリ文書（G0121）への参照は不要である。
 
-## 2.1 Categories（カテゴリ定義）
+### 2.1 Categories（カテゴリ定義）
 <a id="2-1"></a>
 
 | コード | 名称 | 用途概要 | 代表文書例 |
@@ -62,7 +62,7 @@ DocFoundary 全体で共通利用される Markdown 文書の形式を標準化�
 | RPT | 報告書（Report） | 分析・評価 | G0700-RPT-RPTA |
 | REF | 参考資料（Reference） | 用語集・例示 | G0120-REF-DOCR |
 
-## 2.2 Language Codes（言語コード）
+### 2.2 Language Codes（言語コード）
 <a id="2-2"></a>
 
 DocFoundary 標準群では、**日本語（`ja`）を唯一の公式言語コード（MUST）** とする。
@@ -70,7 +70,7 @@ DocFoundary 標準群では、**日本語（`ja`）を唯一の公式言語コ�
 
 ---
 
-# 3. ファイル命名規則（naming-convention）
+## 3. ファイル命名規則（naming-convention）
 <a id="3"></a>
 
 ```
@@ -87,7 +87,7 @@ DocFoundary 標準群では、**日本語（`ja`）を唯一の公式言語コ�
 
 ---
 
-## 3.1 ファイル名と文書名の言語仕様
+### 3.1 ファイル名と文書名の言語仕様
 <a id="3-1"></a>
 
 | 項目 | 言語 | 規範性 | 説明 |
@@ -98,7 +98,7 @@ DocFoundary 標準群では、**日本語（`ja`）を唯一の公式言語コ�
 
 ---
 
-## 3.2 例と補足
+### 3.2 例と補足
 <a id="3-2"></a>
 
 Markdown 本文の H1 見出しでは、必要に応じて

@@ -1,22 +1,20 @@
 ---
-
-schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
-@type: "CreativeWork"
+schema: "https://schema.org/CreativeWork"
+"@type": "CreativeWork"
 identifier: "G0300-STD-COD0-CodingStandard"
-name: "Coding Standard – Core (Language-Agnostic)"
-version: "v1.2.1"
-datePublished: "2025-11-09"
-status: "Star5 Alignment Draft"
+name: "Coding Standard – Core"
+version: "v1.1.0"
+datePublished: "2025-11-14"
+inLanguage: ["ja"]
 creator:
-@type: "Organization"
-name: "Documentation Team"
-inLanguage: ["ja", "en"]
+  "@type": "Person"
+  name: "Individual Developer"
 description: >
-言語非依存のコーディング原則を定義する標準文書。
-本版では G0000-STD-OVRV-OverView（Star5 Edition） に完全整合し、
-L4 層として体系的位置付けを明確化。
-原則・適用・適合性・測定・検証の五層構造に整理し、Profile 概念を OVRV に準拠して再定義した。
------------------------------------------------------
+  言語非依存のコーディング原則を定義する標準文書。
+  本版では G0000-STD-OVRV-OverView（Star5 Edition） に完全整合し、
+  L4 層として体系的位置付けを明確化。
+  原則・適用・適合性・測定・検証の五層構造に整理し、Profile 概念を OVRV に準拠して再定義した。
+---
 
 # [STD-COD0] Coding Standard – Core (Language-Agnostic / Star5 Alignment Draft)
 

@@ -1,6 +1,5 @@
 ---
-
-schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
+schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
 identifier: "G0120-STD-DOC2-DocumentOperation"
 name: "ドキュメント運用標準（構造・検証・不整合管理指針）"
@@ -8,13 +7,12 @@ version: "v1.4.0"
 datePublished: "2025-11-12"
 inLanguage: ["ja"]
 creator:
-"@type": "Person"
-name: "Individual Developer"
+  "@type": "Person"
+  name: "Individual Developer"
 description: >
-DocFoundary 標準群における文書構成・検証仕様・不整合管理の運用方式を定義する標準文書。
-docs／checklist／report の三層構造に共通階層（00-ovr／01-doc）を導入し、
-他階層（02-scd 以降）への拡張性を確保する。
-
+  DocFoundary 標準群における文書構成・検証仕様・不整合管理の運用方式を定義する標準文書。
+  docs／checklist／report の三層構造に共通階層（00-ovr／01-doc）を導入し、
+  他階層（02-scd 以降）への拡張性を確保する。
 ---
 
 # [STD-DOC2] ドキュメント運用標準（構造・検証・不整合管理指針）
@@ -68,7 +66,7 @@ project-root/
 │  │      G0000-STD-OVRV-OverView.md
 │  │
 │  ├─ 01-doc/               # 文書標準群
-│  │      G0100-STD-DOC0-FormatPolicy.md
+│  │      G0100-STD-DOC0-FormatPolicy/ ...
 │  │      G0110-STD-DOC1-AuthoringGuideline.md
 │  │      G0120-STD-DOC2-DocumentOperation.md
 │  │

@@ -1,19 +1,16 @@
 ---
-
 schema: "https://schema.org/CreativeWork"
-@type: "CreativeWork"       # ← G0100/G0110と統一
+"@type": "CreativeWork"
 identifier: "G0400-STD-YML0-ContentStructure"
-name: "YAML文書内容構造標準（YML0: YAML Content Structure Standard）"
-version: "v2.1.0"
-datePublished: "2025-11-06"
-status: "Publication Approved"
-creator: "Documentation Team"
-reviewers: ["Documentation Review Committee"]
-confidentiality: "Public"
-lifecycle: "Canonical"
+name: "YAML文書内容構造標準"
+version: "v1.1.0"
+datePublished: "2025-11-14"
 inLanguage: ["ja"]
-description: "本標準は、文書内容をYAML形式で構造化するための体系的指針を定義する。JSON Schemaによる形式保証とSchema.orgによる意味付けを中核とし、運用層をProfileとして分離する構成を採用する。5部構成に再整理し、付録に最小Schema・テンプレート・CI例を含む正式発行版。"
-
+creator:
+  "@type": "Person"
+  name: "Individual Developer"
+description: >
+  "本標準は、文書内容をYAML形式で構造化するための体系的指針を定義する。JSON Schemaによる形式保証とSchema.orgによる意味付けを中核とし、運用層をProfileとして分離する構成を採用する。5部構成に再整理し、付録に最小Schema・テンプレート・CI例を含む正式発行版。"
 ---
 
 # G0400-STD-YAMLContentStructure（v2.1.0 / Publication Approved）

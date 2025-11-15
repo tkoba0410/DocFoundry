@@ -1,24 +1,15 @@
-<!-- Auto-updated via Codex-AI Mechanical Fix Plan v3.2 (Enhanced) -->
 ---
 schema: "https://schema.org/CreativeWork"
-@type: "CreativeWork"
-identifier: "G0202-STD-SCD2"
-name: "契約確立フェーズガイド（v3.0統一構成）"
-version: "v1.0.0"
-datePublished: "2025-10-15"
-status: "Approved"
+"@type": "CreativeWork"
+identifier: "G0202-STD-SCD2-ContractPhase"
+name: "契約確立フェーズガイド"
+version: "v1.1.0"
+datePublished: "2025-11-14"
+inLanguage: ["ja"]
 creator:
-  @type: Organization
-  name: Documentation Team
-reviewers:
-  - "Contract-Design-Council"
-  - "Quality-Assurance-Guild"
-confidentiality: "Public"
-lifecycle: "Canonical"
-scope: "Generic"
-owner: "Standards-Governance-Team"
-inherit_from: ["G0100-STD-DOC0"]
-x-schema: "/schemas/dcmm.scd.schema.json"
+  "@type": "Person"
+  name: "Individual Developer"
+description: "契約確立フェーズガイド"
 ---
 
 # [SCD-CONTRACT] 契約確立フェーズガイド（v3.0統一構成）

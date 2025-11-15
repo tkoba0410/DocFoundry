@@ -1,7 +1,7 @@
 ---
 schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
-identifier: "G0100-STD-DOC0-FormatPolic-00"
+identifier: "G0100-STD-DOC0-FormatPolicy-00"
 name: "ドキュメント書式標準 総合編（Index／参照・改訂情報）"
 version: "v5.7.1"
 datePublished: "2025-11-11"
@@ -53,7 +53,7 @@ description: "G0100-STD-DOC0 の総合編。分冊構成、目次、参照文書
 |------|------|------|
 | G0000-STD-OVRV-Overview | ドキュメント標準全体指針 | 上位理念層 |
 | G0110-STD-DOC1-AuthoringGuideline | 文書作成指針 | 形式層基準 |
-| G0300-ARC-COD0-CodingStandard | コーディング規約 | 設計層関連 |
+| G0300-STD-COD0-CodingStandard | コーディング規約 | 設計層関連 |
 | G0400-STD-YML0-ContentStructure | YAML構造定義 | 構造層関連 |
 
 ---

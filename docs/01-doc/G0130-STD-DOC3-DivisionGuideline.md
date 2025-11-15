@@ -1,5 +1,4 @@
 ---
-
 schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
 identifier: "G0130-STD-DOC3-DivisionGuideline"
@@ -7,13 +6,12 @@ name: "分冊（Volume）方式・汎用ファイル名規則（末尾番号方�
 description: "DocFoundary における大規模 Markdown 文書の分冊方式と末尾番号方式のファイル名規則を定義する。"
 version: "v1.0.0"
 datePublished: "2025-11-13"
-inLanguage:
-  - "ja"
-
+inLanguage: ["ja"]
 creator:
-  - "@type": "Person"
-    name: "Individual Developer"
-
+  "@type": "Person"
+  name: "Individual Developer"
+description: >
+  分冊（Volume）方式・汎用ファイル名規則
 ---
 
 # 分冊（Volume）方式・汎用ファイル名規則（末尾番号方式）

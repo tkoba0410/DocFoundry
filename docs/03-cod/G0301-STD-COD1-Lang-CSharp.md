@@ -1,25 +1,17 @@
 ---
-
-schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
-@type: "CreativeWork"
-identifier: "G0301-STD-COD1"
-name: "Coding Standard – C# (Project-Agnostic)"
-version: "v1.1.1"
-datePublished: "2025-11-09"
-status: "Star5 Compliance Edition (Language Core Only)"
+schema: "https://schema.org/CreativeWork"
+"@type": "CreativeWork"
+identifier: "G0301-STD-COD1-Lang-CSharp"
+name: "Coding Standard – C#"
+version: "v1.1.0"
+datePublished: "2025-11-14"
+inLanguage: ["ja"]
 creator:
-@type: "Organization"
-name: "Documentation Team"
-inLanguage: ["ja", "en"]
+  "@type": "Person"
+  name: "Individual Developer"
 description: >
-本書はプロジェクトに依存しないC#のコーディング規範を定義する。
-運用・CI・逸脱管理要素を除外し、純粋な言語規範層（L4: Coding Core）として整備したStar5準拠版。
-related_docs:
-
-* "G0300-STD-COD0"
-* "G0100-STD-DOC0-FormatPolicy"
-  x-schema: "/schemas/dcmm.cod.schema.json"
-
+  本書はプロジェクトに依存しないC#のコーディング規範を定義する。
+  運用・CI・逸脱管理要素を除外し、純粋な言語規範層（L4: Coding Core）として整備したStar5準拠版。
 ---
 
 # [STD-COD1] Coding Standard – C# (Project-Agnostic / Language Core Edition)

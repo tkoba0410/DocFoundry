@@ -1,18 +1,17 @@
 ---
-
-schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
-@type: "CreativeWork"
+schema: "https://schema.org/CreativeWork"
+"@type": "CreativeWork"
 identifier: "G0410-STD-YML1-LayerModel"
-name: "YAML構造三層モデル標準（YML1: YAML Layer Model Standard）"
-version: "v1.0.0"
-datePublished: "2025-11-07"
-status: "Draft"
+name: "YAML構造三層モデル標準"
+version: "v1.1.0"
+datePublished: "2025-11-14"
 inLanguage: ["ja"]
 creator:
-@type: "Organization"
-name: "Documentation Team"
-description: "YAML, JSON Schema, Schema.org の三層による文書内容構造モデルを定義し、文書の意味・形式・内容整合を体系的に確立する。運用・検証は含まない。"
----------------------------------------------------------------------------------------------------
+  "@type": "Person"
+  name: "Individual Developer"
+description: >
+ "YAML, JSON Schema, Schema.org の三層による文書内容構造モデルを定義し、文書の意味・形式・内容整合を体系的に確立する。運用・検証は含まない。"
+---
 
 # [STD-YAML-LayerModel] YAML構造三層モデル標準（v1.0.0 / Draft）
 

@@ -1,24 +1,15 @@
-<!-- Auto-updated via Codex-AI Mechanical Fix Plan v3.2 (Enhanced) -->
 ---
 schema: "https://schema.org/CreativeWork"
-@type: "CreativeWork"
-identifier: "G0206-STD-SCD6"
-name: "フィードバックフェーズガイド（v3.0統一構成）"
-version: "v1.0.0"
-datePublished: "2025-10-15"
-status: "Approved"
+"@type": "CreativeWork"
+identifier: "G0206-STD-SCD6-FeedbackPhase"
+name: "フィードバックフェーズガイド"
+version: "v1.1.0"
+datePublished: "2025-11-14"
+inLanguage: ["ja"]
 creator:
-  @type: Organization
-  name: Documentation Team
-reviewers:
-  - "Feedback-Operations-Guild"
-  - "Quality-Assurance-Guild"
-confidentiality: "Public"
-lifecycle: "Canonical"
-scope: "Generic"
-owner: "Standards-Governance-Team"
-inherit_from: ["G0100-STD-DOC0"]
-x-schema: "/schemas/dcmm.scd.schema.json"
+  "@type": "Person"
+  name: "Individual Developer"
+description: "フィードバックフェーズガイド"
 ---
 
 # [SCD-FEEDBACK] フィードバックフェーズガイド（v3.0統一構成）

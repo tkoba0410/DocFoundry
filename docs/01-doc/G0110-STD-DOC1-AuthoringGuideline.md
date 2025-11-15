@@ -1,5 +1,4 @@
 ---
-
 schema: "https://schema.org/CreativeWork"
 "@type": "CreativeWork"
 identifier: "G0110-STD-DOC1-AuthoringGuideline"
@@ -8,12 +7,11 @@ version: "v2.1.0"
 datePublished: "2025-11-11"
 inLanguage: ["ja"]
 creator:
-"@type": "Person"
-name: "Individual Developer"
+  "@type": "Person"
+  name: "Individual Developer"
 description: >
-DocFoundary 標準群における文書作成・構成・表現・管理の原則を定義する最終整備版。
-章構成・用語・表記・書式を完全統一し、正式公開基準に適合させた。
-
+  DocFoundary 標準群における文書作成・構成・表現・管理の原則を定義する最終整備版。
+  章構成・用語・表記・書式を完全統一し、正式公開基準に適合させた。
 ---
 
 # [STD-DOC1] 文書設計指針（Documentation Authoring Guideline / v2.1.0）

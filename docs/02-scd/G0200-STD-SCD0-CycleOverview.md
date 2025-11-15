@@ -1,25 +1,15 @@
 ---
-
-schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
-@type: "CreativeWork"
-identifier: "G0200-STD-SCD0"
-name: "開発サイクル概要（Spec–Conformance Development Cycle）"
-version: "v1.2.0"
-datePublished: "2025-11-11"
-status: "Approved"
+schema: "https://schema.org/CreativeWork"
+"@type": "CreativeWork"
+identifier: "G0200-STD-SCD0-CycleOverview"
+name: "開発サイクル概要"
+version: "v1.1.0"
+datePublished: "2025-11-14"
+inLanguage: ["ja"]
 creator:
-@type: Organization
-name: "Documentation Team"
-reviewers:
-
-* "Quality-Assurance-Guild"
-* "Product-Compliance-Board"
-  confidentiality: "Public"
-  lifecycle: "Canonical"
-  scope: "Generic"
-  owner: "Standards-Governance-Team"
-  inherit_from: ["G0100-STD-DOC0"]
-
+  "@type": "Person"
+  name: "Individual Developer"
+description: "開発サイクル概要"
 ---
 
 # [SCD-CYCL] 開発サイクル概要（Spec–Conformance Development Cycle）

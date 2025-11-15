@@ -1,17 +1,16 @@
 ---
-
-schema: "[https://schema.org/CreativeWork](https://schema.org/CreativeWork)"
-@type: "CreativeWork"
+schema: "https://schema.org/CreativeWork"
+"@type": "CreativeWork"
 identifier: "G0420-STD-YML2-SyntaxStyleGuide"
-name: "YAML記述スタイル標準（YML2: Syntax Style Guide）"
-version: "v1.2.1"
-datePublished: "2025-11-09"
-status: "Star5 Edition (Refined)"
+name: "YAML記述スタイル標準"
+version: "v1.1.0"
+datePublished: "2025-11-14"
 inLanguage: ["ja"]
-creator: "Documentation Team"
-confidentiality: "Public"
-glossary_ref: "G0100-STD-DOC0-Glossary"
-description: "DocFoundary プロジェクトにおける YAML 記述スタイルの完全標準。コメント規則を統合し、Lint対応・Annex参照導線を追加。Glossary参照を明記し、章構成の明瞭性と保守性を向上。"
+creator:
+  "@type": "Person"
+  name: "Individual Developer"
+description: >
+ "DocFoundary プロジェクトにおける YAML 記述スタイルの完全標準。コメント規則を統合し、Lint対応・Annex参照導線を追加。Glossary参照を明記し、章構成の明瞭性と保守性を向上。"
 
 ---
 

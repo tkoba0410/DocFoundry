@@ -1,28 +1,15 @@
-<!-- Auto-updated via Codex-AI Mechanical Fix Plan v3.2 (Enhanced) -->
 ---
 schema: "https://schema.org/CreativeWork"
-@type: "CreativeWork"
-identifier: "G0220-STD-SCDM"
-name: "フェーズ別実務行動マップ（v3.1汎用統合版）"
-version: "v1.0.0"
-datePublished: "2025-10-30"
-status: "Approved"
+"@type": "CreativeWork"
+identifier: "G0220-STD-SCDM-PhaseActionMap"
+name: "フェーズ別実務行動マップ"
+version: "v1.1.0"
+datePublished: "2025-11-14"
+inLanguage: ["ja"]
 creator:
-  @type: Organization
-  name: Documentation Team
-reviewers:
-  - "Operations-Enablement-Guild"
-  - "Quality-Assurance-Guild"
-confidentiality: "Public"
-lifecycle: "Canonical"
-scope: "Generic"
-owner: "Standards-Governance-Team"
-links:
-  - doc_id: "G0200-STD-SCD0"
-    relation: "base_on"
-    comment: "Cycle Overview v3.1.0 準拠"
-inherit_from: ["G0100-STD-DOC0"]
-x-schema: "/schemas/dcmm.scd.schema.json"
+  "@type": "Person"
+  name: "Individual Developer"
+description: "フェーズ別実務行動マップ"
 ---
 
 # [SCD-MAP] フェーズ別実務行動マップ（v3.1汎用統合版）
@@ -35,7 +22,7 @@ x-schema: "/schemas/dcmm.scd.schema.json"
 
 ## 1. 表紙情報
 - 文書番号: `G0220-STD-SCDM`
-- バージョン: **v1.0.0**
+- バージョン: **v2.0.0**
 - 日付: 2025-10-30
 - 状態: Approved
 
